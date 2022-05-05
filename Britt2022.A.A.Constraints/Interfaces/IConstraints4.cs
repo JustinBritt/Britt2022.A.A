@@ -1,0 +1,19 @@
+﻿namespace Britt2022.A.A.Constraints.Interfaces
+{
+    using System;
+
+    using Britt2022.A.A.CrossJoinElements.Structs;
+    using Britt2022.A.A.IndexElements.Structs;
+    using Britt2022.A.A.VariableElements.Structs;
+
+    public interface IConstraints4 : IDisposable
+    {
+        bool IsFeasible(
+            ReadOnlySpan<iIndexElement> i,
+            ReadOnlySpan<jIndexElement> j,
+            ReadOnlySpan<kIndexElement> k,
+            ReadOnlySpan<ijkCrossJoinElement> ijk,
+            ReadOnlySpan<ikCrossJoinElement> ik,
+            Span<xVariableElement> x);
+    }
+}
