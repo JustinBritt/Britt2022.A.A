@@ -9,5 +9,8 @@
             double finalTemperature,
             double initialTemperature,
             int maximumSolutionsAccepted);
+
+        IParameters Create(
+            ISolverConfiguration solverConfiguration);
     }
 }

@@ -32,5 +32,25 @@
 
             return parameters;
         }
+
+        public IParameters Create(
+            ISolverConfiguration solverConfiguration)
+        {
+            IParameters parameters = null;
+
+            try
+            {
+                parameters = new Parameters(
+                    coolingRate: solverConfiguration.CoolingRate,
+                    finalTemperature: solverConfiguration.FinalTemperature,
+                    initialTemperature: solverConfiguration.InitialTemperature,
+                    maximumSolutionsAccepted: solverConfiguration.MaximumSolutionsAccepted);
+            }
+            finally
+            {
+            }
+
+            return parameters;
+        }
     }
 }
