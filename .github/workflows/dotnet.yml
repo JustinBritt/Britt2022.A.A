@@ -26,8 +26,8 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish package
-      run: dotnet nuget push --skip-duplicate ${{ github.workspace }}/${{ github.event.repository.name }}/bin/Release/*.nupkg
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}/bin/Release/*.nupkg
     - name: Publish package Constraints
-      run: dotnet nuget push --skip-duplicate ${{ github.workspace }}/${{ github.event.repository.name }}.Constraints/bin/Release/*.nupkg
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Constraints/bin/Release/*.nupkg
     - name: Publish package ConstructionHeuristic
-      run: dotnet nuget push --skip-duplicate ${{ github.workspace }}/${{ github.event.repository.name }}.ConstructionHeuristic/bin/Release/*.nupkg
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.ConstructionHeuristic/bin/Release/*.nupkg
