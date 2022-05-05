@@ -25,10 +25,7 @@
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
                 improvementHeuristicFactory: ((ISAAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory(),
                 parameters: ((ISAAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
-                    coolingRate: ((ISolverConfiguration)solverConfiguration).CoolingRate,
-                    finalTemperature: ((ISolverConfiguration)solverConfiguration).FinalTemperature,
-                    initialTemperature: ((ISolverConfiguration)solverConfiguration).InitialTemperature,
-                    maximumSolutionsAccepted: ((ISolverConfiguration)solverConfiguration).MaximumSolutionsAccepted),
+                    (ISolverConfiguration)solverConfiguration),
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),
                 k: WGPMModel.Getk(),
