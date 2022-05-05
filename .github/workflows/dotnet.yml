@@ -29,3 +29,5 @@ jobs:
       run: dotnet nuget push --skip-duplicate ${{ github.workspace }}/${{ github.event.repository.name }}/bin/Release/*.nupkg
     - name: Publish package Constraints
       run: dotnet nuget push --skip-duplicate ${{ github.workspace }}/${{ github.event.repository.name }}.Constraints/bin/Release/*.nupkg
+    - name: Publish package ConstructionHeuristic
+      run: dotnet nuget push --skip-duplicate ${{ github.workspace }}/${{ github.event.repository.name }}.ConstructionHeuristic/bin/Release/*.nupkg
