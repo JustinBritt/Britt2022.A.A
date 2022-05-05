@@ -25,7 +25,7 @@
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
                 improvementHeuristicFactory: ((ILAHCAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory(),
                 parameters: ((ILAHCAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
-                    fitnessArrayLength: ((ISolverConfiguration)solverConfiguration).FitnessArrayLength),
+                    (ISolverConfiguration)solverConfiguration),
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),
                 k: WGPMModel.Getk(),
