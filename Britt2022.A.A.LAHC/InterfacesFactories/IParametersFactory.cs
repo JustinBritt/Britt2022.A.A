@@ -6,5 +6,8 @@
     {
         IParameters Create(
             int fitnessArrayLength);
+
+        IParameters Create(
+            ISolverConfiguration solverConfiguration);
     }
 }
