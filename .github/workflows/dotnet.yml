@@ -25,9 +25,9 @@ jobs:
       run: dotnet build --no-restore --configuration Release
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Publish package
+    - name: Publish package Britt2022.A.A
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}/bin/Release/*.nupkg
-    - name: Publish package Constraints
+    - name: Publish package Britt2022.A.A.Constraints
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Constraints/bin/Release/*.nupkg
-    - name: Publish package ConstructionHeuristic
+    - name: Publish package Britt2022.A.A.ConstructionHeuristic
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.ConstructionHeuristic/bin/Release/*.nupkg
