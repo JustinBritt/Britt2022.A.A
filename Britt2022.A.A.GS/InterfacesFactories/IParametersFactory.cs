@@ -6,5 +6,8 @@
     {
         IParameters Create(
             long maximumNumberTicks);
+
+        IParameters Create(
+            ISolverConfiguration solverConfiguration);
     }
 }

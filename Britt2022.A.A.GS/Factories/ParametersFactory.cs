@@ -26,5 +26,22 @@
 
             return parameters;
         }
+
+        public IParameters Create(
+            ISolverConfiguration solverConfiguration)
+        {
+            IParameters parameters = null;
+
+            try
+            {
+                parameters = new Parameters(
+                    maximumNumberTicks: solverConfiguration.MaximumNumberTicks);
+            }
+            finally
+            {
+            }
+
+            return parameters;
+        }
     }
 }
