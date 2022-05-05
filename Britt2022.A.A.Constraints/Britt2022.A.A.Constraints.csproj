@@ -4,7 +4,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>0.0.1</Version>
-    <RepositoryUrl>https://github.com/JustinBritt/Britt2022.A.E.O</RepositoryUrl>
+    <RepositoryUrl>https://github.com/JustinBritt/Britt2022.A.A</RepositoryUrl>
     <Description>C# implementation of the heuristics developed by Britt et al. (2022)</Description>
     <Copyright>2022</Copyright>
   </PropertyGroup>
