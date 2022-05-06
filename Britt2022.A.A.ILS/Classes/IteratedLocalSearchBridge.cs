@@ -25,8 +25,8 @@
             IILSAbstractFactory ILSAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IWGPMModel WGPMModel,
-            IStandaloneLocalSearchImprovementHeuristic standalonelocalSearchImprovementHeuristic,
-            IStandaloneLocalSearchParameters standalonelocalSearchParameters,
+            IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
+            IStandaloneLocalSearchParameters standaloneLocalSearchParameters,
             ISingleEmbeddedLocalSearchParameters parameters)
         {
             ILSAbstractFactory.CreateIteratedLocalSearchFactory().Create().Solve(
@@ -34,8 +34,8 @@
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
                 improvementHeuristicFactory: ILSAbstractFactory.CreateImprovementHeuristicFactory(),
                 parameters: parameters,
-                standalonelocalSearchImprovementHeuristic: standalonelocalSearchImprovementHeuristic,
-                standalonelocalSearchParameters: standalonelocalSearchParameters,
+                standaloneLocalSearchImprovementHeuristic: standaloneLocalSearchImprovementHeuristic,
+                standaloneLocalSearchParameters: standaloneLocalSearchParameters,
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),
                 k: WGPMModel.Getk(),
@@ -90,30 +90,30 @@
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration localSearchSolverConfiguration,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration ILSSolverConfiguration) 
         {
-            IStandaloneLocalSearchParameters standalonelocalSearchParameters = null;
+            IStandaloneLocalSearchParameters standaloneLocalSearchParameters = null;
 
-            IStandaloneLocalSearchImprovementHeuristic standalonelocalSearchImprovementHeuristic = null;
+            IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic = null;
 
             if (typeof(Britt2022.A.A.GS.Interfaces.ISolverConfiguration).IsAssignableFrom(localSearchSolverConfiguration.GetType()))
             {
-                standalonelocalSearchParameters = ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
+                standaloneLocalSearchParameters = ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         (Britt2022.A.A.GS.Interfaces.ISolverConfiguration)localSearchSolverConfiguration);
 
-                standalonelocalSearchImprovementHeuristic = ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create();
+                standaloneLocalSearchImprovementHeuristic = ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create();
             }
             else if (typeof(Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration).IsAssignableFrom(localSearchSolverConfiguration.GetType()))
             {
-                standalonelocalSearchParameters = ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
+                standaloneLocalSearchParameters = ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         (Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration)localSearchSolverConfiguration);
 
-                standalonelocalSearchImprovementHeuristic = ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create();
+                standaloneLocalSearchImprovementHeuristic = ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create();
             }
             else if (typeof(Britt2022.A.A.SA.Interfaces.ISolverConfiguration).IsAssignableFrom(localSearchSolverConfiguration.GetType()))
             {
-                standalonelocalSearchParameters = ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
+                standaloneLocalSearchParameters = ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         (Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration);
 
-                standalonelocalSearchImprovementHeuristic = ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create();
+                standaloneLocalSearchImprovementHeuristic = ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create();
             }
      
             this.Bridge(
@@ -121,8 +121,8 @@
                 (IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory,
                 neighbourhoodStructuresAbstractFactory,
                 WGPMModel,
-                standalonelocalSearchImprovementHeuristic,
-                standalonelocalSearchParameters,
+                standaloneLocalSearchImprovementHeuristic,
+                standaloneLocalSearchParameters,
                 ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
                     (ISolverConfiguration)ILSSolverConfiguration));
         }
