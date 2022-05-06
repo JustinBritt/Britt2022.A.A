@@ -3,7 +3,7 @@
     using Britt2022.A.A.SA.InterfacesFactories;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
-    public interface ISAAbstractFactory : IStandaloneLocalSearchesAbstractFactory
+    public interface ISAAbstractFactory : IStandaloneLocalSearchAbstractFactory
     {
         IImprovementHeuristicFactory CreateImprovementHeuristicFactory();
 

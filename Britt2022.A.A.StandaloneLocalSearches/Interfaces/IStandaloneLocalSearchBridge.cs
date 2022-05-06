@@ -11,7 +11,7 @@
         void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
-            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IWGPMModel WGPMModel,
             ISolverConfiguration solverConfiguration);
     }

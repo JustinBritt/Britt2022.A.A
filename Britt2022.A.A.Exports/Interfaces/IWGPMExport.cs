@@ -30,7 +30,7 @@
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
             ISolutionsAbstractFactory solutionsAbstractFactory,
-            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration);
@@ -47,7 +47,7 @@
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
             ISolutionsAbstractFactory solutionsAbstractFactory,
-            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
             Britt2022.A.A.ILS.Interfaces.ISolverConfiguration ILSSolverConfiguration,

@@ -16,15 +16,15 @@
         public void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
-            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IWGPMModel WGPMModel,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration)
         {
-            ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateSimulatedAnnealingFactory().Create().Solve(
+            ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
-                improvementHeuristicFactory: ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory(),
-                parameters: ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
+                improvementHeuristicFactory: ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory(),
+                parameters: ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                     (ISolverConfiguration)solverConfiguration),
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),

@@ -1,6 +1,6 @@
 ﻿namespace Britt2022.A.A.SingleEmbeddedLocalSearches.InterfacesAbstractFactories
 {
-    public interface ISingleEmbeddedLocalSearchesAbstractFactory
+    public interface ISingleEmbeddedLocalSearchAbstractFactory
     {
     }
 }

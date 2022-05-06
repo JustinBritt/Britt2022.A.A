@@ -10,7 +10,7 @@
         void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
-            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IWGPMModel WGPMModel,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration);
     }

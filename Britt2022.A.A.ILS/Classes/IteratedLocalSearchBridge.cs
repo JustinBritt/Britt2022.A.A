@@ -84,8 +84,8 @@
         public void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
-            ISingleEmbeddedLocalSearchesAbstractFactory singleEmbeddedLocalSearchesAbstractFactory,
-            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
+            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory,
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IWGPMModel WGPMModel,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration localSearchSolverConfiguration,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration ILSSolverConfiguration) 
@@ -94,13 +94,13 @@
             {
                 this.Bridge(
                     constructionHeuristicAbstractFactory,
-                    (IILSAbstractFactory)singleEmbeddedLocalSearchesAbstractFactory,
+                    (IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory,
                     neighbourhoodStructuresAbstractFactory,
                     WGPMModel,
-                    ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
-                    ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
+                    ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
+                    ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.GS.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumNumberTicks),
-                    ((IILSAbstractFactory)singleEmbeddedLocalSearchesAbstractFactory).CreateParametersFactory().Create(
+                    ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         ((ISolverConfiguration)ILSSolverConfiguration).NumberIterations,
                         ((ISolverConfiguration)ILSSolverConfiguration).NumberPerturbations));
             }
@@ -108,13 +108,13 @@
             {
                 this.Bridge(
                     constructionHeuristicAbstractFactory,
-                    (IILSAbstractFactory)singleEmbeddedLocalSearchesAbstractFactory,
+                    (IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory,
                     neighbourhoodStructuresAbstractFactory,
                     WGPMModel,
-                    ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
-                    ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
+                    ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
+                    ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).FitnessArrayLength),
-                    ((IILSAbstractFactory)singleEmbeddedLocalSearchesAbstractFactory).CreateParametersFactory().Create(
+                    ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         ((ISolverConfiguration)ILSSolverConfiguration).NumberIterations,
                         ((ISolverConfiguration)ILSSolverConfiguration).NumberPerturbations));
             }
@@ -122,16 +122,16 @@
             {
                 this.Bridge(
                     constructionHeuristicAbstractFactory,
-                    (IILSAbstractFactory)singleEmbeddedLocalSearchesAbstractFactory,
+                    (IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory,
                     neighbourhoodStructuresAbstractFactory,
                     WGPMModel,
-                    ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
-                    ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
+                    ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
+                    ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         coolingRate: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).CoolingRate,
                         finalTemperature: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).FinalTemperature,
                         initialTemperature: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).InitialTemperature,
                         maximumSolutionsAccepted: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumSolutionsAccepted),
-                    ((IILSAbstractFactory)singleEmbeddedLocalSearchesAbstractFactory).CreateParametersFactory().Create(
+                    ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         ((ISolverConfiguration)ILSSolverConfiguration).NumberIterations,
                         ((ISolverConfiguration)ILSSolverConfiguration).NumberPerturbations));
             }
