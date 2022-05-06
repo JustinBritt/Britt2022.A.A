@@ -68,7 +68,7 @@ jobs:
     - name: Publish package Britt2022.A.A.SolverConfigurations
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.SolverConfigurations/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Britt2022.A.A.StandaloneLocalSearches
-      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Britt2022.A.A.StandaloneLocalSearches/bin/Release/*.nupkg
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.StandaloneLocalSearches/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.VariableElements
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.VariableElements/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Variables
