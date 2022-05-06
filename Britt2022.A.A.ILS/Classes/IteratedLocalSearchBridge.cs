@@ -99,7 +99,7 @@
                     WGPMModel,
                     ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
                     ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                        ((Britt2022.A.A.GS.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumNumberTicks),
+                        ((Britt2022.A.A.GS.Interfaces.ISolverConfiguration)localSearchSolverConfiguration)),
                     ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         (ISolverConfiguration)ILSSolverConfiguration));
             }
