@@ -20,7 +20,7 @@
 
     public interface IImprovementHeuristic
     {
-        Span<xVariableElement> Search(
+        void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchImprovementHeuristic localSearchImprovementHeuristic,
             ILocalSearchParameters localSearchParameters,

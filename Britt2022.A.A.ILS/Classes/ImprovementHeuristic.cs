@@ -26,7 +26,7 @@
         {
         }
 
-        public unsafe Span<xVariableElement> Search(
+        public unsafe void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchImprovementHeuristic localSearchImprovementHeuristic,
             ILocalSearchParameters localSearchParameters,
@@ -369,8 +369,6 @@
 
             xStarSpan.CopyTo(
                 x);
-
-            return x;
         }
 
         private Span<xVariableElement> Perturbation(
