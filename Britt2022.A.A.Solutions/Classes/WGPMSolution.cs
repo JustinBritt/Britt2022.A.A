@@ -251,8 +251,8 @@
                 {
                     ILSAbstractFactory.CreateIteratedLocalSearchBridgeFactory().Create().Bridge(
                         constructionHeuristicAbstractFactory,
-                        ILSAbstractFactory,
                         neighbourhoodStructuresAbstractFactory,
+                        ILSAbstractFactory,
                         standaloneLocalSearchesAbstractFactory,
                         WGPMModel,
                         ILSSolverConfiguration,
