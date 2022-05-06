@@ -28,7 +28,7 @@
         {
         }
 
-        // Non-iterated local searches
+        // StandaloneLocalSearches
         public Task<IWGPMOutputContext> Solve(
             IConstraintsAbstractFactory constraintsAbstractFactory,
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
@@ -216,7 +216,7 @@
             });
         }
 
-        // ILS
+        // SingleEmbeddedLocalSearches
         public Task<IWGPMOutputContext> Solve(
             IConstraintsAbstractFactory constraintsAbstractFactory,
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
