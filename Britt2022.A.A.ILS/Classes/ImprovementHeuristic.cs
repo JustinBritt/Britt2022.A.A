@@ -26,59 +26,6 @@
         {
         }
 
-        private Span<xVariableElement> Perturbation(
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
-            ReadOnlySpan<iIndexElement> i,
-            ReadOnlySpan<jIndexElement> j,
-            ReadOnlySpan<kIndexElement> k,
-            ReadOnlySpan<rIndexElement> r,
-            ReadOnlySpan<ijkCrossJoinElement> ijk,
-            ReadOnlySpan<ikCrossJoinElement> ik,
-            ReadOnlySpan<jkCrossJoinElement> jk,
-            ReadOnlySpan<BParameterElement> B,
-            ReadOnlySpan<B1ParameterElement> B1,
-            ReadOnlySpan<F2ParameterElement> F2,
-            ReadOnlySpan<HParameterElement> H,
-            ReadOnlySpan<LParameterElement> Li,
-            ReadOnlySpan<ΠParameterElement> Π,
-            ReadOnlySpan<ΩParameterElement> Ω,
-            Span<xVariableElement> x,
-            IConstraints constraints,
-            int swapsTarget)
-        {
-            int swapCounter = 0;
-            
-            while (swapCounter < swapsTarget)
-            {
-                IRandomPairwiseSwap randomPairwiseSwap = randomPairwiseSwapFactory.Create();
-
-                randomPairwiseSwap.Swap(
-                        i,
-                        j,
-                        k,
-                        r,
-                        B1,
-                        F2,
-                        x);
-
-                if (randomPairwiseSwap.SwapMade)
-                {
-                    if (constraints.IsFeasible(i, j, k, r, ijk, ik, jk, B, B1, F2, H, Li, Π, Ω, x))
-                    {
-                        swapCounter = swapCounter + 1;
-                    }
-                    else
-                    {
-                        // Reject swap
-                        randomPairwiseSwap.UndoSwap(
-                            x);
-                    }
-                }
-            }
-
-            return x;
-        }
-
         public unsafe Span<xVariableElement> Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchImprovementHeuristic localSearchImprovementHeuristic,
@@ -422,6 +369,59 @@
 
             xStarSpan.CopyTo(
                 x);
+
+            return x;
+        }
+
+        private Span<xVariableElement> Perturbation(
+            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            ReadOnlySpan<iIndexElement> i,
+            ReadOnlySpan<jIndexElement> j,
+            ReadOnlySpan<kIndexElement> k,
+            ReadOnlySpan<rIndexElement> r,
+            ReadOnlySpan<ijkCrossJoinElement> ijk,
+            ReadOnlySpan<ikCrossJoinElement> ik,
+            ReadOnlySpan<jkCrossJoinElement> jk,
+            ReadOnlySpan<BParameterElement> B,
+            ReadOnlySpan<B1ParameterElement> B1,
+            ReadOnlySpan<F2ParameterElement> F2,
+            ReadOnlySpan<HParameterElement> H,
+            ReadOnlySpan<LParameterElement> Li,
+            ReadOnlySpan<ΠParameterElement> Π,
+            ReadOnlySpan<ΩParameterElement> Ω,
+            Span<xVariableElement> x,
+            IConstraints constraints,
+            int swapsTarget)
+        {
+            int swapCounter = 0;
+
+            while (swapCounter < swapsTarget)
+            {
+                IRandomPairwiseSwap randomPairwiseSwap = randomPairwiseSwapFactory.Create();
+
+                randomPairwiseSwap.Swap(
+                        i,
+                        j,
+                        k,
+                        r,
+                        B1,
+                        F2,
+                        x);
+
+                if (randomPairwiseSwap.SwapMade)
+                {
+                    if (constraints.IsFeasible(i, j, k, r, ijk, ik, jk, B, B1, F2, H, Li, Π, Ω, x))
+                    {
+                        swapCounter = swapCounter + 1;
+                    }
+                    else
+                    {
+                        // Reject swap
+                        randomPairwiseSwap.UndoSwap(
+                            x);
+                    }
+                }
+            }
 
             return x;
         }
