@@ -249,14 +249,17 @@
                     variablesAbstractFactory,
                     WGPMInputContext))
                 {
-                    ILSAbstractFactory.CreateIteratedLocalSearchBridgeFactory().Create().Bridge(
-                        constructionHeuristicAbstractFactory,
-                        neighbourhoodStructuresAbstractFactory,
-                        ILSAbstractFactory,
-                        standaloneLocalSearchAbstractFactory,
-                        WGPMModel,
-                        singleEmbeddedLocalSearchSolverConfiguration,
-                        standaloneLocalSearchSolverConfiguration);
+                    if (typeof(Britt2022.A.A.ILS.Interfaces.ISolverConfiguration).IsAssignableFrom(singleEmbeddedLocalSearchSolverConfiguration.GetType()))
+                    {
+                        ((IILSAbstractFactory)ILSAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create().Bridge(
+                            constructionHeuristicAbstractFactory,
+                            neighbourhoodStructuresAbstractFactory,
+                            ILSAbstractFactory,
+                            standaloneLocalSearchAbstractFactory,
+                            WGPMModel,
+                            singleEmbeddedLocalSearchSolverConfiguration,
+                            standaloneLocalSearchSolverConfiguration);
+                    }                   
 
                     stopWatch.Stop();
 
