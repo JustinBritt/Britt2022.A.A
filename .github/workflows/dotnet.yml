@@ -63,6 +63,8 @@ jobs:
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Results/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.SA
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.SA/bin/Release/*.nupkg
+    - name: Publish package Britt2022.A.A.Britt2022.A.A.SingleEmbeddedLocalSearches
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.SingleEmbeddedLocalSearches/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Solutions
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Solutions/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.SolverConfigurations
