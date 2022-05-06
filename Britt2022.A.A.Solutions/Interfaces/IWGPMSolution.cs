@@ -47,7 +47,7 @@
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
-            Britt2022.A.A.ILS.Interfaces.ISolverConfiguration ILSSolverConfiguration,
-            Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration localSearchSolverConfiguration);
+            Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
+            Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration standaloneLocalSearchSolverConfiguration);
     }
 }
