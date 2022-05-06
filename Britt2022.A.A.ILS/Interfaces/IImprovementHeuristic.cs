@@ -2,7 +2,7 @@
 {
     using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
 
-    public interface IImprovementHeuristic : ISingleEmbeddedImprovementHeuristic
+    public interface IImprovementHeuristic : ISingleEmbeddedLocalSearchImprovementHeuristic
     {
     }
 }

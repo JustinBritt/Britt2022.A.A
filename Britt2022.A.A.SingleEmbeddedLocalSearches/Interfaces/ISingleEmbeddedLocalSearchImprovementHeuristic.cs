@@ -17,7 +17,7 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
 
-    public interface ISingleEmbeddedImprovementHeuristic
+    public interface ISingleEmbeddedLocalSearchImprovementHeuristic
     {
         void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
