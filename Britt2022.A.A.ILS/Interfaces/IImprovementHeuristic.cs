@@ -4,7 +4,6 @@
 
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
-    using Britt2022.A.A.GS.InterfacesAbstractFactories;
     using Britt2022.A.A.IndexElements.Structs;
     using Britt2022.A.A.LocalSearch.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesFactories;
