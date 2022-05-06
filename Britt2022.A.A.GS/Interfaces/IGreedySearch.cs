@@ -25,7 +25,7 @@
             IConstructionHeuristicFactory constructionHeuristicFactory,
             IImprovementHeuristicFactory improvementHeuristicFactory,
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
-            ILocalSearchParameters parameters,
+            IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,

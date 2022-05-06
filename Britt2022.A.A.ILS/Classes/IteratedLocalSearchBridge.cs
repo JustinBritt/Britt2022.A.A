@@ -25,8 +25,8 @@
             IILSAbstractFactory ILSAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IWGPMModel WGPMModel,
-            ILocalSearchImprovementHeuristic localSearchImprovementHeuristic,
-            ILocalSearchParameters localSearchParameters,
+            IStandaloneLocalSearchImprovementHeuristic localSearchImprovementHeuristic,
+            IStandaloneLocalSearchParameters localSearchParameters,
             ISingleEmbeddedLocalSearchParameters parameters)
         {
             ILSAbstractFactory.CreateIteratedLocalSearchFactory().Create().Solve(

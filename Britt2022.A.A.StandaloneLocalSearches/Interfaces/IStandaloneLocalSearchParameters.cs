@@ -1,6 +1,6 @@
 ﻿namespace Britt2022.A.A.StandaloneLocalSearches.Interfaces
 {
-    public interface ILocalSearchParameters
+    public interface IStandaloneLocalSearchParameters
     {
     }
 }

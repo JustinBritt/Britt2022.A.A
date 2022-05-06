@@ -29,8 +29,8 @@
 
         public unsafe void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
-            ILocalSearchImprovementHeuristic localSearchImprovementHeuristic,
-            ILocalSearchParameters localSearchParameters,
+            IStandaloneLocalSearchImprovementHeuristic localSearchImprovementHeuristic,
+            IStandaloneLocalSearchParameters localSearchParameters,
             ISingleEmbeddedLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,

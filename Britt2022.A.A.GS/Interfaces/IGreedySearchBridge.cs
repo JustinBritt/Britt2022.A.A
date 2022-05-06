@@ -2,7 +2,7 @@
 {
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
 
-    public interface IGreedySearchBridge : ILocalSearchBridge
+    public interface IGreedySearchBridge : IStandaloneLocalSearchBridge
     {
     }
 }

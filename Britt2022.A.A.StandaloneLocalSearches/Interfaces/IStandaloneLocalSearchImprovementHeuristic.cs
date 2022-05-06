@@ -16,11 +16,11 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
 
-    public interface ILocalSearchImprovementHeuristic
+    public interface IStandaloneLocalSearchImprovementHeuristic
     {
         void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
-            ILocalSearchParameters parameters,
+            IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,

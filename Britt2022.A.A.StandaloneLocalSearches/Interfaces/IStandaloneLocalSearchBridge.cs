@@ -6,7 +6,7 @@
     using Britt2022.A.A.SolverConfigurations.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
-    public interface ILocalSearchBridge
+    public interface IStandaloneLocalSearchBridge
     {
         void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,

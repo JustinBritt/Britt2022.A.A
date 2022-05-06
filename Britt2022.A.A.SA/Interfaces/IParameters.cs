@@ -2,7 +2,7 @@
 {
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
 
-    public interface IParameters : ILocalSearchParameters
+    public interface IParameters : IStandaloneLocalSearchParameters
     {
         double CoolingRate { get; }
 
