@@ -26,7 +26,7 @@
         {
         }
 
-        public unsafe Span<xVariableElement> Search(
+        public unsafe void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
@@ -219,9 +219,7 @@
                         }
                     }
                 }
-            }
-            
-            return x;
+            }  
         }
     }
 }

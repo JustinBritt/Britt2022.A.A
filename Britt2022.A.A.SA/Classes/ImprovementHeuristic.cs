@@ -25,7 +25,7 @@
         {
         }
 
-        public unsafe Span<xVariableElement> Search(
+        public unsafe void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
@@ -241,8 +241,6 @@
                     currentTemperature = currentTemperature * ((IParameters)parameters).CoolingRate;
                 }
             }
-
-            return x;
         }
     }
 }

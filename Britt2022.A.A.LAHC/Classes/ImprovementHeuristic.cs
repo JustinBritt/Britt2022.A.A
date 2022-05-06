@@ -25,7 +25,7 @@
         {
         }
 
-        public unsafe Span<xVariableElement> Search(
+        public unsafe void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
@@ -253,8 +253,6 @@
                 //Increment the iteration number It := It + 1
                 It = It + 1;
             }
-
-            return x;
         }
     }
 }

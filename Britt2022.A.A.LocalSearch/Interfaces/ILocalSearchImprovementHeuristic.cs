@@ -5,7 +5,6 @@
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
-    using Britt2022.A.A.LocalSearch.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesFactories;
     using Britt2022.A.A.ObjectiveFunctions.Interfaces;
     using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
@@ -19,7 +18,7 @@
 
     public interface ILocalSearchImprovementHeuristic
     {
-        Span<xVariableElement> Search(
+        void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
