@@ -101,8 +101,7 @@
                     ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.GS.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumNumberTicks),
                     ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                        ((ISolverConfiguration)ILSSolverConfiguration).NumberIterations,
-                        ((ISolverConfiguration)ILSSolverConfiguration).NumberPerturbations));
+                        (ISolverConfiguration)ILSSolverConfiguration));
             }
             else if (typeof(Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration).IsAssignableFrom(localSearchSolverConfiguration.GetType()))
             {
@@ -115,8 +114,7 @@
                     ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).FitnessArrayLength),
                     ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                        ((ISolverConfiguration)ILSSolverConfiguration).NumberIterations,
-                        ((ISolverConfiguration)ILSSolverConfiguration).NumberPerturbations));
+                        (ISolverConfiguration)ILSSolverConfiguration));
             }
             else if (typeof(Britt2022.A.A.SA.Interfaces.ISolverConfiguration).IsAssignableFrom(localSearchSolverConfiguration.GetType()))
             {
@@ -132,8 +130,7 @@
                         initialTemperature: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).InitialTemperature,
                         maximumSolutionsAccepted: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumSolutionsAccepted),
                     ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                        ((ISolverConfiguration)ILSSolverConfiguration).NumberIterations,
-                        ((ISolverConfiguration)ILSSolverConfiguration).NumberPerturbations));
+                        (ISolverConfiguration)ILSSolverConfiguration));
             }
         }
     }
