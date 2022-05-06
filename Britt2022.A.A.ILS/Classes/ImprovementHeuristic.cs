@@ -29,9 +29,9 @@
 
         public unsafe void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
-            IStandaloneLocalSearchImprovementHeuristic localSearchImprovementHeuristic,
-            IStandaloneLocalSearchParameters localSearchParameters,
             ISingleEmbeddedLocalSearchParameters parameters,
+            IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
+            IStandaloneLocalSearchParameters standaloneLocalSearchParameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,
@@ -175,9 +175,9 @@
             x0Span.CopyTo(
                 xStarSpan);
 
-            localSearchImprovementHeuristic.Search(
+            standaloneLocalSearchImprovementHeuristic.Search(
                 randomPairwiseSwapFactory,
-                localSearchParameters,
+                standaloneLocalSearchParameters,
                 i,
                 j,
                 k,
@@ -281,9 +281,9 @@
                 xPrimeSpan.CopyTo(
                     xStarPrimeSpan);
 
-                localSearchImprovementHeuristic.Search(
+                standaloneLocalSearchImprovementHeuristic.Search(
                     randomPairwiseSwapFactory,
-                    localSearchParameters,
+                    standaloneLocalSearchParameters,
                     i,
                     j,
                     k,

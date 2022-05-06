@@ -25,17 +25,17 @@
             IILSAbstractFactory ILSAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IWGPMModel WGPMModel,
-            IStandaloneLocalSearchImprovementHeuristic localSearchImprovementHeuristic,
-            IStandaloneLocalSearchParameters localSearchParameters,
+            IStandaloneLocalSearchImprovementHeuristic standalonelocalSearchImprovementHeuristic,
+            IStandaloneLocalSearchParameters standalonelocalSearchParameters,
             ISingleEmbeddedLocalSearchParameters parameters)
         {
             ILSAbstractFactory.CreateIteratedLocalSearchFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
                 improvementHeuristicFactory: ILSAbstractFactory.CreateImprovementHeuristicFactory(),
-                localSearchImprovementHeuristic: localSearchImprovementHeuristic,
-                localSearchParameters: localSearchParameters,
                 parameters: parameters,
+                standalonelocalSearchImprovementHeuristic: standalonelocalSearchImprovementHeuristic,
+                standalonelocalSearchParameters: standalonelocalSearchParameters,
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),
                 k: WGPMModel.Getk(),

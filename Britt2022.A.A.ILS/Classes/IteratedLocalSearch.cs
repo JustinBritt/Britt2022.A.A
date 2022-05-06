@@ -31,9 +31,9 @@
             IConstructionHeuristicFactory constructionHeuristicFactory,
             IImprovementHeuristicFactory improvementHeuristicFactory,
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
-            IStandaloneLocalSearchImprovementHeuristic localSearchImprovementHeuristic,
-            IStandaloneLocalSearchParameters localSearchParameters,
             ISingleEmbeddedLocalSearchParameters parameters,
+            IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
+            IStandaloneLocalSearchParameters standaloneLocalSearchParameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,
@@ -94,9 +94,9 @@
 
             improvementHeuristicFactory.Create().Search(
                 randomPairwiseSwapFactory: randomPairwiseSwapFactory,
-                localSearchImprovementHeuristic: localSearchImprovementHeuristic,
-                localSearchParameters: localSearchParameters,
                 parameters: parameters,
+                standaloneLocalSearchImprovementHeuristic: standaloneLocalSearchImprovementHeuristic,
+                standaloneLocalSearchParameters: standaloneLocalSearchParameters,
                 i: i,
                 j: j,
                 k: k,

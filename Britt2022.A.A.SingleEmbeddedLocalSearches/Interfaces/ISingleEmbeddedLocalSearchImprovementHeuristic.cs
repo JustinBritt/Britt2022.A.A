@@ -21,9 +21,9 @@
     {
         void Search(
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
-            IStandaloneLocalSearchImprovementHeuristic localSearchImprovementHeuristic,
-            IStandaloneLocalSearchParameters localSearchParameters,
             ISingleEmbeddedLocalSearchParameters parameters,
+            IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
+            IStandaloneLocalSearchParameters standaloneLocalSearchParameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,
