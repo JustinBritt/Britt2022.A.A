@@ -39,6 +39,7 @@
     <ProjectReference Include="..\Britt2022.A.A.ObjectiveFunctions\Britt2022.A.A.ObjectiveFunctions.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.ParameterElements\Britt2022.A.A.ParameterElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.SA\Britt2022.A.A.SA.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.SingleEmbeddedLocalSearches\Britt2022.A.A.SingleEmbeddedLocalSearches.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.SolverConfigurations\Britt2022.A.A.SolverConfigurations.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.StandaloneLocalSearches\Britt2022.A.A.StandaloneLocalSearches.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.VariableElements\Britt2022.A.A.VariableElements.csproj" />
