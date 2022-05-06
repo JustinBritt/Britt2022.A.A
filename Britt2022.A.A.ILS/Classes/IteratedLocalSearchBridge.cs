@@ -79,7 +79,7 @@
                 goal4: WGPMModel.Goal4);
         }
 
-        // ILS-GS
+        // ILS
         public void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IILSAbstractFactory ILSAbstractFactory,
