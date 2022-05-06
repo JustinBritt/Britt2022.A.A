@@ -49,8 +49,6 @@ jobs:
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.IndexElements/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.LAHC
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.LAHC/bin/Release/*.nupkg
-    - name: Publish package Britt2022.A.A.LocalSearch
-      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.LocalSearch/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Models
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Models/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.NeighbourhoodStructures
@@ -69,6 +67,8 @@ jobs:
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Solutions/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.SolverConfigurations
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.SolverConfigurations/bin/Release/*.nupkg
+    - name: Publish package Britt2022.A.A.Britt2022.A.A.StandaloneLocalSearches
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Britt2022.A.A.StandaloneLocalSearches/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.VariableElements
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.VariableElements/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Variables
