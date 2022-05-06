@@ -1,6 +1,8 @@
 ﻿namespace Britt2022.A.A.ILS.Interfaces
 {
-    public interface IParameters
+    using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
+
+    public interface IParameters : ISingleEmbeddedLocalSearchParameters
     {
         int NumberIterations { get; }
 
