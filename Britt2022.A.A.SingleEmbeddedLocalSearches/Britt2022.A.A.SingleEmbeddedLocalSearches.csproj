@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.1</Version>
+    <RepositoryUrl>https://github.com/JustinBritt/Britt2022.A.A</RepositoryUrl>
+    <Description>C# implementation of the heuristics developed by Britt et al. (2022)</Description>
+    <Copyright>2022</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.194">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" Condition="'$(TargetFramework)' == 'netstandard2.1'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Britt2022.A.A.Constraints\Britt2022.A.A.Constraints.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.ConstructionHeuristic\Britt2022.A.A.ConstructionHeuristic.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.CrossJoinElements\Britt2022.A.A.CrossJoinElements.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.IndexElements\Britt2022.A.A.IndexElements.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.Models\Britt2022.A.A.Models.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.NeighbourhoodStructures\Britt2022.A.A.NeighbourhoodStructures.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.ObjectiveFunctions\Britt2022.A.A.ObjectiveFunctions.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.ParameterElements\Britt2022.A.A.ParameterElements.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.SolverConfigurations\Britt2022.A.A.SolverConfigurations.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.StandaloneLocalSearches\Britt2022.A.A.StandaloneLocalSearches.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.VariableElements\Britt2022.A.A.VariableElements.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.Variables\Britt2022.A.A.Variables.csproj" />
+  </ItemGroup>
+</Project>
