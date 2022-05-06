@@ -223,12 +223,12 @@
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IContextsAbstractFactory contextsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
-            IILSAbstractFactory ILSAbstractFactory,
             IModelsAbstractFactory modelsAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
+            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
@@ -252,10 +252,10 @@
                 {
                     if (typeof(Britt2022.A.A.ILS.Interfaces.ISolverConfiguration).IsAssignableFrom(singleEmbeddedLocalSearchSolverConfiguration.GetType()))
                     {
-                        ((IILSAbstractFactory)ILSAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create().Bridge(
+                        ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create().Bridge(
                             constructionHeuristicAbstractFactory,
                             neighbourhoodStructuresAbstractFactory,
-                            ILSAbstractFactory,
+                            singleEmbeddedLocalSearchAbstractFactory,
                             standaloneLocalSearchAbstractFactory,
                             WGPMModel,
                             singleEmbeddedLocalSearchSolverConfiguration,
