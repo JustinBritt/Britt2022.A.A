@@ -16,6 +16,7 @@
     using Britt2022.A.A.ParameterElements.Structs.StrategicTargets;
     using Britt2022.A.A.ParameterElements.Structs.Surgeries;
     using Britt2022.A.A.ParameterElements.Structs.SurgicalSpecialties;
+    using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
@@ -30,7 +31,7 @@
             IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
             ILocalSearchImprovementHeuristic localSearchImprovementHeuristic,
             ILocalSearchParameters localSearchParameters,
-            IParameters parameters,
+            ISingleEmbeddedLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,
@@ -220,7 +221,7 @@
                 goal3,
                 goal4);
 
-            while (numberIterations < parameters.NumberIterations)
+            while (numberIterations < ((IParameters)parameters).NumberIterations)
             {
                 double xStarEnergy = energyFunction.GetValue(
                     i,
@@ -275,7 +276,7 @@
                     Ω,
                     xPrimeSpan,
                     constraints,
-                    parameters.NumberPerturbations);
+                    ((IParameters)parameters).NumberPerturbations);
 
                 xPrimeSpan.CopyTo(
                     xStarPrimeSpan);

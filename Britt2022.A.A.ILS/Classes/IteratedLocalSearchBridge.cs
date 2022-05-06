@@ -8,6 +8,7 @@
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
     using Britt2022.A.A.SA.InterfacesAbstractFactories;
+    using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
@@ -25,7 +26,7 @@
             IWGPMModel WGPMModel,
             ILocalSearchImprovementHeuristic localSearchImprovementHeuristic,
             ILocalSearchParameters localSearchParameters,
-            IParameters parameters)
+            ISingleEmbeddedLocalSearchParameters parameters)
         {
             ILSAbstractFactory.CreateIteratedLocalSearchFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
@@ -98,9 +99,7 @@
                     ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
                     ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.GS.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumNumberTicks),
-                    ILSAbstractFactory.CreateParametersFactory().Create(
-                        numberIterations: ILSSolverConfiguration.NumberIterations,
-                        numberPerturbations: ILSSolverConfiguration.NumberPerturbations));
+                    (ISingleEmbeddedLocalSearchParameters)ILSSolverConfiguration);
             }
             else if (typeof(Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration).IsAssignableFrom(localSearchSolverConfiguration.GetType()))
             {
@@ -112,9 +111,7 @@
                     ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
                     ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).FitnessArrayLength),
-                    ILSAbstractFactory.CreateParametersFactory().Create(
-                        numberIterations: ILSSolverConfiguration.NumberIterations,
-                        numberPerturbations: ILSSolverConfiguration.NumberPerturbations));
+                    (ISingleEmbeddedLocalSearchParameters)ILSSolverConfiguration);
             }
             else if (typeof(Britt2022.A.A.SA.Interfaces.ISolverConfiguration).IsAssignableFrom(localSearchSolverConfiguration.GetType()))
             {
@@ -129,9 +126,7 @@
                         finalTemperature: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).FinalTemperature,
                         initialTemperature: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).InitialTemperature,
                         maximumSolutionsAccepted: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumSolutionsAccepted),
-                    ILSAbstractFactory.CreateParametersFactory().Create(
-                        numberIterations: ILSSolverConfiguration.NumberIterations,
-                        numberPerturbations: ILSSolverConfiguration.NumberPerturbations));
+                    (ISingleEmbeddedLocalSearchParameters)ILSSolverConfiguration);
             }
         }
     }
