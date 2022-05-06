@@ -5,7 +5,6 @@
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
-    using Britt2022.A.A.LocalSearch.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesFactories;
     using Britt2022.A.A.ObjectiveFunctions.Interfaces;
     using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
@@ -14,6 +13,7 @@
     using Britt2022.A.A.ParameterElements.Structs.StrategicTargets;
     using Britt2022.A.A.ParameterElements.Structs.Surgeries;
     using Britt2022.A.A.ParameterElements.Structs.SurgicalSpecialties;
+    using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
 

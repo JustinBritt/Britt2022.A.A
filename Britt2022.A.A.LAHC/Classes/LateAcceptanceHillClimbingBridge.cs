@@ -3,10 +3,10 @@
     using Britt2022.A.A.ConstructionHeuristic.InterfacesAbstractFactories;
     using Britt2022.A.A.LAHC.Interfaces;
     using Britt2022.A.A.LAHC.InterfacesAbstractFactories;
-    using Britt2022.A.A.LocalSearch.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
-   
+    using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
+
     internal sealed class LateAcceptanceHillClimbingBridge : ILateAcceptanceHillClimbingBridge
     {
         public LateAcceptanceHillClimbingBridge()
@@ -15,16 +15,16 @@
 
         public void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
-            ILocalSearchAbstractFactory localSearchAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
+            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
             IWGPMModel WGPMModel,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration)
         {
-            ((ILAHCAbstractFactory)localSearchAbstractFactory).CreateLateAcceptanceHillClimbingFactory().Create().Solve(
+            ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateLateAcceptanceHillClimbingFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
-                improvementHeuristicFactory: ((ILAHCAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory(),
-                parameters: ((ILAHCAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
+                improvementHeuristicFactory: ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory(),
+                parameters: ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                     (ISolverConfiguration)solverConfiguration),
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),

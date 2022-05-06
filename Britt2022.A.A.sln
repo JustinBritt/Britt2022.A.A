@@ -27,8 +27,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.IndexElements
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.LAHC", "Britt2022.A.A.LAHC\Britt2022.A.A.LAHC.csproj", "{86CC1402-B09E-456E-8CB7-581AF872FB9B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.LocalSearch", "Britt2022.A.A.LocalSearch\Britt2022.A.A.LocalSearch.csproj", "{F38D9FD3-9AFF-4B26-AD5B-F9B624C084F9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.Models", "Britt2022.A.A.Models\Britt2022.A.A.Models.csproj", "{FE3CAB0D-E05E-4D84-A4C3-86CC93AF6215}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.NeighbourhoodStructures", "Britt2022.A.A.NeighbourhoodStructures\Britt2022.A.A.NeighbourhoodStructures.csproj", "{38923411-8DCF-46DC-9AD4-7CC0E4F48BB1}"
@@ -46,6 +44,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.Solutions", "Britt2022.A.A.Solutions\Britt2022.A.A.Solutions.csproj", "{F5A8C5DD-CDD9-49F6-A378-93AD1EA91A78}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.SolverConfigurations", "Britt2022.A.A.SolverConfigurations\Britt2022.A.A.SolverConfigurations.csproj", "{7DD0B580-AB1B-49E4-94BB-153C7CF1C208}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.StandaloneLocalSearches", "Britt2022.A.A.StandaloneLocalSearches\Britt2022.A.A.StandaloneLocalSearches.csproj", "{F38D9FD3-9AFF-4B26-AD5B-F9B624C084F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.VariableElements", "Britt2022.A.A.VariableElements\Britt2022.A.A.VariableElements.csproj", "{26690337-DA0D-4D9E-B014-8B507B0B9AFF}"
 EndProject

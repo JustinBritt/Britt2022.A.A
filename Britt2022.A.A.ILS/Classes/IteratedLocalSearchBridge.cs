@@ -5,11 +5,11 @@
     using Britt2022.A.A.ILS.Interfaces;
     using Britt2022.A.A.ILS.InterfacesAbstractFactories;
     using Britt2022.A.A.LAHC.InterfacesAbstractFactories;
-    using Britt2022.A.A.LocalSearch.Interfaces;
-    using Britt2022.A.A.LocalSearch.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
     using Britt2022.A.A.SA.InterfacesAbstractFactories;
+    using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
+    using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
     internal sealed class IteratedLocalSearchBridge : IIteratedLocalSearchBridge
     {
@@ -82,8 +82,8 @@
         public void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IILSAbstractFactory ILSAbstractFactory,
-            ILocalSearchAbstractFactory localSearchAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
+            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
             IWGPMModel WGPMModel,
             ISolverConfiguration ILSSolverConfiguration,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration localSearchSolverConfiguration) 
@@ -95,8 +95,8 @@
                     ILSAbstractFactory,
                     neighbourhoodStructuresAbstractFactory,
                     WGPMModel,
-                    ((IGSAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
-                    ((IGSAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
+                    ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
+                    ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.GS.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).MaximumNumberTicks),
                     ILSAbstractFactory.CreateParametersFactory().Create(
                         numberIterations: ILSSolverConfiguration.NumberIterations,
@@ -109,8 +109,8 @@
                     ILSAbstractFactory,
                     neighbourhoodStructuresAbstractFactory,
                     WGPMModel,
-                    ((ILAHCAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
-                    ((ILAHCAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
+                    ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
+                    ((ILAHCAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                         ((Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).FitnessArrayLength),
                     ILSAbstractFactory.CreateParametersFactory().Create(
                         numberIterations: ILSSolverConfiguration.NumberIterations,
@@ -123,8 +123,8 @@
                     ILSAbstractFactory,
                     neighbourhoodStructuresAbstractFactory,
                     WGPMModel,
-                    ((ISAAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
-                    ((ISAAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
+                    ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory().Create(),
+                    ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                         coolingRate: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).CoolingRate,
                         finalTemperature: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).FinalTemperature,
                         initialTemperature: ((Britt2022.A.A.SA.Interfaces.ISolverConfiguration)localSearchSolverConfiguration).InitialTemperature,

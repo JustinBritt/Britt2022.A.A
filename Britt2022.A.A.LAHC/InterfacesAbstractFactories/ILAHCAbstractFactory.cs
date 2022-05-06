@@ -1,9 +1,9 @@
 ﻿namespace Britt2022.A.A.LAHC.InterfacesAbstractFactories
 {
     using Britt2022.A.A.LAHC.InterfacesFactories;
-    using Britt2022.A.A.LocalSearch.InterfacesAbstractFactories;
+    using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
-    public interface ILAHCAbstractFactory : ILocalSearchAbstractFactory
+    public interface ILAHCAbstractFactory : IStandaloneLocalSearchesAbstractFactory
     {
         IImprovementHeuristicFactory CreateImprovementHeuristicFactory();
 

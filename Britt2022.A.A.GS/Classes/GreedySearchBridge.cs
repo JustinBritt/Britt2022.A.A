@@ -3,10 +3,10 @@
     using Britt2022.A.A.ConstructionHeuristic.InterfacesAbstractFactories;
     using Britt2022.A.A.GS.Interfaces;
     using Britt2022.A.A.GS.InterfacesAbstractFactories;
-    using Britt2022.A.A.LocalSearch.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
-    
+    using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
+
     internal sealed class GreedySearchBridge : IGreedySearchBridge
     {
         public GreedySearchBridge()
@@ -15,16 +15,16 @@
 
         public void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
-            ILocalSearchAbstractFactory localSearchAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
+            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
             IWGPMModel WGPMModel,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration)
         {
-            ((IGSAbstractFactory)localSearchAbstractFactory).CreateGreedySearchFactory().Create().Solve(
+            ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateGreedySearchFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
-                improvementHeuristicFactory: ((IGSAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory(),
-                parameters: ((IGSAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
+                improvementHeuristicFactory: ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory(),
+                parameters: ((IGSAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                     (ISolverConfiguration)solverConfiguration),
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),

@@ -1,11 +1,11 @@
 ﻿namespace Britt2022.A.A.SA.Classes
 {
     using Britt2022.A.A.ConstructionHeuristic.InterfacesAbstractFactories;
-    using Britt2022.A.A.LocalSearch.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
     using Britt2022.A.A.SA.Interfaces;
     using Britt2022.A.A.SA.InterfacesAbstractFactories;
+    using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
     public sealed class SimulatedAnnealingBridge : ISimulatedAnnealingBridge
     {
@@ -15,16 +15,16 @@
 
         public void Bridge(
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
-            ILocalSearchAbstractFactory localSearchAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
+            IStandaloneLocalSearchesAbstractFactory standaloneLocalSearchesAbstractFactory,
             IWGPMModel WGPMModel,
             Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration)
         {
-            ((ISAAbstractFactory)localSearchAbstractFactory).CreateSimulatedAnnealingFactory().Create().Solve(
+            ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateSimulatedAnnealingFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
                 randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
-                improvementHeuristicFactory: ((ISAAbstractFactory)localSearchAbstractFactory).CreateImprovementHeuristicFactory(),
-                parameters: ((ISAAbstractFactory)localSearchAbstractFactory).CreateParametersFactory().Create(
+                improvementHeuristicFactory: ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateImprovementHeuristicFactory(),
+                parameters: ((ISAAbstractFactory)standaloneLocalSearchesAbstractFactory).CreateParametersFactory().Create(
                     (ISolverConfiguration)solverConfiguration),
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),

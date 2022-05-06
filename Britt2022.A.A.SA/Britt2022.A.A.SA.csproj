@@ -32,12 +32,12 @@
     <ProjectReference Include="..\Britt2022.A.A.ConstructionHeuristic\Britt2022.A.A.ConstructionHeuristic.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.CrossJoinElements\Britt2022.A.A.CrossJoinElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.IndexElements\Britt2022.A.A.IndexElements.csproj" />
-    <ProjectReference Include="..\Britt2022.A.A.LocalSearch\Britt2022.A.A.LocalSearch.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Models\Britt2022.A.A.Models.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.NeighbourhoodStructures\Britt2022.A.A.NeighbourhoodStructures.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.ObjectiveFunctions\Britt2022.A.A.ObjectiveFunctions.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.ParameterElements\Britt2022.A.A.ParameterElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.SolverConfigurations\Britt2022.A.A.SolverConfigurations.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.StandaloneLocalSearches\Britt2022.A.A.StandaloneLocalSearches.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.VariableElements\Britt2022.A.A.VariableElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Variables\Britt2022.A.A.Variables.csproj" />
   </ItemGroup>

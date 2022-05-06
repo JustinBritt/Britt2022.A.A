@@ -1,4 +1,4 @@
-﻿namespace Britt2022.A.A.LocalSearch.Interfaces
+﻿namespace Britt2022.A.A.StandaloneLocalSearches.Interfaces
 {
     using System;
 
