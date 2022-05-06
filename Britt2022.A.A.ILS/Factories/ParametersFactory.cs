@@ -28,5 +28,23 @@
 
             return parameters;
         }
+
+        public IParameters Create(
+            ISolverConfiguration solverConfiguration)
+        {
+            IParameters parameters = null;
+
+            try
+            {
+                parameters = new Parameters(
+                    numberIterations: solverConfiguration.NumberIterations,
+                    numberPerturbations: solverConfiguration.NumberPerturbations);
+            }
+            finally
+            {
+            }
+
+            return parameters;
+        }
     }
 }

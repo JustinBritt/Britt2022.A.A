@@ -7,5 +7,8 @@
         IParameters Create(
             int numberIterations,
             int numberPerturbations);
+
+        IParameters Create(
+            ISolverConfiguration solverConfiguration);
     }
 }
