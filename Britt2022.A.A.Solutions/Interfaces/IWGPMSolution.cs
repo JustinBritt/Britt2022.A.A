@@ -13,6 +13,7 @@
     using Britt2022.A.A.ObjectiveFunctions.InterfacesAbstractFactories;
     using Britt2022.A.A.ParameterElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Results.InterfacesAbstractFactories;
+    using Britt2022.A.A.SingleEmbeddedLocalSearches.InterfacesAbstractFactories;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
     
