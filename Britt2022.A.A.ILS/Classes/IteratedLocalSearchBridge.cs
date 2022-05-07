@@ -92,22 +92,6 @@
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration) 
         {
-            IStandaloneLocalSearchParameters standaloneLocalSearchParameters = standaloneLocalSearchSolverConfiguration switch
-            {
-                Britt2022.A.A.GS.Interfaces.ISolverConfiguration => ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                        (Britt2022.A.A.GS.Interfaces.ISolverConfiguration)standaloneLocalSearchSolverConfiguration),
-
-                Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration => ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                        (Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration)standaloneLocalSearchSolverConfiguration),
-
-                Britt2022.A.A.SA.Interfaces.ISolverConfiguration => ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                        (Britt2022.A.A.SA.Interfaces.ISolverConfiguration)standaloneLocalSearchSolverConfiguration),
-
-                { } => throw new ArgumentNullException(nameof(standaloneLocalSearchSolverConfiguration)),
-
-                _ => null
-            };
-
             IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic = standaloneLocalSearchSolverConfiguration switch
             {
                 Britt2022.A.A.GS.Interfaces.ISolverConfiguration => ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
@@ -129,7 +113,30 @@
                 standaloneLocalSearchImprovementHeuristic,
                 ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
                     (ISolverConfiguration)singleEmbeddedLocalSearchSolverConfiguration),
-                standaloneLocalSearchParameters);
+                this.GetStandaloneLocalSearchParameters(
+                    standaloneLocalSearchAbstractFactory,
+                    standaloneLocalSearchSolverConfiguration));
+        }
+
+        private IStandaloneLocalSearchParameters GetStandaloneLocalSearchParameters(
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration)
+        {
+            return standaloneLocalSearchSolverConfiguration switch
+            {
+                Britt2022.A.A.GS.Interfaces.ISolverConfiguration => ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
+                        (Britt2022.A.A.GS.Interfaces.ISolverConfiguration)standaloneLocalSearchSolverConfiguration),
+
+                Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration => ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
+                        (Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration)standaloneLocalSearchSolverConfiguration),
+
+                Britt2022.A.A.SA.Interfaces.ISolverConfiguration => ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
+                        (Britt2022.A.A.SA.Interfaces.ISolverConfiguration)standaloneLocalSearchSolverConfiguration),
+
+                { } => throw new ArgumentNullException(nameof(standaloneLocalSearchSolverConfiguration)),
+
+                _ => null
+            };
         }
     }
 }
