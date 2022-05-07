@@ -19,14 +19,14 @@
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IWGPMModel WGPMModel,
-            Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration)
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration)
         {
             ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
                 neighbourhoodStructureFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
                 improvementHeuristicFactory: ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory(),
                 parameters: ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                    (ISolverConfiguration)solverConfiguration),
+                    (ISolverConfiguration)standaloneLocalSearchSolverConfiguration),
                 i: WGPMModel.Geti(),
                 j: WGPMModel.Getj(),
                 k: WGPMModel.Getk(),

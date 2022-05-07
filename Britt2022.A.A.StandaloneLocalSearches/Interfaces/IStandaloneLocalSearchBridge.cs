@@ -14,6 +14,6 @@
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IWGPMModel WGPMModel,
-            ISolverConfiguration solverConfiguration);
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration);
     }
 }
