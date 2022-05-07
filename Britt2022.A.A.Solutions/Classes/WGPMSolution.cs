@@ -90,7 +90,7 @@
                     }
                     else
                     {
-                        localSearchBridge = standaloneLocalSearchSolverConfiguration switch
+                        localSearchBridge = singleEmbeddedLocalSearchSolverConfiguration switch
                         {
                             Britt2022.A.A.ILS.Interfaces.ISolverConfiguration => ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create(),
 
