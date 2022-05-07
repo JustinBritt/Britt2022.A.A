@@ -2,7 +2,7 @@
 {
     using Britt2022.A.A.NeighbourhoodStructures.Interfaces;
 
-    public interface IRandomPairwiseSwapFactory
+    public interface IRandomPairwiseSwapFactory : INeighbourhoodStructureFactory
     {
         IRandomPairwiseSwap Create();
     }
