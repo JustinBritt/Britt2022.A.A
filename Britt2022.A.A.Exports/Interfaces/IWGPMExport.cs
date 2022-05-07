@@ -26,22 +26,6 @@
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IContextsAbstractFactory contextsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
-            IModelsAbstractFactory modelsAbstractFactory,
-            INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
-            IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
-            IParameterElementsAbstractFactory parameterElementsAbstractFactory,
-            IResultsAbstractFactory resultsAbstractFactory,
-            ISolutionsAbstractFactory solutionsAbstractFactory,
-            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
-            IVariablesAbstractFactory variablesAbstractFactory,
-            IWGPMInputContext WGPMInputContext,
-            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration);
-
-        Task<IWGPMOutputContext> Solve(
-            IConstraintsAbstractFactory constraintsAbstractFactory,
-            IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
-            IContextsAbstractFactory contextsAbstractFactory,
-            IDependenciesAbstractFactory dependenciesAbstractFactory,
             IILSAbstractFactory ILSAbstractFactory,
             IModelsAbstractFactory modelsAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
@@ -52,7 +36,7 @@
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
-            ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
-            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration);
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
+            ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration = null);
     }
 }
