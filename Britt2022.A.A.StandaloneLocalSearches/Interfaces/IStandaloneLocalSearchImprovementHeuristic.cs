@@ -19,7 +19,7 @@
     public interface IStandaloneLocalSearchImprovementHeuristic
     {
         void Search(
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,

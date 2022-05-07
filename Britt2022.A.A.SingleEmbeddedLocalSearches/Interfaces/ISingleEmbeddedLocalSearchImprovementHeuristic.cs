@@ -20,7 +20,7 @@
     public interface ISingleEmbeddedLocalSearchImprovementHeuristic
     {
         void Search(
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             ISingleEmbeddedLocalSearchParameters parameters,
             IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
             IStandaloneLocalSearchParameters standaloneLocalSearchParameters,

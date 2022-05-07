@@ -26,7 +26,7 @@
         }
 
         public unsafe void Search(
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
@@ -154,11 +154,11 @@
                 // Construct a candidate solution s*
                 bool feasibleCandidateSolution = false;
 
-                INeighbourhoodStructure randomPairwiseSwap = randomPairwiseSwapFactory.Create();
+                INeighbourhoodStructure neighbourhoodStructure = neighbourhoodStructureFactory.Create();
 
                 while (!feasibleCandidateSolution)
                 {
-                    randomPairwiseSwap.Swap(
+                    neighbourhoodStructure.Swap(
                         i,
                         j,
                         k,
@@ -167,7 +167,7 @@
                         F2,
                         x);
 
-                    if (randomPairwiseSwap.SwapMade)
+                    if (neighbourhoodStructure.SwapMade)
                     {
                         if (constraints.IsFeasible(i, j, k, r, ijk, ik, jk, B, B1, F2, H, Li, Π, Ω, x))
                         {
@@ -176,7 +176,7 @@
                         else
                         {
                             // Reject due to infeasibility
-                            randomPairwiseSwap.UndoSwap(
+                            neighbourhoodStructure.UndoSwap(
                                 x);
                         }
                     }
@@ -239,7 +239,7 @@
                 // Else reject the candidate s := s
                 else
                 {
-                    randomPairwiseSwap.UndoSwap(
+                    neighbourhoodStructure.UndoSwap(
                         x);
                 }
 

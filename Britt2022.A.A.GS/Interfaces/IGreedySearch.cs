@@ -24,7 +24,7 @@
         void Solve(
             IConstructionHeuristicFactory constructionHeuristicFactory,
             IImprovementHeuristicFactory improvementHeuristicFactory,
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,

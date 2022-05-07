@@ -23,7 +23,7 @@
     {
         void Solve(
             IConstructionHeuristicFactory constructionHeuristicFactory,
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             IImprovementHeuristicFactory improvementHeuristicFactory,
             IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,

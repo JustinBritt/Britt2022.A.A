@@ -27,7 +27,7 @@
         }
 
         public unsafe void Search(
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
@@ -152,9 +152,9 @@
                     goal3,
                     goal4);
 
-                    INeighbourhoodStructure randomPairwiseSwap = randomPairwiseSwapFactory.Create();
-                    
-                    randomPairwiseSwap.Swap(
+                    INeighbourhoodStructure neighbourhoodStructure = neighbourhoodStructureFactory.Create();
+
+                    neighbourhoodStructure.Swap(
                         i,
                         j,
                         k,
@@ -163,7 +163,7 @@
                         F2,
                         x);
 
-                    if (randomPairwiseSwap.SwapMade)
+                    if (neighbourhoodStructure.SwapMade)
                     {
                         if (constraints.IsFeasible(i, j, k, r, ijk, ik, jk, B, B1, F2, H, Li, Π, Ω, x))
                         {
@@ -207,14 +207,14 @@
                             else if (newEnergy >= currentEnergy)
                             {
                                 //Reject new solution and don't swap values
-                                randomPairwiseSwap.UndoSwap(
+                                neighbourhoodStructure.UndoSwap(
                                     x);
                             }
                         }
                         else
                         {
                             // Reject due to infeasibility
-                            randomPairwiseSwap.UndoSwap(
+                            neighbourhoodStructure.UndoSwap(
                                 x);
                         }
                     }

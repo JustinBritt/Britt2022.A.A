@@ -25,7 +25,7 @@
         void Solve(
             IConstructionHeuristicFactory constructionHeuristicFactory,
             IImprovementHeuristicFactory improvementHeuristicFactory,
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             ISingleEmbeddedLocalSearchParameters parameters,
             IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
             IStandaloneLocalSearchParameters standaloneLocalSearchParameters,

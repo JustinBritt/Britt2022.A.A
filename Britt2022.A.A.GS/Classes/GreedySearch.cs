@@ -29,7 +29,7 @@
         public unsafe void Solve(
             IConstructionHeuristicFactory constructionHeuristicFactory,
             IImprovementHeuristicFactory improvementHeuristicFactory,
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             IStandaloneLocalSearchParameters parameters,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
@@ -90,7 +90,7 @@
                 x: x);
 
             improvementHeuristicFactory.Create().Search(
-                randomPairwiseSwapFactory: randomPairwiseSwapFactory,
+                neighbourhoodStructureFactory: neighbourhoodStructureFactory,
                 parameters: (IParameters)parameters,
                 i: i,
                 j: j,

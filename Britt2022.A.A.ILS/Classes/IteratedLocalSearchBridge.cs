@@ -31,7 +31,7 @@
         {
             ILSAbstractFactory.CreateIteratedLocalSearchFactory().Create().Solve(
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
-                randomPairwiseSwapFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
+                neighbourhoodStructureFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
                 improvementHeuristicFactory: ILSAbstractFactory.CreateImprovementHeuristicFactory(),
                 parameters: parameters,
                 standaloneLocalSearchImprovementHeuristic: standaloneLocalSearchImprovementHeuristic,

@@ -28,7 +28,7 @@
         }
 
         public unsafe void Search(
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             ISingleEmbeddedLocalSearchParameters parameters,
             IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
             IStandaloneLocalSearchParameters standaloneLocalSearchParameters,
@@ -176,7 +176,7 @@
                 xStarSpan);
 
             standaloneLocalSearchImprovementHeuristic.Search(
-                randomPairwiseSwapFactory,
+                neighbourhoodStructureFactory,
                 standaloneLocalSearchParameters,
                 i,
                 j,
@@ -259,7 +259,7 @@
                     xPrimeSpan);
 
                 this.Perturbation(
-                    randomPairwiseSwapFactory,
+                    neighbourhoodStructureFactory,
                     i,
                     j,
                     k,
@@ -282,7 +282,7 @@
                     xStarPrimeSpan);
 
                 standaloneLocalSearchImprovementHeuristic.Search(
-                    randomPairwiseSwapFactory,
+                    neighbourhoodStructureFactory,
                     standaloneLocalSearchParameters,
                     i,
                     j,
@@ -373,7 +373,7 @@
         }
 
         private Span<xVariableElement> Perturbation(
-            IRandomPairwiseSwapFactory randomPairwiseSwapFactory,
+            INeighbourhoodStructureFactory neighbourhoodStructureFactory,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,
@@ -396,9 +396,9 @@
 
             while (swapCounter < swapsTarget)
             {
-                INeighbourhoodStructure randomPairwiseSwap = randomPairwiseSwapFactory.Create();
+                INeighbourhoodStructure neighbourhoodStructure = neighbourhoodStructureFactory.Create();
 
-                randomPairwiseSwap.Swap(
+                neighbourhoodStructure.Swap(
                         i,
                         j,
                         k,
@@ -407,7 +407,7 @@
                         F2,
                         x);
 
-                if (randomPairwiseSwap.SwapMade)
+                if (neighbourhoodStructure.SwapMade)
                 {
                     if (constraints.IsFeasible(i, j, k, r, ijk, ik, jk, B, B1, F2, H, Li, Π, Ω, x))
                     {
@@ -416,7 +416,7 @@
                     else
                     {
                         // Reject swap
-                        randomPairwiseSwap.UndoSwap(
+                        neighbourhoodStructure.UndoSwap(
                             x);
                     }
                 }
