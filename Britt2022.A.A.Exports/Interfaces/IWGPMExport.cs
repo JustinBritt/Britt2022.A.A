@@ -14,6 +14,8 @@
     using Britt2022.A.A.ParameterElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Results.InterfacesAbstractFactories;
     using Britt2022.A.A.Solutions.InterfacesAbstractFactories;
+    using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
+    using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
 
