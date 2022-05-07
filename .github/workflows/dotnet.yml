@@ -39,6 +39,8 @@ jobs:
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.CrossJoins/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Dependencies.Hl7.Fhir.R4.Model/bin/Release/*.nupkg
+    - name: Publish package Britt2022.A.A.Britt2022.A.A.DoubleEmbeddedLocalSearches
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.DoubleEmbeddedLocalSearches/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Exports
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Exports/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.GS
