@@ -67,7 +67,7 @@
                         ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateGreedySearchBridgeFactory().Create().Bridge(
                             constructionHeuristicAbstractFactory,
                             neighbourhoodStructuresAbstractFactory,
-                            ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory),
+                            standaloneLocalSearchAbstractFactory,
                             WGPMModel,
                             standaloneLocalSearchSolverConfiguration);
                     }
@@ -76,7 +76,7 @@
                         ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateLateAcceptanceHillClimbingBridgeFactory().Create().Bridge(
                             constructionHeuristicAbstractFactory,
                             neighbourhoodStructuresAbstractFactory,
-                            ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory),
+                            standaloneLocalSearchAbstractFactory,
                             WGPMModel,
                             standaloneLocalSearchSolverConfiguration);
                     }
@@ -85,7 +85,7 @@
                         ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingBridgeFactory().Create().Bridge(
                             constructionHeuristicAbstractFactory,
                             neighbourhoodStructuresAbstractFactory,
-                            ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory),
+                            standaloneLocalSearchAbstractFactory,
                             WGPMModel,
                             standaloneLocalSearchSolverConfiguration);
                     }
