@@ -68,18 +68,18 @@
 
                     if (singleEmbeddedLocalSearchSolverConfiguration == null)
                     {
-                        if (typeof(Britt2022.A.A.GS.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
+                        localSearchBridge = standaloneLocalSearchSolverConfiguration switch
                         {
-                            localSearchBridge = ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateGreedySearchBridgeFactory().Create();
-                        }
-                        else if (typeof(Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
-                        {
-                            localSearchBridge = ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateLateAcceptanceHillClimbingBridgeFactory().Create();
-                        }
-                        else if (typeof(Britt2022.A.A.SA.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
-                        {
-                            localSearchBridge = ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingBridgeFactory().Create();
-                        }
+                            Britt2022.A.A.GS.Interfaces.ISolverConfiguration => ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateGreedySearchBridgeFactory().Create(),
+
+                            Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration => ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateLateAcceptanceHillClimbingBridgeFactory().Create(),
+
+                            Britt2022.A.A.SA.Interfaces.ISolverConfiguration => ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingBridgeFactory().Create(),
+
+                            { } => throw new ArgumentNullException(nameof(standaloneLocalSearchSolverConfiguration)),
+
+                            _ => null
+                        };
 
                         ((IStandaloneLocalSearchBridge)localSearchBridge).Bridge(
                             constructionHeuristicAbstractFactory,
@@ -90,10 +90,14 @@
                     }
                     else
                     {
-                        if (typeof(Britt2022.A.A.ILS.Interfaces.ISolverConfiguration).IsAssignableFrom(singleEmbeddedLocalSearchSolverConfiguration.GetType()))
+                        localSearchBridge = standaloneLocalSearchSolverConfiguration switch
                         {
-                            localSearchBridge = ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create();
-                        }
+                            Britt2022.A.A.ILS.Interfaces.ISolverConfiguration => ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create(),
+
+                            { } => throw new ArgumentNullException(nameof(standaloneLocalSearchSolverConfiguration)),
+
+                            _ => null
+                        };
 
                         ((ISingleEmbeddedLocalSearchBridge)localSearchBridge).Bridge(
                                 constructionHeuristicAbstractFactory,
