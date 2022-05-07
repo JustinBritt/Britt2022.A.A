@@ -1,6 +1,8 @@
 ﻿namespace Britt2022.A.A.ILS.Interfaces
 {
-    public interface ISolverConfiguration : Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration
+    using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
+
+    public interface ISolverConfiguration : ISingleEmbeddedLocalSearchSolverConfiguration
     {
         int NumberIterations { get; }
 
