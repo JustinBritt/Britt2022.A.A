@@ -108,7 +108,6 @@
                         }
                     }
                     
-
                     stopWatch.Stop();
 
                     TimeSpan overallWallTime = stopWatch.Elapsed;
