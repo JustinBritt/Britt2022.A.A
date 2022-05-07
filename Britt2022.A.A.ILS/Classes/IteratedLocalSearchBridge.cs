@@ -92,7 +92,26 @@
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration) 
         {
-            IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic = standaloneLocalSearchSolverConfiguration switch
+            this.Bridge(
+                constructionHeuristicAbstractFactory,
+                (IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory,
+                neighbourhoodStructuresAbstractFactory,
+                WGPMModel,
+                this.GetStandaloneLocalSearchImprovementHeuristic(
+                    standaloneLocalSearchAbstractFactory,
+                    standaloneLocalSearchSolverConfiguration),
+                ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
+                    (ISolverConfiguration)singleEmbeddedLocalSearchSolverConfiguration),
+                this.GetStandaloneLocalSearchParameters(
+                    standaloneLocalSearchAbstractFactory,
+                    standaloneLocalSearchSolverConfiguration));
+        }
+        
+        private IStandaloneLocalSearchImprovementHeuristic GetStandaloneLocalSearchImprovementHeuristic(
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration)
+        {
+            return standaloneLocalSearchSolverConfiguration switch
             {
                 Britt2022.A.A.GS.Interfaces.ISolverConfiguration => ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateImprovementHeuristicFactory().Create(),
 
@@ -104,18 +123,6 @@
 
                 _ => null
             };
-     
-            this.Bridge(
-                constructionHeuristicAbstractFactory,
-                (IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory,
-                neighbourhoodStructuresAbstractFactory,
-                WGPMModel,
-                standaloneLocalSearchImprovementHeuristic,
-                ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateParametersFactory().Create(
-                    (ISolverConfiguration)singleEmbeddedLocalSearchSolverConfiguration),
-                this.GetStandaloneLocalSearchParameters(
-                    standaloneLocalSearchAbstractFactory,
-                    standaloneLocalSearchSolverConfiguration));
         }
 
         private IStandaloneLocalSearchParameters GetStandaloneLocalSearchParameters(
