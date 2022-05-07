@@ -5,6 +5,7 @@
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
+    using Britt2022.A.A.LocalSearches.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesFactories;
     using Britt2022.A.A.ObjectiveFunctions.Interfaces;
     using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
@@ -16,7 +17,7 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
 
-    public interface IStandaloneLocalSearchImprovementHeuristic
+    public interface IStandaloneLocalSearchImprovementHeuristic : ILocalSearchImprovementHeuristic
     {
         void Search(
             INeighbourhoodStructureFactory neighbourhoodStructureFactory,

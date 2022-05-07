@@ -1,8 +1,8 @@
 ﻿namespace Britt2022.A.A.StandaloneLocalSearches.Interfaces
 {
-    using Britt2022.A.A.SolverConfigurations.Interfaces;
+    using Britt2022.A.A.LocalSearches.Interfaces;
 
-    public interface IStandaloneLocalSearchSolverConfiguration : ISolverConfiguration
+    public interface IStandaloneLocalSearchSolverConfiguration : ILocalSearchSolverConfiguration
     {
     }
 }
