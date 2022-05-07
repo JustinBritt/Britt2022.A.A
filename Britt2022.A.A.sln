@@ -51,7 +51,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.VariableEleme
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.Variables", "Britt2022.A.A.Variables\Britt2022.A.A.Variables.csproj", "{79EABF89-78A4-4BB3-BF2B-45A60F040F69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Britt2022.A.A.SingleEmbeddedLocalSearches", "Britt2022.A.A.SingleEmbeddedLocalSearches\Britt2022.A.A.SingleEmbeddedLocalSearches.csproj", "{D572AD55-6EB9-47DC-96E4-98799A958DF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.SingleEmbeddedLocalSearches", "Britt2022.A.A.SingleEmbeddedLocalSearches\Britt2022.A.A.SingleEmbeddedLocalSearches.csproj", "{D572AD55-6EB9-47DC-96E4-98799A958DF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Britt2022.A.A.LocalSearches", "Britt2022.A.A.LocalSearches\Britt2022.A.A.LocalSearches.csproj", "{8FC670CA-13AF-4972-8646-9B7C6C88D4DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{D572AD55-6EB9-47DC-96E4-98799A958DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D572AD55-6EB9-47DC-96E4-98799A958DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D572AD55-6EB9-47DC-96E4-98799A958DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC670CA-13AF-4972-8646-9B7C6C88D4DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC670CA-13AF-4972-8646-9B7C6C88D4DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC670CA-13AF-4972-8646-9B7C6C88D4DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC670CA-13AF-4972-8646-9B7C6C88D4DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
