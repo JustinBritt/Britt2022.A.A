@@ -234,8 +234,8 @@
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
-            Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
-            Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration standaloneLocalSearchSolverConfiguration)
+            ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration)
         {
             IWGPMOutputContext WGPMOutputContext = null;
 
