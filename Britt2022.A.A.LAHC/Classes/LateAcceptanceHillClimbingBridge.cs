@@ -5,6 +5,7 @@
     using Britt2022.A.A.LAHC.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
+    using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
     internal sealed class LateAcceptanceHillClimbingBridge : ILateAcceptanceHillClimbingBridge

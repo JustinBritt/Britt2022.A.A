@@ -5,6 +5,7 @@
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
     using Britt2022.A.A.SA.Interfaces;
     using Britt2022.A.A.SA.InterfacesAbstractFactories;
+    using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
 
     public sealed class SimulatedAnnealingBridge : ISimulatedAnnealingBridge
