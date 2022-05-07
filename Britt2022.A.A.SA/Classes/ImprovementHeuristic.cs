@@ -157,7 +157,7 @@
 
                     while (NA < ((IParameters)parameters).MaximumSolutionsAccepted)
                     {
-                        IRandomPairwiseSwap randomPairwiseSwap = randomPairwiseSwapFactory.Create();
+                        INeighbourhoodStructure randomPairwiseSwap = randomPairwiseSwapFactory.Create();
 
                         randomPairwiseSwap.Swap(
                             i,

@@ -154,7 +154,7 @@
                 // Construct a candidate solution s*
                 bool feasibleCandidateSolution = false;
 
-                IRandomPairwiseSwap randomPairwiseSwap = randomPairwiseSwapFactory.Create();
+                INeighbourhoodStructure randomPairwiseSwap = randomPairwiseSwapFactory.Create();
 
                 while (!feasibleCandidateSolution)
                 {

@@ -152,7 +152,7 @@
                     goal3,
                     goal4);
 
-                    IRandomPairwiseSwap randomPairwiseSwap = randomPairwiseSwapFactory.Create();
+                    INeighbourhoodStructure randomPairwiseSwap = randomPairwiseSwapFactory.Create();
                     
                     randomPairwiseSwap.Swap(
                         i,
