@@ -64,41 +64,38 @@
                     variablesAbstractFactory,
                     WGPMInputContext))
                 {
+                    ILocalSearchBridge localSearchBridge = null;
+
                     if (singleEmbeddedLocalSearchSolverConfiguration == null)
                     {
                         if (typeof(Britt2022.A.A.GS.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
                         {
-                            ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateGreedySearchBridgeFactory().Create().Bridge(
-                                constructionHeuristicAbstractFactory,
-                                neighbourhoodStructuresAbstractFactory,
-                                standaloneLocalSearchAbstractFactory,
-                                WGPMModel,
-                                standaloneLocalSearchSolverConfiguration);
+                            localSearchBridge = ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateGreedySearchBridgeFactory().Create();
                         }
                         else if (typeof(Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
                         {
-                            ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateLateAcceptanceHillClimbingBridgeFactory().Create().Bridge(
-                                constructionHeuristicAbstractFactory,
-                                neighbourhoodStructuresAbstractFactory,
-                                standaloneLocalSearchAbstractFactory,
-                                WGPMModel,
-                                standaloneLocalSearchSolverConfiguration);
+                            localSearchBridge = ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateLateAcceptanceHillClimbingBridgeFactory().Create();
                         }
                         else if (typeof(Britt2022.A.A.SA.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
                         {
-                            ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingBridgeFactory().Create().Bridge(
-                                constructionHeuristicAbstractFactory,
-                                neighbourhoodStructuresAbstractFactory,
-                                standaloneLocalSearchAbstractFactory,
-                                WGPMModel,
-                                standaloneLocalSearchSolverConfiguration);
+                            localSearchBridge = ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingBridgeFactory().Create();
                         }
+
+                        ((IStandaloneLocalSearchBridge)localSearchBridge).Bridge(
+                            constructionHeuristicAbstractFactory,
+                            neighbourhoodStructuresAbstractFactory,
+                            standaloneLocalSearchAbstractFactory,
+                            WGPMModel,
+                            standaloneLocalSearchSolverConfiguration);
                     }
                     else
                     {
                         if (typeof(Britt2022.A.A.ILS.Interfaces.ISolverConfiguration).IsAssignableFrom(singleEmbeddedLocalSearchSolverConfiguration.GetType()))
                         {
-                            ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create().Bridge(
+                            localSearchBridge = ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create();
+                        }
+
+                        ((ISingleEmbeddedLocalSearchBridge)localSearchBridge).Bridge(
                                 constructionHeuristicAbstractFactory,
                                 neighbourhoodStructuresAbstractFactory,
                                 singleEmbeddedLocalSearchAbstractFactory,
@@ -106,7 +103,6 @@
                                 WGPMModel,
                                 singleEmbeddedLocalSearchSolverConfiguration,
                                 standaloneLocalSearchSolverConfiguration);
-                        }
                     }
                     
                     stopWatch.Stop();
