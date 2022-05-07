@@ -11,7 +11,6 @@
     using Britt2022.A.A.GS.InterfacesAbstractFactories;
     using Britt2022.A.A.ILS.InterfacesAbstractFactories;
     using Britt2022.A.A.LAHC.InterfacesAbstractFactories;
-    using Britt2022.A.A.LocalSearches.Interfaces;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.Models.InterfacesAbstractFactories;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
@@ -25,7 +24,8 @@
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
-    
+    using Britt2022.A.A.VNS.InterfacesAbstractFactories;
+
     public sealed class WGPMSolution : IWGPMSolution
     {
         public WGPMSolution()
@@ -227,6 +227,8 @@
             return singleEmbeddedLocalSearchSolverConfiguration switch
             {
                 Britt2022.A.A.ILS.Interfaces.ISolverConfiguration => ((IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateIteratedLocalSearchBridgeFactory().Create(),
+
+                Britt2022.A.A.VNS.Interfaces.ISolverConfiguration => ((IVNSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory).CreateVariableNeighbourhoodSearchBridgeFactory().Create(),
 
                 { } => throw new ArgumentNullException(nameof(singleEmbeddedLocalSearchSolverConfiguration)),
 

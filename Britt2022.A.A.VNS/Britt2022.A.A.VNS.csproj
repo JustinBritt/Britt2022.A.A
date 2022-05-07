@@ -29,19 +29,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Britt2022.A.A.Contexts\Britt2022.A.A.Contexts.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.Constraints\Britt2022.A.A.Constraints.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.ConstructionHeuristic\Britt2022.A.A.ConstructionHeuristic.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.CrossJoinElements\Britt2022.A.A.CrossJoinElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.GS\Britt2022.A.A.GS.csproj" />
-    <ProjectReference Include="..\Britt2022.A.A.ILS\Britt2022.A.A.ILS.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.IndexElements\Britt2022.A.A.IndexElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.LAHC\Britt2022.A.A.LAHC.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Models\Britt2022.A.A.Models.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.NeighbourhoodStructures\Britt2022.A.A.NeighbourhoodStructures.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.ObjectiveFunctions\Britt2022.A.A.ObjectiveFunctions.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.ParameterElements\Britt2022.A.A.ParameterElements.csproj" />
-    <ProjectReference Include="..\Britt2022.A.A.ResultElements\Britt2022.A.A.ResultElements.csproj" />
-    <ProjectReference Include="..\Britt2022.A.A.Results\Britt2022.A.A.Results.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.SA\Britt2022.A.A.SA.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.SingleEmbeddedLocalSearches\Britt2022.A.A.SingleEmbeddedLocalSearches.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.SolverConfigurations\Britt2022.A.A.SolverConfigurations.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.StandaloneLocalSearches\Britt2022.A.A.StandaloneLocalSearches.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.VariableElements\Britt2022.A.A.VariableElements.csproj" />
-    <ProjectReference Include="..\Britt2022.A.A.VNS\Britt2022.A.A.VNS.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.Variables\Britt2022.A.A.Variables.csproj" />
   </ItemGroup>
 </Project>
