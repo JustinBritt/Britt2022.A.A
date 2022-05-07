@@ -1,6 +1,8 @@
 ﻿namespace Britt2022.A.A.SA.Interfaces
 {
-    public interface ISolverConfiguration : Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration
+    using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
+
+    public interface ISolverConfiguration : IStandaloneLocalSearchSolverConfiguration
     {
         double CoolingRate { get; }
 
