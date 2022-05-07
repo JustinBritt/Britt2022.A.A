@@ -4,6 +4,6 @@
 
     public interface IRandomPairwiseSwapFactory : INeighbourhoodStructureFactory
     {
-        IRandomPairwiseSwap Create();
+        INeighbourhoodStructure Create();
     }
 }

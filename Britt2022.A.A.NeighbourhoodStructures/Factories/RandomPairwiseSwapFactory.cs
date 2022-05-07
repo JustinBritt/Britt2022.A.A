@@ -10,7 +10,7 @@
         {
         }
 
-        public IRandomPairwiseSwap Create()
+        public INeighbourhoodStructure Create()
         {
             IRandomPairwiseSwap randomPairwiseSwap = null;
 
