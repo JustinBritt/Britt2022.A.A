@@ -49,6 +49,8 @@ jobs:
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.IndexElements/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.LAHC
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.LAHC/bin/Release/*.nupkg
+    - name: Publish package Britt2022.A.A.Britt2022.A.A.LocalSearches
+      run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.LocalSearches/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.Models
       run: dotnet nuget push ${{ github.workspace }}/${{ github.event.repository.name }}.Models/bin/Release/*.nupkg
     - name: Publish package Britt2022.A.A.NeighbourhoodStructures
