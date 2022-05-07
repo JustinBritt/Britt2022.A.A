@@ -41,11 +41,11 @@
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
-            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
+            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory = null,
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration = null)
         {
             IWGPMOutputContext WGPMOutputContext = null;

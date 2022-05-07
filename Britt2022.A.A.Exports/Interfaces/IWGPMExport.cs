@@ -32,12 +32,12 @@
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
-            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory,
             ISolutionsAbstractFactory solutionsAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
+            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory = null,
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration = null);
     }
 }

@@ -37,12 +37,12 @@
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
-            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory,
             ISolutionsAbstractFactory solutionsAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
+            ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory = null,
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration = null)
         {
             return solutionsAbstractFactory.CreateWGPMSolutionFactory().Create().Solve(
@@ -55,11 +55,11 @@
                 objectiveFunctionsAbstractFactory,
                 parameterElementsAbstractFactory,
                 resultsAbstractFactory,
-                singleEmbeddedLocalSearchAbstractFactory,
                 standaloneLocalSearchAbstractFactory,
                 variablesAbstractFactory,
                 WGPMInputContext,
                 standaloneLocalSearchSolverConfiguration,
+                singleEmbeddedLocalSearchAbstractFactory,
                 singleEmbeddedLocalSearchSolverConfiguration);
         }
     }
