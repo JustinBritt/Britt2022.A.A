@@ -45,7 +45,7 @@
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
-            Britt2022.A.A.SolverConfigurations.Interfaces.ISolverConfiguration solverConfiguration)
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration)
         {
             IWGPMOutputContext WGPMOutputContext = null;
 
@@ -62,32 +62,32 @@
                     variablesAbstractFactory,
                     WGPMInputContext))
                 {
-                    if (typeof(Britt2022.A.A.GS.Interfaces.ISolverConfiguration).IsAssignableFrom(solverConfiguration.GetType()))
+                    if (typeof(Britt2022.A.A.GS.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
                     {
                         ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateGreedySearchBridgeFactory().Create().Bridge(
                             constructionHeuristicAbstractFactory,
                             neighbourhoodStructuresAbstractFactory,
                             ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory),
                             WGPMModel,
-                            solverConfiguration);
+                            standaloneLocalSearchSolverConfiguration);
                     }
-                    else if (typeof(Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration).IsAssignableFrom(solverConfiguration.GetType()))
+                    else if (typeof(Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
                     {
                         ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateLateAcceptanceHillClimbingBridgeFactory().Create().Bridge(
                             constructionHeuristicAbstractFactory,
                             neighbourhoodStructuresAbstractFactory,
                             ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory),
                             WGPMModel,
-                            solverConfiguration);
+                            standaloneLocalSearchSolverConfiguration);
                     }
-                    else if (typeof(Britt2022.A.A.SA.Interfaces.ISolverConfiguration).IsAssignableFrom(solverConfiguration.GetType()))
+                    else if (typeof(Britt2022.A.A.SA.Interfaces.ISolverConfiguration).IsAssignableFrom(standaloneLocalSearchSolverConfiguration.GetType()))
                     {
                         ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingBridgeFactory().Create().Bridge(
                             constructionHeuristicAbstractFactory,
                             neighbourhoodStructuresAbstractFactory,
                             ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory),
                             WGPMModel,
-                            solverConfiguration);
+                            standaloneLocalSearchSolverConfiguration);
                     }
 
                     stopWatch.Stop();
