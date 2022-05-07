@@ -45,42 +45,22 @@
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration = null)
         {
-            if (singleEmbeddedLocalSearchSolverConfiguration == null)
-            {
-                return solutionsAbstractFactory.CreateWGPMSolutionFactory().Create().Solve(
-                    constraintsAbstractFactory,
-                    constructionHeuristicAbstractFactory,
-                    contextsAbstractFactory,
-                    dependenciesAbstractFactory,
-                    modelsAbstractFactory,
-                    neighbourhoodStructuresAbstractFactory,
-                    objectiveFunctionsAbstractFactory,
-                    parameterElementsAbstractFactory,
-                    resultsAbstractFactory,
-                    singleEmbeddedLocalSearchAbstractFactory,
-                    standaloneLocalSearchAbstractFactory,
-                    variablesAbstractFactory,
-                    WGPMInputContext,
-                    singleEmbeddedLocalSearchSolverConfiguration,
-                    standaloneLocalSearchSolverConfiguration);
-            }
-            else
-            {
-                return solutionsAbstractFactory.CreateWGPMSolutionFactory().Create().Solve(
-                    constraintsAbstractFactory,
-                    constructionHeuristicAbstractFactory,
-                    contextsAbstractFactory,
-                    dependenciesAbstractFactory,
-                    modelsAbstractFactory,
-                    neighbourhoodStructuresAbstractFactory,
-                    objectiveFunctionsAbstractFactory,
-                    parameterElementsAbstractFactory,
-                    resultsAbstractFactory,
-                    standaloneLocalSearchAbstractFactory,
-                    variablesAbstractFactory,
-                    WGPMInputContext,
-                    standaloneLocalSearchSolverConfiguration); 
-            }
+            return solutionsAbstractFactory.CreateWGPMSolutionFactory().Create().Solve(
+                constraintsAbstractFactory,
+                constructionHeuristicAbstractFactory,
+                contextsAbstractFactory,
+                dependenciesAbstractFactory,
+                modelsAbstractFactory,
+                neighbourhoodStructuresAbstractFactory,
+                objectiveFunctionsAbstractFactory,
+                parameterElementsAbstractFactory,
+                resultsAbstractFactory,
+                singleEmbeddedLocalSearchAbstractFactory,
+                standaloneLocalSearchAbstractFactory,
+                variablesAbstractFactory,
+                WGPMInputContext,
+                standaloneLocalSearchSolverConfiguration,
+                singleEmbeddedLocalSearchSolverConfiguration);
         }
     }
 }

@@ -30,26 +30,11 @@
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
-            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
-            IVariablesAbstractFactory variablesAbstractFactory,
-            IWGPMInputContext WGPMInputContext,
-            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration);
-
-        Task<IWGPMOutputContext> Solve(
-            IConstraintsAbstractFactory constraintsAbstractFactory,
-            IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
-            IContextsAbstractFactory contextsAbstractFactory,
-            IDependenciesAbstractFactory dependenciesAbstractFactory,
-            IModelsAbstractFactory modelsAbstractFactory,
-            INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
-            IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
-            IParameterElementsAbstractFactory parameterElementsAbstractFactory,
-            IResultsAbstractFactory resultsAbstractFactory,
             ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
-            ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
-            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration);
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
+            ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration = null);
     }
 }
