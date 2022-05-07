@@ -237,5 +237,23 @@
                 return WGPMOutputContext;
             });
         }
+
+        private IStandaloneLocalSearchBridge GetStandaloneLocalSearchBridge(
+            IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
+            IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration)
+        {
+            return standaloneLocalSearchSolverConfiguration switch
+            {
+                Britt2022.A.A.GS.Interfaces.ISolverConfiguration => ((IGSAbstractFactory)standaloneLocalSearchAbstractFactory).CreateGreedySearchBridgeFactory().Create(),
+
+                Britt2022.A.A.LAHC.Interfaces.ISolverConfiguration => ((ILAHCAbstractFactory)standaloneLocalSearchAbstractFactory).CreateLateAcceptanceHillClimbingBridgeFactory().Create(),
+
+                Britt2022.A.A.SA.Interfaces.ISolverConfiguration => ((ISAAbstractFactory)standaloneLocalSearchAbstractFactory).CreateSimulatedAnnealingBridgeFactory().Create(),
+
+                { } => throw new ArgumentNullException(nameof(standaloneLocalSearchSolverConfiguration)),
+
+                _ => null
+            };
+        }
     }
 }
