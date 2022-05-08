@@ -63,5 +63,7 @@
         IVariableElementsAbstractFactory CreateVariableElementsAbstractFactory();
 
         IVariablesAbstractFactory CreateVariablesAbstractFactory();
+
+        IVNSAbstractFactory CreateVNSAbstractFactory();
     }
 }

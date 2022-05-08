@@ -348,5 +348,20 @@
 
             return abstractFactory;
         }
+
+        public IVNSAbstractFactory CreateVNSAbstractFactory()
+        {
+            IVNSAbstractFactory abstractFactory = null;
+
+            try
+            {
+                abstractFactory = new VNSAbstractFactory();
+            }
+            finally
+            {
+            }
+
+            return abstractFactory;
+        }
     }
 }
