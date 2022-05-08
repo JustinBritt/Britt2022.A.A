@@ -49,5 +49,6 @@
     <ProjectReference Include="..\Britt2022.A.A.Solutions\Britt2022.A.A.Solutions.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.VariableElements\Britt2022.A.A.VariableElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Variables\Britt2022.A.A.Variables.csproj" />
+    <ProjectReference Include="..\Britt2022.A.A.VNS\Britt2022.A.A.VNS.csproj" />
   </ItemGroup>
 </Project>
