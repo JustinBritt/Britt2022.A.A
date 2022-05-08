@@ -4,7 +4,7 @@
     using Britt2022.A.A.VNS.InterfacesAbstractFactories;
     using Britt2022.A.A.VNS.InterfacesFactories;
 
-    internal sealed class VNSAbstractFactory : IVNSAbstractFactory
+    public sealed class VNSAbstractFactory : IVNSAbstractFactory
     {
         public VNSAbstractFactory()
         {
