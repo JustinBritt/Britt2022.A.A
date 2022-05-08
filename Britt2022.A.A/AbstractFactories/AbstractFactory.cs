@@ -18,6 +18,7 @@
     using Britt2022.A.A.ILS.InterfacesAbstractFactories;
     using Britt2022.A.A.IndexElements.AbstractFactories;
     using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
+    using Britt2022.A.A.InterfacesAbstractFactories;
     using Britt2022.A.A.LAHC.AbstractFactories;
     using Britt2022.A.A.LAHC.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.AbstractFactories;
@@ -43,7 +44,7 @@
     using Britt2022.A.A.VNS.AbstractFactories;
     using Britt2022.A.A.VNS.InterfacesAbstractFactories;
 
-    public sealed class AbstractFactory : Britt2022.A.A.InterfacesAbstractFactories.IAbstractFactory
+    public sealed class AbstractFactory : IAbstractFactory
     {
         public AbstractFactory()
         {
