@@ -179,10 +179,8 @@
             // A(i, ω)
             this.SurgeonScenarioWeightedAverageSurgicalDurations = WGPMInputContext
                 .SurgeonScenarioWeightedAverageSurgicalDurations
-                .ToArray()
                 .OrderBy(w => int.Parse(w.Item1.Id))
-                .ToArray()
-                .OrderBy(w => w.Item2.Value.Value)
+                .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
             this.SurgeonScenarioWeightedAverageSurgicalDurationsIntPtr = Marshal.AllocHGlobal(
@@ -195,6 +193,7 @@
             // B(r)
             this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = WGPMInputContext
                 .SurgicalSpecialtyStrategicTargetNumberTimeBlocks
+                .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
             this.SurgicalSpecialtyStrategicTargetNumberTimeBlocksIntPtr = Marshal.AllocHGlobal(
@@ -246,6 +245,7 @@
             // H(i)
             this.SurgeonMaximumNumberTimeBlocks = WGPMInputContext
                 .SurgeonMaximumNumberTimeBlocks
+                .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
             this.SurgeonMaximumNumberTimeBlocksIntPtr = Marshal.AllocHGlobal(
@@ -256,6 +256,7 @@
             // h(i)
             this.SurgeonLengthOfStayMaximums = WGPMInputContext
                 .SurgeonMaximumLengthsOfStay
+                .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
             this.SurgeonLengthOfStayMaximumsIntPtr = Marshal.AllocHGlobal(
@@ -266,6 +267,7 @@
             // L(i)
             this.SurgeonMinimumNumberTimeBlocks = WGPMInputContext
                 .SurgeonMinimumNumberTimeBlocks
+                .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
             this.SurgeonMinimumNumberTimeBlocksIntPtr = Marshal.AllocHGlobal(
@@ -276,6 +278,7 @@
             // N(i)
             this.SurgeonStrategicTargets = WGPMInputContext
                 .SurgeonStrategicTargetNumberPatients
+                .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
             this.SurgeonStrategicTargetsIntPtr = Marshal.AllocHGlobal(
@@ -286,10 +289,8 @@
             // n(i, ω)
             this.SurgeonScenarioMaximumNumberPatients = WGPMInputContext
                 .SurgeonScenarioMaximumNumberPatients
-                .ToArray()
                 .OrderBy(w => int.Parse(w.Item1.Id))
-                .ToArray()
-                .OrderBy(w => w.Item2.Value.Value)
+                .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
             this.SurgeonScenarioMaximumNumberPatientsIntPtr = Marshal.AllocHGlobal(
@@ -300,12 +301,9 @@
             // p(i, l, ω)
             this.SurgeonDayScenarioLengthOfStayProbabilities = WGPMInputContext
                 .SurgeonDayScenarioLengthOfStayProbabilities
-                .ToArray()
                 .OrderBy(w => int.Parse(w.Item1.Id))
-                .ToArray()
-                .OrderBy(w => w.Item2.Value.Value)
-                .ToArray()
-                .OrderBy(w => w.Item3.Value.Value)
+                .ThenBy(w => w.Item2.Value.Value)
+                .ThenBy(w => w.Item3.Value.Value)
                 .ToArray();
 
             this.SurgeonDayScenarioLengthOfStayProbabilitiesIntPtr = Marshal.AllocHGlobal(
@@ -340,10 +338,8 @@
             // Π(i, j)
             this.SurgeonOperatingRoomAvailabilities = WGPMInputContext
                 .SurgeonOperatingRoomAvailabilities
-                .ToArray()
                 .OrderBy(w => int.Parse(w.Item1.Id))
-                .ToArray()
-                .OrderBy(w => int.Parse(w.Item2.Id))
+                .ThenBy(w => int.Parse(w.Item2.Id))
                 .ToArray();
 
             this.SurgeonOperatingRoomAvailabilitiesIntPtr = Marshal.AllocHGlobal(
@@ -354,6 +350,7 @@
             // Ρ(ω)
             this.ScenarioProbabilities = WGPMInputContext
                 .ScenarioProbabilities
+                .OrderBy(w => w.Key.Value.Value)
                 .ToArray();
 
             this.ScenarioProbabilitiesIntPtr = Marshal.AllocHGlobal(
@@ -364,12 +361,9 @@
             // Φ(i, l, ω)
             this.SurgeonDayScenarioCumulativeNumberPatients = WGPMInputContext
                 .SurgeonDayScenarioCumulativeNumberPatients
-                .ToArray()
                 .OrderBy(w => int.Parse(w.Item1.Id))
-                .ToArray()
-                .OrderBy(w => w.Item2.Value.Value)
-                .ToArray()
-                .OrderBy(w => w.Item3.Value.Value)
+                .ThenBy(w => w.Item2.Value.Value)
+                .ThenBy(w => w.Item3.Value.Value)
                 .ToArray();
 
             this.SurgeonDayScenarioCumulativeNumberPatientsIntPtr = Marshal.AllocHGlobal(
@@ -384,10 +378,8 @@
             // Ω(i, k)
             this.SurgeonDayAvailabilities = WGPMInputContext
                 .SurgeonDayAvailabilities
-                .ToArray()
                 .OrderBy(w => int.Parse(w.Item1.Id))
-                .ToArray()
-                .OrderBy(w => w.Item2.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime)
+                .ThenBy(w => w.Item2.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime)
                 .ToArray();
 
             this.SurgeonDayAvailabilitiesIntPtr = Marshal.AllocHGlobal(
