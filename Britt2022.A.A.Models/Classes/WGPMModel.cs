@@ -233,6 +233,8 @@
                AParameterElement.SizeInBytes);
 
             // B(r)
+            this.BParameterElementFactory = parameterElementsAbstractFactory.CreateBParameterElementFactory();
+
             this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = WGPMInputContext
                 .SurgicalSpecialtyStrategicTargetNumberTimeBlocks
                 .OrderBy(w => int.Parse(w.Key.Id))
@@ -526,6 +528,8 @@
         private IkωCrossJoinElementFactory kωCrossJoinElementFactory { get; }
 
         private IAParameterElementFactory AParameterElementFactory { get; }
+
+        private IBParameterElementFactory BParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1390,7 +1394,7 @@
 
             for (int w = 1; w < r.Length; w = w + 1)
             {
-                BSpan[r[w].Value] = new BParameterElement(
+                BSpan[r[w].Value] = this.BParameterElementFactory.Create(
                     rIndexElement: r[w].Value,
                     value: this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks[r[w].Value - 1].Value.Value.Value);
             }
