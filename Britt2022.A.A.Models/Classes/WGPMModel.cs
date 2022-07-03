@@ -357,6 +357,8 @@
                niωParameterElement.SizeInBytes);
 
             // p(i, l, ω)
+            this.pParameterElementFactory = parameterElementsAbstractFactory.CreatepParameterElementFactory();
+
             this.SurgeonDayScenarioLengthOfStayProbabilities = WGPMInputContext
                 .SurgeonDayScenarioLengthOfStayProbabilities
                 .OrderBy(w => int.Parse(w.Item1.Id))
@@ -558,6 +560,8 @@
         private INParameterElementFactory NParameterElementFactory { get; }
 
         private IniωParameterElementFactory nParameterElementFactory { get; }
+
+        private IpParameterElementFactory pParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1583,7 +1587,7 @@
 
             for (int w = 1; w < ilω.Length; w = w + 1)
             {
-                pSpan[ilω[w].ilωOI] = new pParameterElement(
+                pSpan[ilω[w].ilωOI] = this.pParameterElementFactory.Create(
                     iIndexElement: ilω[w].iIndexElement,
                     lIndexElement: ilω[w].lIndexElement,
                     ωIndexElement: ilω[w].ωIndexElement,
