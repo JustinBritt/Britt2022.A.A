@@ -291,6 +291,8 @@
                F2ParameterElement.SizeInBytes);
 
             // H(i)
+            this.HParameterElementFactory = parameterElementsAbstractFactory.CreateHParameterElementFactory();
+
             this.SurgeonMaximumNumberTimeBlocks = WGPMInputContext
                 .SurgeonMaximumNumberTimeBlocks
                 .OrderBy(w => int.Parse(w.Key.Id))
@@ -538,6 +540,8 @@
         private IB1ParameterElementFactory B1ParameterElementFactory { get; }
 
         private IF2ParameterElementFactory F2ParameterElementFactory { get; }
+
+        private IHParameterElementFactory HParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1460,7 +1464,7 @@
 
             for (int w = 1; w < i.Length; w = w + 1)
             {
-                HSpan[i[w].Value] = new HParameterElement(
+                HSpan[i[w].Value] = this.HParameterElementFactory.Create(
                     iIndexElement: i[w].Value,
                     value: this.SurgeonMaximumNumberTimeBlocks[i[w].Value - 1].Value.Value.Value);
             }
