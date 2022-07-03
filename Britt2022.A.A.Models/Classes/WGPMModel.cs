@@ -1481,7 +1481,7 @@
 
             for (int w = 1; w < r.Length; w = w + 1)
             {
-                F2Span[r[w].Value] = new F2ParameterElement(
+                F2Span[r[w].Value] = this.F2ParameterElementFactory.Create(
                     this.SurgicalSpecialtyUpperBounds[r[w].Value - 1].Value);
             }
 
