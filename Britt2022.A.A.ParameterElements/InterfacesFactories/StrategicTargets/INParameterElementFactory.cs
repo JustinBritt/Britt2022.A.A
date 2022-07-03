@@ -4,6 +4,8 @@
 
     public interface INParameterElementFactory
     {
-        NParameterElement Create();
+        NParameterElement Create(
+            int iIndexElement,
+            int value);
     }
 }

@@ -9,13 +9,17 @@
         {
         }
 
-        public NParameterElement Create()
+        public NParameterElement Create(
+            int iIndexElement,
+            int value)
         {
             NParameterElement parameterElement;
 
             try
             {
-                parameterElement = new NParameterElement();
+                parameterElement = new NParameterElement(
+                    iIndexElement: iIndexElement,
+                    value: value);
             }
             finally
             {
