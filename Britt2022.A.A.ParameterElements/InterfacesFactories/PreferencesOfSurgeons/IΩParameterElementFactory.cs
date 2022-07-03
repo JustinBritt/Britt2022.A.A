@@ -4,6 +4,9 @@
 
     public interface IΩParameterElementFactory
     {
-        ΩParameterElement Create();
+        ΩParameterElement Create(
+            int iIndexElement,
+            int kIndexElement,
+            int value);
     }
 }

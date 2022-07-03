@@ -9,13 +9,19 @@
         {
         }
 
-        public ΩParameterElement Create()
+        public ΩParameterElement Create(
+            int iIndexElement,
+            int kIndexElement,
+            int value)
         {
             ΩParameterElement parameterElement;
 
             try
             {
-                parameterElement = new ΩParameterElement();
+                parameterElement = new ΩParameterElement(
+                    iIndexElement: iIndexElement,
+                    kIndexElement: kIndexElement,
+                    value: value);
             }
             finally
             {
