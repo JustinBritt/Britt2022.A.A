@@ -9,13 +9,15 @@
         {
         }
 
-        public eIndexElement Create()
+        public eIndexElement Create(
+            int value)
         {
             eIndexElement indexElement;
 
             try
             {
-                indexElement = new eIndexElement();
+                indexElement = new eIndexElement(
+                    value);
             }
             finally
             {

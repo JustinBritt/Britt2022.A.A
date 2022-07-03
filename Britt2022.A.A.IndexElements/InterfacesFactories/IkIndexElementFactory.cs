@@ -4,6 +4,7 @@
 
     public interface IkIndexElementFactory
     {
-        kIndexElement Create();
+        kIndexElement Create(
+            int value);
     }
 }

@@ -4,6 +4,7 @@
 
     public interface IlIndexElementFactory
     {
-        lIndexElement Create();
+        lIndexElement Create(
+            int value);
     }
 }

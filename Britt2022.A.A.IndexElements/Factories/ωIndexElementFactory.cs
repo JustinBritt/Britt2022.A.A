@@ -9,13 +9,15 @@
         {
         }
 
-        public ωIndexElement Create()
+        public ωIndexElement Create(
+            int value)
         {
             ωIndexElement indexElement;
 
             try
             {
-                indexElement = new ωIndexElement();
+                indexElement = new ωIndexElement(
+                    value);
             }
             finally
             {

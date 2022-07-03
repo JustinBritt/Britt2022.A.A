@@ -4,6 +4,7 @@
 
     public interface IrIndexElementFactory
     {
-        rIndexElement Create();
+        rIndexElement Create(
+            int value);
     }
 }

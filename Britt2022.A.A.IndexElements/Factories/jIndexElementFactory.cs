@@ -9,13 +9,15 @@
         {
         }
 
-        public jIndexElement Create()
+        public jIndexElement Create(
+            int value)
         {
             jIndexElement indexElement;
 
             try
             {
-                indexElement = new jIndexElement();
+                indexElement = new jIndexElement(
+                    value);
             }
             finally
             {

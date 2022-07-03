@@ -4,6 +4,7 @@
 
     public interface IjIndexElementFactory
     {
-        jIndexElement Create();
+        jIndexElement Create(
+            int value);
     }
 }

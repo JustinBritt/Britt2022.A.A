@@ -9,13 +9,15 @@
         {
         }
 
-        public iIndexElement Create()
+        public iIndexElement Create(
+            int value)
         {
             iIndexElement indexElement;
 
             try
             {
-                indexElement = new iIndexElement();
+                indexElement = new iIndexElement(
+                    value);
             }
             finally
             {

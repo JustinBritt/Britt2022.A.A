@@ -4,6 +4,7 @@
 
     public interface IωIndexElementFactory
     {
-        ωIndexElement Create();
+        ωIndexElement Create(
+            int value);
     }
 }

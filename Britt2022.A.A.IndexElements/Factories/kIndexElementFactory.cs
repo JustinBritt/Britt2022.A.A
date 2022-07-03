@@ -9,13 +9,15 @@
         {
         }
 
-        public kIndexElement Create()
+        public kIndexElement Create(
+            int value)
         {
             kIndexElement indexElement;
 
             try
             {
-                indexElement = new kIndexElement();
+                indexElement = new kIndexElement(
+                    value);
             }
             finally
             {

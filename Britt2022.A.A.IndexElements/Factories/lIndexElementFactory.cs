@@ -9,13 +9,15 @@
         {
         }
 
-        public lIndexElement Create()
+        public lIndexElement Create(
+            int value)
         {
             lIndexElement indexElement;
 
             try
             {
-                indexElement = new lIndexElement();
+                indexElement = new lIndexElement(
+                    value);
             }
             finally
             {

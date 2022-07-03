@@ -4,6 +4,7 @@
 
     public interface IeIndexElementFactory
     {
-        eIndexElement Create();
+        eIndexElement Create(
+            int value);
     }
 }
