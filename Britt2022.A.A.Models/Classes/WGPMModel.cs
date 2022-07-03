@@ -423,6 +423,8 @@
                ΡParameterElement.SizeInBytes);
 
             // Φ(i, l, ω)
+            this.ΦParameterElementFactory = parameterElementsAbstractFactory.CreateΦParameterElementFactory();
+
             this.SurgeonDayScenarioCumulativeNumberPatients = WGPMInputContext
                 .SurgeonDayScenarioCumulativeNumberPatients
                 .OrderBy(w => int.Parse(w.Item1.Id))
@@ -570,6 +572,8 @@
         private IΠParameterElementFactory ΠParameterElementFactory { get; }
 
         private IΡParameterElementFactory ΡParameterElementFactory { get; }
+
+        private IΦParameterElementFactory ΦParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1685,7 +1689,7 @@
 
             for (int w = 1; w < ilω.Length; w = w + 1)
             {
-                ΦSpan[ilω[w].ilωOI] = new ΦParameterElement(
+                ΦSpan[ilω[w].ilωOI] = this.ΦParameterElementFactory.Create(
                     iIndexElement: ilω[w].iIndexElement,
                     lIndexElement: ilω[w].lIndexElement,
                     ωIndexElement: ilω[w].ωIndexElement,
