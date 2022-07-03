@@ -10,6 +10,7 @@
     using Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model.InterfacesAbstractFactories;
     using Britt2022.A.A.GS.InterfacesAbstractFactories;
     using Britt2022.A.A.ILS.InterfacesAbstractFactories;
+    using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
     using Britt2022.A.A.LAHC.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.Models.InterfacesAbstractFactories;
@@ -37,6 +38,7 @@
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IContextsAbstractFactory contextsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
+            IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IModelsAbstractFactory modelsAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
@@ -59,6 +61,7 @@
 
                 using (IWGPMModel WGPMModel = modelsAbstractFactory.CreateWGPMModelFactory().Create(
                     constraintsAbstractFactory,
+                    indexElementsAbstractFactory,
                     objectiveFunctionsAbstractFactory,
                     parameterElementsAbstractFactory,
                     variablesAbstractFactory,

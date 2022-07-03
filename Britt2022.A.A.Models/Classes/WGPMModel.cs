@@ -33,6 +33,7 @@
         // Note: This assumes that indices have numbered Ids.
         public unsafe WGPMModel(
             IConstraintsAbstractFactory constraintsAbstractFactory,
+            IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,

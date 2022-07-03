@@ -7,6 +7,7 @@
     using Britt2022.A.A.Contexts.InterfacesAbstractFactories;
     using Britt2022.A.A.Contexts.Interfaces;
     using Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model.InterfacesAbstractFactories;
+    using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Models.InterfacesAbstractFactories;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
     using Britt2022.A.A.ObjectiveFunctions.InterfacesAbstractFactories;
@@ -25,6 +26,7 @@
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IContextsAbstractFactory contextsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
+            IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IModelsAbstractFactory modelsAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
