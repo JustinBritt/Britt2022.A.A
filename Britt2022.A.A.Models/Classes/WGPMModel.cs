@@ -936,7 +936,7 @@
 
         public unsafe ReadOnlySpan<ijCrossJoinElement> Getij()
         {
-            Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping abMapping = new Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping();
+            IabMapping abMapping = this.abMappingFactory.Create();
 
             int iLowerBound = 1;
 
@@ -1162,7 +1162,7 @@
 
         public unsafe ReadOnlySpan<ikCrossJoinElement> Getik()
         {
-            Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping abMapping = new Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping();
+            IabMapping abMapping = this.abMappingFactory.Create();
 
             int iLowerBound = 1;
 
@@ -1281,7 +1281,7 @@
 
         public unsafe ReadOnlySpan<iωCrossJoinElement> Getiω()
         {
-            Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping abMapping = new Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping();
+            IabMapping abMapping = this.abMappingFactory.Create();
 
             int iLowerBound = 1;
 
@@ -1331,7 +1331,7 @@
 
         public unsafe ReadOnlySpan<jkCrossJoinElement> Getjk()
         {
-            Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping abMapping = new Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping();
+            IabMapping abMapping = this.abMappingFactory.Create();
 
             int jLowerBound = 1;
 
@@ -1382,7 +1382,7 @@
         // Gets kω.
         public unsafe ReadOnlySpan<kωCrossJoinElement> Getkω()
         {
-            Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping abMapping = new Britt2022.A.A.CrossJoins.Classes.Mappings.abMapping();
+            IabMapping abMapping = this.abMappingFactory.Create();
 
             int kLowerBound = 1;
 
