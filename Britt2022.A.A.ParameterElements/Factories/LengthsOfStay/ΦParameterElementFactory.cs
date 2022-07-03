@@ -9,13 +9,21 @@
         {
         }
 
-        public ΦParameterElement Create()
+        public ΦParameterElement Create(
+            int iIndexElement,
+            int lIndexElement,
+            int ωIndexElement,
+            double value)
         {
             ΦParameterElement parameterElement;
 
             try
             {
-                parameterElement = new ΦParameterElement();
+                parameterElement = new ΦParameterElement(
+                    iIndexElement: iIndexElement,
+                    lIndexElement: lIndexElement,
+                    ωIndexElement: ωIndexElement,
+                    value: value);
             }
             finally
             {

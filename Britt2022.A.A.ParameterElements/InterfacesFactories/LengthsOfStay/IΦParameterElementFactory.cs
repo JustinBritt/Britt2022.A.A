@@ -4,6 +4,10 @@
 
     public interface IΦParameterElementFactory
     {
-        ΦParameterElement Create();
+        ΦParameterElement Create(
+            int iIndexElement,
+            int lIndexElement,
+            int ωIndexElement,
+            double value);
     }
 }
