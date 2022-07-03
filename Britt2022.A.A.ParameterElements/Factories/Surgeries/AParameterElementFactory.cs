@@ -9,13 +9,19 @@
         {
         }
 
-        public AParameterElement Create()
+        public AParameterElement Create(
+            int iIndexElement,
+            int ωIndexElement,
+            double value)
         {
             AParameterElement parameterElement;
 
             try
             {
-                parameterElement = new AParameterElement();
+                parameterElement = new AParameterElement(
+                    iIndexElement: iIndexElement,
+                    ωIndexElement: ωIndexElement,
+                    value: value);
             }
             finally
             {

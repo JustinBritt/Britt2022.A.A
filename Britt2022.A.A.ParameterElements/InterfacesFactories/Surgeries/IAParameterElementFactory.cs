@@ -4,6 +4,9 @@
 
     public interface IAParameterElementFactory
     {
-        AParameterElement Create();
+        AParameterElement Create(
+            int iIndexElement,
+            int ωIndexElement,
+            double value);
     }
 }
