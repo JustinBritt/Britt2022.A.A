@@ -9,13 +9,21 @@
         {
         }
 
-        public ikCrossJoinElement Create()
+        public ikCrossJoinElement Create(
+            int iIndexElement,
+            int kIndexElement,
+            int ikOI,
+            int ikZI)
         {
             ikCrossJoinElement crossJoinElement;
 
             try
             {
-                crossJoinElement = new ikCrossJoinElement();
+                crossJoinElement = new ikCrossJoinElement(
+                    iIndexElement: iIndexElement,
+                    kIndexElement: kIndexElement,
+                    ikOI: ikOI,
+                    ikZI: ikZI);
             }
             finally
             {
