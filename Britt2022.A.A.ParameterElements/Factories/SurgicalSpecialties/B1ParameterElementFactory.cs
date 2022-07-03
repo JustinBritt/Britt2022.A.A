@@ -9,21 +9,6 @@
         {
         }
 
-        public B1ParameterElement Create()
-        {
-            B1ParameterElement parameterElement;
-
-            try
-            {
-                parameterElement = new B1ParameterElement();
-            }
-            finally
-            {
-            }
-
-            return parameterElement;
-        }
-
         public B1ParameterElement Create(
             int value)
         {
