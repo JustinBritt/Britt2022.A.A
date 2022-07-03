@@ -9,21 +9,6 @@
         {
         }
 
-        public F2ParameterElement Create()
-        {
-            F2ParameterElement parameterElement;
-
-            try
-            {
-                parameterElement = new F2ParameterElement();
-            }
-            finally
-            {
-            }
-
-            return parameterElement;
-        }
-
         public F2ParameterElement Create(
             int value)
         {

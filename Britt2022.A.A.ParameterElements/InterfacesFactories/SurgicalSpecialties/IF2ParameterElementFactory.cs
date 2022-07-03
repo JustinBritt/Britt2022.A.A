@@ -4,8 +4,6 @@
 
     public interface IF2ParameterElementFactory
     {
-        F2ParameterElement Create();
-
         F2ParameterElement Create(
             int value);
     }
