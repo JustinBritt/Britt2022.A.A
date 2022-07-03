@@ -9,13 +9,29 @@
         {
         }
 
-        public ijkωCrossJoinElement Create()
+        public ijkωCrossJoinElement Create(
+            int iIndexElement,
+            int jIndexElement,
+            int kIndexElement,
+            int ωIndexElement,
+            int ijkOI,
+            int ijkωOI,
+            int ijkωZI,
+            int iωOI)
         {
             ijkωCrossJoinElement crossJoinElement;
 
             try
             {
-                crossJoinElement = new ijkωCrossJoinElement();
+                crossJoinElement = new ijkωCrossJoinElement(
+                    iIndexElement: iIndexElement,
+                    jIndexElement: jIndexElement,
+                    kIndexElement: kIndexElement,
+                    ωIndexElement: ωIndexElement,
+                    ijkOI: ijkOI,
+                    ijkωOI: ijkωOI,
+                    ijkωZI: ijkωZI,
+                    iωOI: iωOI);
             }
             finally
             {
