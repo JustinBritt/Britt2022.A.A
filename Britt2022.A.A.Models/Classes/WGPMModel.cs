@@ -13,6 +13,7 @@
     using Britt2022.A.A.CrossJoinElements.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoinElements.InterfacesFactories;
     using Britt2022.A.A.CrossJoinElements.Structs;
+    using Britt2022.A.A.CrossJoins.Interfaces.Mappings;
     using Britt2022.A.A.CrossJoins.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoins.InterfacesFactories.Mappings;
     using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
