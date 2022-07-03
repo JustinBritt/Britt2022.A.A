@@ -4,7 +4,7 @@
     using Britt2022.A.A.CrossJoins.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoins.InterfacesFactories.Mappings;
 
-    internal sealed class CrossJoinsAbstractFactory : ICrossJoinsAbstractFactory
+    public sealed class CrossJoinsAbstractFactory : ICrossJoinsAbstractFactory
     {
         public CrossJoinsAbstractFactory()
         {
