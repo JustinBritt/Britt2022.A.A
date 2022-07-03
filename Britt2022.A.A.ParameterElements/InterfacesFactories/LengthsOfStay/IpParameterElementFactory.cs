@@ -4,6 +4,10 @@
 
     public interface IpParameterElementFactory
     {
-        pParameterElement Create();
+        pParameterElement Create(
+            int iIndexElement,
+            int lIndexElement,
+            int ωIndexElement,
+            double value);
     }
 }

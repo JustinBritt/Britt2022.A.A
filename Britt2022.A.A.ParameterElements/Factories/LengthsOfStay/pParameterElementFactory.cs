@@ -9,13 +9,21 @@
         {
         }
 
-        public pParameterElement Create()
+        public pParameterElement Create(
+            int iIndexElement,
+            int lIndexElement,
+            int ωIndexElement,
+            double value)
         {
             pParameterElement parameterElement;
 
             try
             {
-                parameterElement = new pParameterElement();
+                parameterElement = new pParameterElement(
+                    iIndexElement: iIndexElement,
+                    lIndexElement: lIndexElement,
+                    ωIndexElement: ωIndexElement,
+                    value: value);
             }
             finally
             {
