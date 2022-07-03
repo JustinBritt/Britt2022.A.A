@@ -38,8 +38,10 @@
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext)
-        {
+        {  
             // i
+            this.iIndexElementFactory = indexElementsAbstractFactory.CreateiIndexElementFactory();
+
             this.Surgeons = WGPMInputContext
                 .Surgeons
                 .Entry
@@ -53,6 +55,8 @@
                 iIndexElement.SizeInBytes);
 
             // j
+            this.jIndexElementFactory = indexElementsAbstractFactory.CreatejIndexElementFactory();
+
             this.OperatingRooms = WGPMInputContext
                 .OperatingRooms
                 .Entry
@@ -66,6 +70,8 @@
                jIndexElement.SizeInBytes);
 
             // k
+            this.kIndexElementFactory = indexElementsAbstractFactory.CreatekIndexElementFactory();
+
             this.PlanningHorizon = WGPMInputContext
                 .PlanningHorizon
                 .Select(w => w.Value)
@@ -77,6 +83,8 @@
                kIndexElement.SizeInBytes);
 
             // l
+            this.lIndexElementFactory = indexElementsAbstractFactory.CreatelIndexElementFactory();
+
             this.LengthOfStayDays = WGPMInputContext
                 .LengthOfStayDays
                 .ToArray();
@@ -87,6 +95,8 @@
                lIndexElement.SizeInBytes);
 
             // r
+            this.rIndexElementFactory = indexElementsAbstractFactory.CreaterIndexElementFactory();
+
             this.SurgicalSpecialties = WGPMInputContext
                 .SurgicalSpecialties
                 .Select(w => w.Item1)
@@ -98,6 +108,8 @@
                rIndexElement.SizeInBytes);
 
             // ω
+            this.ωIndexElementFactory = indexElementsAbstractFactory.CreateωIndexElementFactory();
+
             this.Scenarios = WGPMInputContext
                 .Scenarios
                 .ToArray();
@@ -457,6 +469,18 @@
 
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
         }
+
+        private IiIndexElementFactory iIndexElementFactory { get; }
+
+        private IjIndexElementFactory jIndexElementFactory { get; }
+
+        private IkIndexElementFactory kIndexElementFactory { get; }
+
+        private IlIndexElementFactory lIndexElementFactory { get; }
+
+        private IrIndexElementFactory rIndexElementFactory { get; }
+
+        private IωIndexElementFactory ωIndexElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
