@@ -304,6 +304,8 @@
                HParameterElement.SizeInBytes);
 
             // h(i)
+            this.hParameterElementFactory = parameterElementsAbstractFactory.CreatehiParameterElementFactory();
+
             this.SurgeonLengthOfStayMaximums = WGPMInputContext
                 .SurgeonMaximumLengthsOfStay
                 .OrderBy(w => int.Parse(w.Key.Id))
@@ -542,6 +544,8 @@
         private IF2ParameterElementFactory F2ParameterElementFactory { get; }
 
         private IHParameterElementFactory HParameterElementFactory { get; }
+
+        private IhiParameterElementFactory hParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1484,7 +1488,7 @@
 
             for (int w = 1; w < i.Length; w = w + 1)
             {
-                hSpan[i[w].Value] = new hiParameterElement(
+                hSpan[i[w].Value] = this.hParameterElementFactory.Create(
                     iIndexElement: i[w].Value,
                     value: this.SurgeonLengthOfStayMaximums[i[w].Value - 1].Value.Value.Value);
             }
