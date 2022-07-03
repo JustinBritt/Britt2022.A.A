@@ -690,7 +690,8 @@
 
             for (int i = iLowerBound; i <= iUpperBound; i = i + 1)
             {
-                iSpan[i] = new iIndexElement(i);
+                iSpan[i] = this.iIndexElementFactory.Create(
+                    i);
             }
 
             return iSpan;
@@ -712,7 +713,8 @@
 
             for (int i = jLowerBound; i <= jUpperBound; i = i + 1)
             {
-                jSpan[i] = new jIndexElement(i);
+                jSpan[i] = this.jIndexElementFactory.Create(
+                    i);
             }
 
             return jSpan;
@@ -734,7 +736,8 @@
 
             for (int i = kLowerBound; i <= kUpperBound; i = i + 1)
             {
-                kSpan[i] = new kIndexElement(i);
+                kSpan[i] = this.kIndexElementFactory.Create(
+                    i);
             }
 
             return kSpan;
@@ -758,7 +761,8 @@
             for (int i = lLowerBound; i <= lUpperBound; i = i + 1)
             {
                 // l is zero-indexed
-                lSpan[i] = new lIndexElement(i - 1);
+                lSpan[i] = this.lIndexElementFactory.Create(
+                    i - 1);
             }
 
             return lSpan;
@@ -780,7 +784,8 @@
 
             for (int i = rLowerBound; i <= rUpperBound; i = i + 1)
             {
-                rSpan[i] = new rIndexElement(i);
+                rSpan[i] = this.rIndexElementFactory.Create(
+                    i);
             }
 
             return rSpan;
@@ -802,7 +807,8 @@
 
             for (int i = ωLowerBound; i <= ωUpperBound; i = i + 1)
             {
-                ωSpan[i] = new ωIndexElement(i);
+                ωSpan[i] = this.ωIndexElementFactory.Create(
+                    i);
             }
 
             return ωSpan;
