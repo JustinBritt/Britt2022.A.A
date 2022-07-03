@@ -9,13 +9,21 @@
         {
         }
 
-        public ijCrossJoinElement Create()
+        public ijCrossJoinElement Create(
+            int iIndexElement,
+            int jIndexElement,
+            int ijOI,
+            int ijZI)
         {
             ijCrossJoinElement crossJoinElement;
 
             try
             {
-                crossJoinElement = new ijCrossJoinElement();
+                crossJoinElement = new ijCrossJoinElement(
+                    iIndexElement: iIndexElement,
+                    jIndexElement: jIndexElement,
+                    ijOI: ijOI,
+                    ijZI: ijZI);
             }
             finally
             {
