@@ -4,6 +4,9 @@
 
     public interface IΠParameterElementFactory
     {
-        ΠParameterElement Create();
+        ΠParameterElement Create(
+            int iIndexElement,
+            int jIndexElement,
+            int value);
     }
 }

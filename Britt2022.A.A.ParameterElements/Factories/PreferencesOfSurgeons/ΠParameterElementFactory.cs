@@ -9,13 +9,19 @@
         {
         }
 
-        public ΠParameterElement Create()
+        public ΠParameterElement Create(
+            int iIndexElement,
+            int jIndexElement,
+            int value)
         {
             ΠParameterElement parameterElement;
 
             try
             {
-                parameterElement = new ΠParameterElement();
+                parameterElement = new ΠParameterElement(
+                    iIndexElement: iIndexElement,
+                    jIndexElement: jIndexElement,
+                    value: value);
             }
             finally
             {
