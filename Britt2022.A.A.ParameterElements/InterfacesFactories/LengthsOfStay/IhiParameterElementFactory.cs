@@ -4,6 +4,8 @@
 
     public interface IhiParameterElementFactory
     {
-        hiParameterElement Create();
+        hiParameterElement Create(
+            int iIndexElement,
+            int value);
     }
 }
