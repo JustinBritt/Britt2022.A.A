@@ -1066,7 +1066,7 @@
 
         public unsafe ReadOnlySpan<ijkωCrossJoinElement> Getijkω()
         {
-            Britt2022.A.A.CrossJoins.Classes.Mappings.abcdMapping abcdMapping = new Britt2022.A.A.CrossJoins.Classes.Mappings.abcdMapping();
+            IabcdMapping abcdMapping = this.abcdMappingFactory.Create();
 
             int iLowerBound = 1;
 
