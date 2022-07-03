@@ -396,6 +396,8 @@
                 .GoalWeight4;
 
             // Π(i, j)
+            this.ΠParameterElementFactory = parameterElementsAbstractFactory.CreateΠParameterElementFactory();
+
             this.SurgeonOperatingRoomAvailabilities = WGPMInputContext
                 .SurgeonOperatingRoomAvailabilities
                 .OrderBy(w => int.Parse(w.Item1.Id))
@@ -562,6 +564,8 @@
         private IniωParameterElementFactory nParameterElementFactory { get; }
 
         private IpParameterElementFactory pParameterElementFactory { get; }
+
+        private IΠParameterElementFactory ΠParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1634,7 +1638,7 @@
 
             for (int w = 1; w < ij.Length; w = w + 1)
             {
-                ΠSpan[ij[w].ijOI] = new ΠParameterElement(
+                ΠSpan[ij[w].ijOI] = this.ΠParameterElementFactory.Create(
                     iIndexElement: ij[w].iIndexElement,
                     jIndexElement: ij[w].jIndexElement,
                     value: this.SurgeonOperatingRoomAvailabilities[ij[w].ijZI].Item3.Value.Value ? 1 : 0);
