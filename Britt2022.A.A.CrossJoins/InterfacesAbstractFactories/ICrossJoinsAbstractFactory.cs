@@ -1,10 +1,13 @@
 ﻿namespace Britt2022.A.A.CrossJoins.InterfacesAbstractFactories
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+    using Britt2022.A.A.CrossJoins.InterfacesFactories.Mappings;
 
     public interface ICrossJoinsAbstractFactory
     {
+        IabMappingFactory CreateabMappingFactory();
+
+        IabcMappingFactory CreateabcMappingFactory();
+
+        IabcdMappingFactory CreateabcdMappingFactory();
     }
 }
