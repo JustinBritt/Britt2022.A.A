@@ -317,6 +317,8 @@
                hiParameterElement.SizeInBytes);
 
             // L(i)
+            this.LParameterElementFactory = parameterElementsAbstractFactory.CreateLParameterElementFactory();
+
             this.SurgeonMinimumNumberTimeBlocks = WGPMInputContext
                 .SurgeonMinimumNumberTimeBlocks
                 .OrderBy(w => int.Parse(w.Key.Id))
@@ -546,6 +548,8 @@
         private IHParameterElementFactory HParameterElementFactory { get; }
 
         private IhiParameterElementFactory hParameterElementFactory { get; }
+
+        private ILParameterElementFactory LParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1508,7 +1512,7 @@
 
             for (int w = 1; w < i.Length; w = w + 1)
             {
-                LSpan[i[w].Value] = new LParameterElement(
+                LSpan[i[w].Value] = this.LParameterElementFactory.Create(
                     iIndexElement: i[w].Value,
                     value: this.SurgeonMinimumNumberTimeBlocks[i[w].Value - 1].Value.Value.Value);
             }
