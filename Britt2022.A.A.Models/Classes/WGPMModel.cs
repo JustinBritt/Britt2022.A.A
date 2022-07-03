@@ -852,7 +852,7 @@
                         a: i,
                         aUpperBound: iUpperBound,
                         b: j,
-                        bLowerBound: jLowerBound)] = new ijCrossJoinElement(
+                        bLowerBound: jLowerBound)] = this.ijCrossJoinElementFactory.Create(
                             iIndexElement: i,
                             jIndexElement: j,
                             ijOI: abMapping.abOI(
