@@ -246,6 +246,10 @@
                BParameterElement.SizeInBytes);
 
             // B1(r), F2(r)
+            this.B1ParameterElementFactory = parameterElementsAbstractFactory.CreateB1ParameterElementFactory();
+
+            this.F2ParameterElementFactory = parameterElementsAbstractFactory.CreateF2ParameterElementFactory();
+
             B1ParameterElement[] B1OI = new B1ParameterElement[this.SurgicalSpecialties.Count() + 1];
 
             B1ParameterElement[] B1ZI = new B1ParameterElement[this.SurgicalSpecialties.Count()];
@@ -530,6 +534,10 @@
         private IAParameterElementFactory AParameterElementFactory { get; }
 
         private IBParameterElementFactory BParameterElementFactory { get; }
+
+        private IB1ParameterElementFactory B1ParameterElementFactory { get; }
+
+        private IF2ParameterElementFactory F2ParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
