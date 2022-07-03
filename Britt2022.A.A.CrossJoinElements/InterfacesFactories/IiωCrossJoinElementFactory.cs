@@ -4,6 +4,10 @@
 
     public interface IiωCrossJoinElementFactory
     {
-        iωCrossJoinElement Create();
+        iωCrossJoinElement Create(
+            int iIndexElement,
+            int ωIndexElement,
+            int iωOI,
+            int iωZI);
     }
 }
