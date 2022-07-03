@@ -7,6 +7,7 @@
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.ObjectiveFunctions.InterfacesAbstractFactories;
     using Britt2022.A.A.ParameterElements.InterfacesAbstractFactories;
+    using Britt2022.A.A.VariableElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
 
     public interface IWGPMModelFactory
@@ -17,6 +18,7 @@
             IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext);
     }

@@ -25,6 +25,7 @@
     using Britt2022.A.A.Solutions.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
+    using Britt2022.A.A.VariableElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
     using Britt2022.A.A.VNS.InterfacesAbstractFactories;
 
@@ -47,6 +48,7 @@
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
             IResultsAbstractFactory resultsAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
@@ -67,6 +69,7 @@
                     indexElementsAbstractFactory,
                     objectiveFunctionsAbstractFactory,
                     parameterElementsAbstractFactory,
+                    variableElementsAbstractFactory,
                     variablesAbstractFactory,
                     WGPMInputContext))
                 {

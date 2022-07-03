@@ -9,6 +9,7 @@
     using Britt2022.A.A.Models.InterfacesFactories;
     using Britt2022.A.A.ObjectiveFunctions.InterfacesAbstractFactories;
     using Britt2022.A.A.ParameterElements.InterfacesAbstractFactories;
+    using Britt2022.A.A.VariableElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
 
     internal sealed class WGPMModelFactory : IWGPMModelFactory
@@ -23,6 +24,7 @@
             IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext)
         {
@@ -36,6 +38,7 @@
                     indexElementsAbstractFactory,
                     objectiveFunctionsAbstractFactory,
                     parameterElementsAbstractFactory,
+                    variableElementsAbstractFactory,
                     variablesAbstractFactory,
                     WGPMInputContext);
             }

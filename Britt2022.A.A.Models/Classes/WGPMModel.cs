@@ -47,6 +47,7 @@
             IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext)
         {  

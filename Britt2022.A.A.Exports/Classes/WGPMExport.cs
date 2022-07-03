@@ -20,6 +20,7 @@
     using Britt2022.A.A.SingleEmbeddedLocalSearches.InterfacesAbstractFactories;
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
+    using Britt2022.A.A.VariableElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
 
     public sealed class WGPMExport : IWGPMExport
@@ -42,6 +43,7 @@
             IResultsAbstractFactory resultsAbstractFactory,
             ISolutionsAbstractFactory solutionsAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IVariablesAbstractFactory variablesAbstractFactory,
             IWGPMInputContext WGPMInputContext,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration,
@@ -61,6 +63,7 @@
                 parameterElementsAbstractFactory,
                 resultsAbstractFactory,
                 standaloneLocalSearchAbstractFactory,
+                variableElementsAbstractFactory,
                 variablesAbstractFactory,
                 WGPMInputContext,
                 standaloneLocalSearchSolverConfiguration,
