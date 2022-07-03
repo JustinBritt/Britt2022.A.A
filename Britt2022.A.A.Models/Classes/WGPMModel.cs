@@ -491,6 +491,8 @@
                 this.Getω());
 
             // x(i, j, k)
+            this.xVariableElementFactory = variableElementsAbstractFactory.CreatexVariableElementFactory();
+
             this.SurgeonOperatingRoomDayAssignmentsIntPtr = Marshal.AllocHGlobal(
                (this.Surgeons.Count() + 1)
                *
@@ -581,6 +583,8 @@
         private IΦParameterElementFactory ΦParameterElementFactory { get; }
 
         private IΩParameterElementFactory ΩParameterElementFactory { get; }
+
+        private IxVariableElementFactory xVariableElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1739,7 +1743,7 @@
 
             for (int w = 1; w < ijk.Length; w = w + 1)
             {
-                xSpan[ijk[w].ijkOI] = new xVariableElement(
+                xSpan[ijk[w].ijkOI] = this.xVariableElementFactory.Create(
                     ijk[w].iIndexElement,
                     ijk[w].jIndexElement,
                     ijk[w].kIndexElement,
