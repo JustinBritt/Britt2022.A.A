@@ -4,6 +4,9 @@
 
     public interface IniωParameterElementFactory
     {
-        niωParameterElement Create();
+        niωParameterElement Create(
+            int iIndexElement,
+            int ωIndexElement,
+            int value);
     }
 }
