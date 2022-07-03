@@ -5,9 +5,9 @@
     using System.Text;
     using Britt2022.A.A.CrossJoins.InterfacesAbstractFactories;
 
-    internal sealed class MappingsAbstractFactory : IMappingsAbstractFactory
+    internal sealed class CrossJoinsAbstractFactory : ICrossJoinsAbstractFactory
     {
-        public MappingsAbstractFactory()
+        public CrossJoinsAbstractFactory()
         {
         }
     }
