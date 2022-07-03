@@ -4,6 +4,10 @@
 
     public interface IjkCrossJoinElementFactory
     {
-        jkCrossJoinElement Create();
+        jkCrossJoinElement Create(
+            int jIndexElement,
+            int kIndexElement,
+            int jkOI,
+            int jkZI);
     }
 }
