@@ -7,9 +7,9 @@
 
     using Hl7.Fhir.Model;
 
-    using Britt2022.A.A.Contexts.Interfaces;
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.Constraints.InterfacesAbstractFactories;
+    using Britt2022.A.A.Contexts.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
     using Britt2022.A.A.Models.Interfaces;
