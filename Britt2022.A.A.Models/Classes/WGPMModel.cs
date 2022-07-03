@@ -13,6 +13,7 @@
     using Britt2022.A.A.CrossJoinElements.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoinElements.InterfacesFactories;
     using Britt2022.A.A.CrossJoinElements.Structs;
+    using Britt2022.A.A.CrossJoins.InterfacesAbstractFactories;
     using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
     using Britt2022.A.A.IndexElements.InterfacesFactories;
     using Britt2022.A.A.IndexElements.Structs;
@@ -44,6 +45,7 @@
         public unsafe WGPMModel(
             IConstraintsAbstractFactory constraintsAbstractFactory,
             ICrossJoinElementsAbstractFactory crossJoinElementsAbstractFactory,
+            ICrossJoinsAbstractFactory crossJoinsAbstractFactory,
             IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,
