@@ -262,10 +262,10 @@
 
             for (int r = 1; r <= this.SurgicalSpecialties.Count(); r = r + 1)
             {
-                F2OI[r] = parameterElementsAbstractFactory.CreateF2ParameterElementFactory().Create(
+                F2OI[r] = this.F2ParameterElementFactory.Create(
                     F2OI[r - 1].Value + items[r - 1]);
 
-                B1OI[r] = parameterElementsAbstractFactory.CreateB1ParameterElementFactory().Create(
+                B1OI[r] = this.B1ParameterElementFactory.Create(
                     F2OI[r - 1].Value + 1);
             }
 
