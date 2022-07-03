@@ -35,6 +35,7 @@
         // Note: This assumes that indices have numbered Ids.
         public unsafe WGPMModel(
             IConstraintsAbstractFactory constraintsAbstractFactory,
+            ICrossJoinElementsAbstractFactory crossJoinElementsAbstractFactory,
             IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IObjectiveFunctionsAbstractFactory objectiveFunctionsAbstractFactory,
             IParameterElementsAbstractFactory parameterElementsAbstractFactory,

@@ -6,6 +6,7 @@
     using Britt2022.A.A.ConstructionHeuristic.InterfacesAbstractFactories;
     using Britt2022.A.A.Contexts.Interfaces;
     using Britt2022.A.A.Contexts.InterfacesAbstractFactories;
+    using Britt2022.A.A.CrossJoinElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model.InterfacesAbstractFactories;
     using Britt2022.A.A.Exports.Interfaces;
     using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
@@ -31,6 +32,7 @@
             IConstraintsAbstractFactory constraintsAbstractFactory,
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IContextsAbstractFactory contextsAbstractFactory,
+            ICrossJoinElementsAbstractFactory crossJoinElementsAbstractFactory,
             IDependenciesAbstractFactory dependenciesAbstractFactory,
             IIndexElementsAbstractFactory indexElementsAbstractFactory,
             IModelsAbstractFactory modelsAbstractFactory,
@@ -50,6 +52,7 @@
                 constraintsAbstractFactory,
                 constructionHeuristicAbstractFactory,
                 contextsAbstractFactory,
+                crossJoinElementsAbstractFactory,
                 dependenciesAbstractFactory,
                 indexElementsAbstractFactory,
                 modelsAbstractFactory,
