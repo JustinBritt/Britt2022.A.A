@@ -4,6 +4,14 @@
 
     public interface IijkCrossJoinElementFactory
     {
-        ijkCrossJoinElement Create();
+        ijkCrossJoinElement Create(
+            int iIndexElement,
+            int jIndexElement,
+            int kIndexElement,
+            int ijOI,
+            int ijkOI,
+            int ijkZI,
+            int ikOI,
+            int jkOI);
     }
 }
