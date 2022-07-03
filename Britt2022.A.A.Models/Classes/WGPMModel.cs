@@ -1622,26 +1622,6 @@
             return (double)this.GoalWeight4.Value.Value;
         }
 
-        public unsafe ReadOnlySpan<ΡParameterElement> GetΡ()
-        {
-            ReadOnlySpan<ωIndexElement> ω = this.Getω();
-
-            Span<ΡParameterElement> ΡSpan = new Span<ΡParameterElement>(
-                (void*)this.ScenarioProbabilitiesIntPtr,
-                1 + this.ScenarioProbabilities.Count());
-
-            ΡSpan.Clear();
-
-            for (int w = 1; w < ω.Length; w = w + 1)
-            {
-                ΡSpan[ω[w].Value] = new ΡParameterElement(
-                    ωIndexElement: ω[w].Value,
-                    value: (double)this.ScenarioProbabilities[ω[w].Value - 1].Value.Value.Value);
-            }
-
-            return ΡSpan;
-        }
-
         public unsafe ReadOnlySpan<ΠParameterElement> GetΠ()
         {
             ReadOnlySpan<ijCrossJoinElement> ij = this.Getij();
@@ -1661,6 +1641,26 @@
             }
 
             return ΠSpan;
+        }
+
+        public unsafe ReadOnlySpan<ΡParameterElement> GetΡ()
+        {
+            ReadOnlySpan<ωIndexElement> ω = this.Getω();
+
+            Span<ΡParameterElement> ΡSpan = new Span<ΡParameterElement>(
+                (void*)this.ScenarioProbabilitiesIntPtr,
+                1 + this.ScenarioProbabilities.Count());
+
+            ΡSpan.Clear();
+
+            for (int w = 1; w < ω.Length; w = w + 1)
+            {
+                ΡSpan[ω[w].Value] = new ΡParameterElement(
+                    ωIndexElement: ω[w].Value,
+                    value: (double)this.ScenarioProbabilities[ω[w].Value - 1].Value.Value.Value);
+            }
+
+            return ΡSpan;
         }
 
         public unsafe ReadOnlySpan<ΦParameterElement> GetΦ()

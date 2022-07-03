@@ -146,9 +146,9 @@
 
         double Getw4();
 
-        ReadOnlySpan<ΡParameterElement> GetΡ();
-
         ReadOnlySpan<ΠParameterElement> GetΠ();
+
+        ReadOnlySpan<ΡParameterElement> GetΡ();
 
         ReadOnlySpan<ΦParameterElement> GetΦ();
 
