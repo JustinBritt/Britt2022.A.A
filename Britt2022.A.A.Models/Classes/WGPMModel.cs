@@ -181,6 +181,8 @@
                ilωCrossJoinElement.SizeInBytes);
 
             // iω
+            this.iωCrossJoinElementFactory = crossJoinElementsAbstractFactory.CreateiωCrossJoinElementFactory();
+
             this.iωIntPtr = Marshal.AllocHGlobal(
                (this.Surgeons.Count() + 1)
                *
@@ -504,6 +506,8 @@
         private IikCrossJoinElementFactory ikCrossJoinElementFactory { get; }
 
         private IilωCrossJoinElementFactory ilωCrossJoinElementFactory { get; }
+
+        private IiωCrossJoinElementFactory iωCrossJoinElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1213,7 +1217,7 @@
                         a: i,
                         aUpperBound: iUpperBound,
                         b: ω,
-                        bLowerBound: ωLowerBound)] = new iωCrossJoinElement(
+                        bLowerBound: ωLowerBound)] = this.iωCrossJoinElementFactory.Create(
                             iIndexElement: i,
                             ωIndexElement: ω,
                             iωOI: abMapping.abOI(
