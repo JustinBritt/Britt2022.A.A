@@ -4,6 +4,8 @@
 
     public interface IBParameterElementFactory
     {
-        BParameterElement Create();
+        BParameterElement Create(
+            int rIndexElement,
+            int value);
     }
 }

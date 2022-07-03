@@ -9,13 +9,17 @@
         {
         }
 
-        public BParameterElement Create()
+        public BParameterElement Create(
+            int rIndexElement,
+            int value)
         {
             BParameterElement parameterElement;
 
             try
             {
-                parameterElement = new BParameterElement();
+                parameterElement = new BParameterElement(
+                    rIndexElement: rIndexElement,
+                    value: value);
             }
             finally
             {
