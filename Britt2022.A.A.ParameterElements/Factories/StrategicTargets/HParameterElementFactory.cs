@@ -9,13 +9,17 @@
         {
         }
 
-        public HParameterElement Create()
+        public HParameterElement Create(
+            int iIndexElement,
+            int value)
         {
             HParameterElement parameterElement;
 
             try
             {
-                parameterElement = new HParameterElement();
+                parameterElement = new HParameterElement(
+                    iIndexElement: iIndexElement,
+                    value: value);
             }
             finally
             {
