@@ -4,6 +4,8 @@
 
     public interface IΡParameterElementFactory
     {
-        ΡParameterElement Create();
+        ΡParameterElement Create(
+            int ωIndexElement,
+            double value);
     }
 }

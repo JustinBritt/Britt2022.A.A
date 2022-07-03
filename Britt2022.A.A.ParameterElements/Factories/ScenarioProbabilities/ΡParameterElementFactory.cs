@@ -9,13 +9,17 @@
         {
         }
 
-        public ΡParameterElement Create()
+        public ΡParameterElement Create(
+            int ωIndexElement,
+            double value)
         {
             ΡParameterElement parameterElement;
 
             try
             {
-                parameterElement = new ΡParameterElement();
+                parameterElement = new ΡParameterElement(
+                    ωIndexElement: ωIndexElement,
+                    value: value);
             }
             finally
             {
