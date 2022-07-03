@@ -4,6 +4,10 @@
 
     public interface IkωCrossJoinElementFactory
     {
-        kωCrossJoinElement Create();
+        kωCrossJoinElement Create(
+            int kIndexElement,
+            int ωIndexElement,
+            int kωOI,
+            int kωZI);
     }
 }

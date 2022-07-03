@@ -9,13 +9,21 @@
         {
         }
 
-        public kωCrossJoinElement Create()
+        public kωCrossJoinElement Create(
+            int kIndexElement,
+            int ωIndexElement,
+            int kωOI,
+            int kωZI)
         {
             kωCrossJoinElement crossJoinElement;
 
             try
             {
-                crossJoinElement = new kωCrossJoinElement();
+                crossJoinElement = new kωCrossJoinElement(
+                    kIndexElement: kIndexElement,
+                    ωIndexElement: ωIndexElement,
+                    kωOI: kωOI,
+                    kωZI: kωZI);
             }
             finally
             {
