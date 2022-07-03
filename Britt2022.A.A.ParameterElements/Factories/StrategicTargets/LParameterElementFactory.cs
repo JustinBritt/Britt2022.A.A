@@ -9,13 +9,17 @@
         {
         }
 
-        public LParameterElement Create()
+        public LParameterElement Create(
+            int iIndexElement,
+            int value)
         {
             LParameterElement parameterElement;
 
             try
             {
-                parameterElement = new LParameterElement();
+                parameterElement = new LParameterElement(
+                    iIndexElement: iIndexElement,
+                    value: value);
             }
             finally
             {

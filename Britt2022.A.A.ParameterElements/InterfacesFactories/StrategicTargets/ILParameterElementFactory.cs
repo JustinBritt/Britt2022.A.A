@@ -4,6 +4,8 @@
 
     public interface ILParameterElementFactory
     {
-        LParameterElement Create();
+        LParameterElement Create(
+            int iIndexElement,
+            int value);
     }
 }
