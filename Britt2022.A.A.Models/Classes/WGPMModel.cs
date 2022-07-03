@@ -410,6 +410,8 @@
                ΠParameterElement.SizeInBytes);
 
             // Ρ(ω)
+            this.ΡParameterElementFactory = parameterElementsAbstractFactory.CreateΡParameterElementFactory();
+
             this.ScenarioProbabilities = WGPMInputContext
                 .ScenarioProbabilities
                 .OrderBy(w => w.Key.Value.Value)
@@ -566,6 +568,8 @@
         private IpParameterElementFactory pParameterElementFactory { get; }
 
         private IΠParameterElementFactory ΠParameterElementFactory { get; }
+
+        private IΡParameterElementFactory ΡParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1659,7 +1663,7 @@
 
             for (int w = 1; w < ω.Length; w = w + 1)
             {
-                ΡSpan[ω[w].Value] = new ΡParameterElement(
+                ΡSpan[ω[w].Value] = this.ΡParameterElementFactory.Create(
                     ωIndexElement: ω[w].Value,
                     value: (double)this.ScenarioProbabilities[ω[w].Value - 1].Value.Value.Value);
             }
