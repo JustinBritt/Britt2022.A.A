@@ -442,6 +442,8 @@
                ΦParameterElement.SizeInBytes);
 
             // Ω(i, k)
+            this.ΩParameterElementFactory = parameterElementsAbstractFactory.CreateΩParameterElementFactory();
+
             this.SurgeonDayAvailabilities = WGPMInputContext
                 .SurgeonDayAvailabilities
                 .OrderBy(w => int.Parse(w.Item1.Id))
@@ -574,6 +576,8 @@
         private IΡParameterElementFactory ΡParameterElementFactory { get; }
 
         private IΦParameterElementFactory ΦParameterElementFactory { get; }
+
+        private IΩParameterElementFactory ΩParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1711,7 +1715,7 @@
 
             for (int w = 1; w < ik.Length; w = w + 1)
             {
-                ΩSpan[ik[w].ikOI] = new ΩParameterElement(
+                ΩSpan[ik[w].ikOI] = this.ΩParameterElementFactory.Create(
                     iIndexElement: ik[w].iIndexElement,
                     kIndexElement: ik[w].kIndexElement,
                     value: this.SurgeonDayAvailabilities[ik[w].ikZI].Item3.Value.Value ? 1 : 0);
