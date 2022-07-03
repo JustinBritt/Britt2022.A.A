@@ -9,13 +9,21 @@
         {
         }
 
-        public xVariableElement Create()
+        public xVariableElement Create(
+            int iIndexElement,
+            int jIndexElement,
+            int kIndexElement,
+            int value)
         {
             xVariableElement variableElement;
 
             try
             {
-                variableElement = new xVariableElement();
+                variableElement = new xVariableElement(
+                    iIndexElement: iIndexElement,
+                    jIndexElement: jIndexElement,
+                    kIndexElement: kIndexElement,
+                    value: value);
             }
             finally
             {

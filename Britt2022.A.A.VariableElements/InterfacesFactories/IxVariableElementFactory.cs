@@ -4,6 +4,10 @@
 
     public interface IxVariableElementFactory
     {
-        xVariableElement Create();
+        xVariableElement Create(
+            int iIndexElement,
+            int jIndexElement,
+            int kIndexElement,
+            int value);
     }
 }
