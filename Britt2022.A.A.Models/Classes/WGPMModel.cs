@@ -330,6 +330,8 @@
                LParameterElement.SizeInBytes);
 
             // N(i)
+            this.NParameterElementFactory = parameterElementsAbstractFactory.CreateNParameterElementFactory();
+
             this.SurgeonStrategicTargets = WGPMInputContext
                 .SurgeonStrategicTargetNumberPatients
                 .OrderBy(w => int.Parse(w.Key.Id))
@@ -550,6 +552,8 @@
         private IhiParameterElementFactory hParameterElementFactory { get; }
 
         private ILParameterElementFactory LParameterElementFactory { get; }
+
+        private INParameterElementFactory NParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1532,7 +1536,7 @@
 
             for (int w = 1; w < i.Length; w = w + 1)
             {
-                NSpan[i[w].Value] = new NParameterElement(
+                NSpan[i[w].Value] = this.NParameterElementFactory.Create(
                     iIndexElement: i[w].Value,
                     value: this.SurgeonStrategicTargets[i[w].Value - 1].Value.Value.Value);
             }
