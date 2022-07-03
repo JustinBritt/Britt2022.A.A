@@ -217,6 +217,8 @@
                kωCrossJoinElement.SizeInBytes);
 
             // A(i, ω)
+            this.AParameterElementFactory = parameterElementsAbstractFactory.CreateAParameterElementFactory();
+
             this.SurgeonScenarioWeightedAverageSurgicalDurations = WGPMInputContext
                 .SurgeonScenarioWeightedAverageSurgicalDurations
                 .OrderBy(w => int.Parse(w.Item1.Id))
@@ -522,6 +524,8 @@
         private IjkCrossJoinElementFactory jkCrossJoinElementFactory { get; }
 
         private IkωCrossJoinElementFactory kωCrossJoinElementFactory { get; }
+
+        private IAParameterElementFactory AParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1365,7 +1369,7 @@
 
             for (int w = 1; w < iω.Length; w = w + 1)
             {
-                ASpan[iω[w].iωOI] = new AParameterElement(
+                ASpan[iω[w].iωOI] = this.AParameterElementFactory.Create(
                     iIndexElement: iω[w].iIndexElement,
                     ωIndexElement: iω[w].ωIndexElement,
                     value: (double)this.SurgeonScenarioWeightedAverageSurgicalDurations[iω[w].iωZI].Item3.Value.Value);
