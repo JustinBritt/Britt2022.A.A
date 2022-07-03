@@ -1462,7 +1462,7 @@
 
             for (int w = 1; w < r.Length; w = w + 1)
             {
-                B1Span[r[w].Value] = new B1ParameterElement(
+                B1Span[r[w].Value] = this.B1ParameterElementFactory.Create(
                     this.SurgicalSpecialtyLowerBounds[r[w].Value - 1].Value);
             }
 
