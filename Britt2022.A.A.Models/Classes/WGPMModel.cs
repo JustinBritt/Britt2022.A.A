@@ -222,6 +222,12 @@
                *
                kωCrossJoinElement.SizeInBytes);
 
+            this.abMappingFactory = crossJoinsAbstractFactory.CreateabMappingFactory();
+
+            this.abcMappingFactory = crossJoinsAbstractFactory.CreateabcMappingFactory();
+
+            this.abcdMappingFactory = crossJoinsAbstractFactory.CreateabcdMappingFactory();
+
             // A(i, ω)
             this.AParameterElementFactory = parameterElementsAbstractFactory.CreateAParameterElementFactory();
 
@@ -558,6 +564,12 @@
         private IjkCrossJoinElementFactory jkCrossJoinElementFactory { get; }
 
         private IkωCrossJoinElementFactory kωCrossJoinElementFactory { get; }
+
+        private IabMappingFactory abMappingFactory { get; }
+
+        private IabcMappingFactory abcMappingFactory { get; }
+
+        private IabcdMappingFactory abcdMappingFactory { get; }
 
         private IAParameterElementFactory AParameterElementFactory { get; }
 
