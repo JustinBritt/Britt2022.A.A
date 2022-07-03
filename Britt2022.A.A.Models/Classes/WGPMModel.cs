@@ -343,6 +343,8 @@
                NParameterElement.SizeInBytes);
 
             // n(i, ω)
+            this.nParameterElementFactory = parameterElementsAbstractFactory.CreateniωParameterElementFactory();
+
             this.SurgeonScenarioMaximumNumberPatients = WGPMInputContext
                 .SurgeonScenarioMaximumNumberPatients
                 .OrderBy(w => int.Parse(w.Item1.Id))
@@ -554,6 +556,8 @@
         private ILParameterElementFactory LParameterElementFactory { get; }
 
         private INParameterElementFactory NParameterElementFactory { get; }
+
+        private IniωParameterElementFactory nParameterElementFactory { get; }
 
         // i
         public Organization[] Surgeons { get; }
@@ -1556,7 +1560,7 @@
 
             for (int w = 1; w < iω.Length; w = w + 1)
             {
-                nSpan[iω[w].iωOI] = new niωParameterElement(
+                nSpan[iω[w].iωOI] = this.nParameterElementFactory.Create(
                     iIndexElement: iω[w].iIndexElement,
                     ωIndexElement: iω[w].ωIndexElement,
                     value: this.SurgeonScenarioMaximumNumberPatients[iω[w].iωZI].Item3.Value.Value);
