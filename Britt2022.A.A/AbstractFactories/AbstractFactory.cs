@@ -8,6 +8,8 @@
     using Britt2022.A.A.Contexts.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoinElements.AbstractFactories;
     using Britt2022.A.A.CrossJoinElements.InterfacesAbstractFactories;
+    using Britt2022.A.A.CrossJoins.AbstractFactories;
+    using Britt2022.A.A.CrossJoins.InterfacesAbstractFactories;
     using Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model.AbstractFactories;
     using Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model.InterfacesAbstractFactories;
     using Britt2022.A.A.Exports.AbstractFactories;
@@ -102,6 +104,21 @@
             try
             {
                 abstractFactory = new CrossJoinElementsAbstractFactory();
+            }
+            finally
+            {
+            }
+
+            return abstractFactory;
+        }
+
+        public ICrossJoinsAbstractFactory CreateCrossJoinsAbstractFactory()
+        {
+            ICrossJoinsAbstractFactory abstractFactory = null;
+
+            try
+            {
+                abstractFactory = new CrossJoinsAbstractFactory();
             }
             finally
             {
