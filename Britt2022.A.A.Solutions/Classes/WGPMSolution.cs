@@ -223,6 +223,7 @@
                             WGPMModel.Goal4),
                         overallWallTime,
                         WGPMModel.x.GetElementsAt(
+                            resultElementsAbstractFactory.CreatexResultElementFactory(),
                             WGPMModel.PlanningHorizon,
                             WGPMModel.OperatingRooms,
                             WGPMModel.Surgeons,
