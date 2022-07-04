@@ -6,6 +6,9 @@
 
     public interface Id1MinusResultElementFactory
     {
-        d1MinusResultElement Create();
+        d1MinusResultElement Create(
+            Organization surgeon,
+            PositiveInt scenario,
+            int value);
     }
 }
