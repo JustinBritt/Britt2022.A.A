@@ -147,6 +147,7 @@
                             WGPMModel.Getv(),
                             WGPMModel.GetxWithoutClearing()),
                         WGPMModel.I.GetElementsAt(
+                            resultElementsAbstractFactory.CreateIResultElementFactory(),
                             WGPMModel.PlanningHorizon,
                             WGPMModel.Scenarios,
                             WGPMModel.Geti(),

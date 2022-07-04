@@ -14,6 +14,7 @@
     public interface II : IDisposable
     {
         ReadOnlySpan<IResultElement> GetElementsAt(
+            IIResultElementFactory IResultElementFactory,
             FhirDateTime[] planningHorizon,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,

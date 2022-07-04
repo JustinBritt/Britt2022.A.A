@@ -41,6 +41,7 @@
         private IntPtr SumsIntPtr { get; }
 
         public unsafe ReadOnlySpan<IResultElement> GetElementsAt(
+            IIResultElementFactory IResultElementFactory,
             FhirDateTime[] planningHorizon,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,
