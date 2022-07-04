@@ -12,6 +12,7 @@
     public interface Ix
     {
         ReadOnlySpan<xResultElement> GetElementsAt(
+            IxResultElementFactory xResultElementFactory,
             FhirDateTime[] planningHorizon,
             Location[] operatingRooms,
             Organization[] surgeons,
