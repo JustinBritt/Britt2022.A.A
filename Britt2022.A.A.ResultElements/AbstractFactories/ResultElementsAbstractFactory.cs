@@ -33,6 +33,21 @@
             return factory;
         }
 
+        public IIMaxResultElementFactory CreateIMaxResultElementFactory()
+        {
+            IIMaxResultElementFactory factory = null;
+
+            try
+            {
+                factory = new IMaxResultElementFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IxResultElementFactory CreatexResultElementFactory()
         {
             IxResultElementFactory factory = null;

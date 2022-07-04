@@ -10,6 +10,8 @@
     {
         IIResultElementFactory CreateIResultElementFactory();
 
+        IIMaxResultElementFactory CreateIMaxResultElementFactory();
+
         IxResultElementFactory CreatexResultElementFactory();
     }
 }
