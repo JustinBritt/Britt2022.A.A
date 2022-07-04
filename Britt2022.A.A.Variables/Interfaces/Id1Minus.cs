@@ -15,6 +15,7 @@
     public interface Id1Minus : IDisposable
     {
         ReadOnlySpan<d1MinusResultElement> GetElementsAt(
+            Id1MinusResultElementFactory d1MinusResultElementFactory,
             Organization[] surgeons,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,

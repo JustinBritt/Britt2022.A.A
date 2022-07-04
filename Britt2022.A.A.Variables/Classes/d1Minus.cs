@@ -40,6 +40,7 @@
         private IntPtr SumsIntPtr { get; }
 
         public unsafe ReadOnlySpan<d1MinusResultElement> GetElementsAt(
+            Id1MinusResultElementFactory d1MinusResultElementFactory,
             Organization[] surgeons,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,

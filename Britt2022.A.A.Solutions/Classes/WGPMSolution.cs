@@ -113,6 +113,7 @@
                         dependenciesAbstractFactory,
                         resultsAbstractFactory,
                         WGPMModel.d1Minus.GetElementsAt(
+                            resultElementsAbstractFactory.Created1MinusResultElementFactory(),
                             WGPMModel.Surgeons,
                             WGPMModel.Scenarios,
                             WGPMModel.Geti(),
