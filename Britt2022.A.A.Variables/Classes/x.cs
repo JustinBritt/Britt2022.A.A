@@ -34,7 +34,7 @@
 
             for (int w = 1; w < ijk.Length; w = w + 1)
             {
-                xResultSpan[ijk[w].ijkZI] = new xResultElement(
+                xResultSpan[ijk[w].ijkZI] = xResultElementFactory.Create(
                     surgeon: surgeons[ijk[w].iIndexElement - 1],
                     operatingRoom: operatingRooms[ijk[w].jIndexElement - 1],
                     day: planningHorizon[ijk[w].kIndexElement - 1],
