@@ -48,6 +48,21 @@
             return factory;
         }
 
+        public IIMinResultElementFactory CreateIMinResultElementFactory()
+        {
+            IIMinResultElementFactory factory = null;
+
+            try
+            {
+                factory = new IMinResultElementFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IxResultElementFactory CreatexResultElementFactory()
         {
             IxResultElementFactory factory = null;

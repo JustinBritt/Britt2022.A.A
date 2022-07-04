@@ -12,6 +12,8 @@
 
         IIMaxResultElementFactory CreateIMaxResultElementFactory();
 
+        IIMinResultElementFactory CreateIMinResultElementFactory();
+
         IxResultElementFactory CreatexResultElementFactory();
     }
 }
