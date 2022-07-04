@@ -35,6 +35,7 @@
         private IntPtr MinimumValuesIntPtr { get; }
 
         public unsafe ReadOnlySpan<IMinResultElement> GetElementsAt(
+            IIMinResultElementFactory IMinResultElementFactory,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
@@ -59,7 +60,7 @@
 
             for (int w = 1; w < ω.Length; w = w + 1)
             {
-                IMinResultSpan[ω[w].Value - 1] = new IMinResultElement(
+                IMinResultSpan[ω[w].Value - 1] = IMinResultElementFactory.Create(
                     scenario: scenarios[ω[w].Value - 1],
                     value: (decimal)IMinVariableSpan[ω[w].Value].Value);
             }

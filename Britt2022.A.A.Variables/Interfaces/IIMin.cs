@@ -13,6 +13,7 @@
     public interface IIMin : IDisposable
     {
         ReadOnlySpan<IMinResultElement> GetElementsAt(
+            IIMinResultElementFactory IMinResultElementFactory,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,

@@ -175,6 +175,7 @@
                                 WGPMModel.GetΦ(),
                                 WGPMModel.GetxWithoutClearing())),
                         WGPMModel.IMin.GetElementsAt(
+                            resultElementsAbstractFactory.CreateIMinResultElementFactory(),
                             WGPMModel.Scenarios,
                             WGPMModel.Geti(),
                             WGPMModel.Getj(),
