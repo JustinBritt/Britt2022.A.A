@@ -8,6 +8,7 @@
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
     using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
+    using Britt2022.A.A.ResultElements.InterfacesFactories.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.A.ResultElements.Structs.DayScenarioRecoveryWardCensuses;
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
