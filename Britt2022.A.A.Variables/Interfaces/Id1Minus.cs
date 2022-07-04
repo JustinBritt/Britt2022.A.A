@@ -10,6 +10,7 @@
     using Britt2022.A.A.ParameterElements.Structs.StrategicTargets;
     using Britt2022.A.A.ResultElements.InterfacesFactories.SurgeonScenarioDeviations;
     using Britt2022.A.A.ResultElements.Structs.SurgeonScenarioDeviations;
+    using Britt2022.A.A.VariableElements.InterfacesFactories;
     using Britt2022.A.A.VariableElements.Structs;
 
     public interface Id1Minus : IDisposable
