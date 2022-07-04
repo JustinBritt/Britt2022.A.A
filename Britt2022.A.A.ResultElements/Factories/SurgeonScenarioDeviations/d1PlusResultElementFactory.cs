@@ -11,13 +11,19 @@
         {
         }
 
-        public d1PlusResultElement Create()
+        public d1PlusResultElement Create(
+            Organization surgeon,
+            PositiveInt scenario,
+            int value)
         {
             d1PlusResultElement resultElement = default;
 
             try
             {
-                resultElement = new d1PlusResultElement();
+                resultElement = new d1PlusResultElement(
+                    surgeon: surgeon,
+                    scenario: scenario,
+                    value: value);
             }
             finally
             {
