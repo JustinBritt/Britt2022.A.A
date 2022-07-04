@@ -1,5 +1,7 @@
 ﻿namespace Britt2022.A.A.ResultElements.Factories.SurgeonOperatingRoomDayScenarioDeviations
 {
+    using Hl7.Fhir.Model;
+
     using Britt2022.A.A.ResultElements.InterfacesFactories.SurgeonOperatingRoomDayScenarioDeviations;
     using Britt2022.A.A.ResultElements.Structs.SurgeonOperatingRoomDayScenarioDeviations;
 
