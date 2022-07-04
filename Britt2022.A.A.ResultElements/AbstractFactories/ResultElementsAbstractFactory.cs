@@ -18,6 +18,21 @@
         {
         }
 
+        public Id1MinusResultElementFactory Created1MinusResultElementFactory()
+        {
+            Id1MinusResultElementFactory factory = null;
+
+            try
+            {
+                factory = new d1MinusResultElementFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IIResultElementFactory CreateIResultElementFactory()
         {
             IIResultElementFactory factory = null;

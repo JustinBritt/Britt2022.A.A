@@ -8,6 +8,8 @@
 
     public interface IResultElementsAbstractFactory
     {
+        Id1MinusResultElementFactory Created1MinusResultElementFactory();
+
         IIResultElementFactory CreateIResultElementFactory();
 
         IIMaxResultElementFactory CreateIMaxResultElementFactory();
