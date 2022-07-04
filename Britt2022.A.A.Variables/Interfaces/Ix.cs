@@ -5,6 +5,7 @@
     using Hl7.Fhir.Model;
 
     using Britt2022.A.A.CrossJoinElements.Structs;
+    using Britt2022.A.A.ResultElements.InterfacesFactories.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.A.ResultElements.Structs.SurgeonOperatingRoomDayAssignments;
     using Britt2022.A.A.VariableElements.Structs;
 
