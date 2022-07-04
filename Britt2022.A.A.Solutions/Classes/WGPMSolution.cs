@@ -133,6 +133,7 @@
                             WGPMModel.Getn(),
                             WGPMModel.GetxWithoutClearing()),
                         WGPMModel.d2Minus.GetElementsAt(
+                            resultElementsAbstractFactory.Created2MinusResultElementFactory(),
                             WGPMModel.Surgeons,
                             WGPMModel.OperatingRooms,
                             WGPMModel.PlanningHorizon,

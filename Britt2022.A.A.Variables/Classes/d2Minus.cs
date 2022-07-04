@@ -37,6 +37,7 @@
         private IntPtr d2MinusIntPtr { get; }
 
         public unsafe ReadOnlySpan<d2MinusResultElement> GetElementsAt(
+            Id2MinusResultElementFactory d2MinusResultElementFactory,
             Organization[] surgeons,
             Location[] operatingRooms,
             FhirDateTime[] planningHorizon,
