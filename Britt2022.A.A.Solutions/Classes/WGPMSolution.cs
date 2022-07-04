@@ -123,6 +123,7 @@
                             WGPMModel.Getn(),
                             WGPMModel.GetxWithoutClearing()),
                         WGPMModel.d1Plus.GetElementsAt(
+                            resultElementsAbstractFactory.Created1PlusResultElementFactory(),
                             WGPMModel.Surgeons,
                             WGPMModel.Scenarios,
                             WGPMModel.Geti(),
