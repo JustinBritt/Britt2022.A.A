@@ -85,7 +85,7 @@
 
             for (int w = 1; w < ijk.Length; w = w + 1)
             {
-                x0Span[ijk[w].ijkOI] = new xVariableElement(
+                x0Span[ijk[w].ijkOI] = xVariableElementFactory.Create(
                     ijk[w].iIndexElement,
                     ijk[w].jIndexElement,
                     ijk[w].kIndexElement,
@@ -100,7 +100,7 @@
 
             for (int w = 1; w < ijk.Length; w = w + 1)
             {
-                xStarSpan[ijk[w].ijkOI] = new xVariableElement(
+                xStarSpan[ijk[w].ijkOI] = xVariableElementFactory.Create(
                     ijk[w].iIndexElement,
                     ijk[w].jIndexElement,
                     ijk[w].kIndexElement,
@@ -115,7 +115,7 @@
 
             for (int w = 1; w < ijk.Length; w = w + 1)
             {
-                xPrimeSpan[ijk[w].ijkOI] = new xVariableElement(
+                xPrimeSpan[ijk[w].ijkOI] = xVariableElementFactory.Create(
                     ijk[w].iIndexElement,
                     ijk[w].jIndexElement,
                     ijk[w].kIndexElement,
@@ -130,7 +130,7 @@
 
             for (int w = 1; w < ijk.Length; w = w + 1)
             {
-                xStarPrimeSpan[ijk[w].ijkOI] = new xVariableElement(
+                xStarPrimeSpan[ijk[w].ijkOI] = xVariableElementFactory.Create(
                     ijk[w].iIndexElement,
                     ijk[w].jIndexElement,
                     ijk[w].kIndexElement,
