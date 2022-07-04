@@ -13,6 +13,7 @@
     public interface IIMax : IDisposable
     {
         ReadOnlySpan<IMaxResultElement> GetElementsAt(
+            IIMaxResultElementFactory IMaxResultElementFactory,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,

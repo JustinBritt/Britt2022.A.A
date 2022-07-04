@@ -159,6 +159,7 @@
                             WGPMModel.GetΦ(),
                             WGPMModel.GetxWithoutClearing()),
                         WGPMModel.IMax.GetElementsAt(
+                            resultElementsAbstractFactory.CreateIMaxResultElementFactory(),
                             WGPMModel.Scenarios,
                             WGPMModel.Geti(),
                             WGPMModel.Getj(),

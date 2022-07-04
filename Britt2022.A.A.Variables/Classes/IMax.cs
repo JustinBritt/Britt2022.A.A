@@ -35,6 +35,7 @@
         private IntPtr MaximumValuesIntPtr { get; }
 
         public unsafe ReadOnlySpan<IMaxResultElement> GetElementsAt(
+            IIMaxResultElementFactory IMaxResultElementFactory,
             PositiveInt[] scenarios,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
