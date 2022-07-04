@@ -19,6 +19,7 @@
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesAbstractFactories;
     using Britt2022.A.A.ObjectiveFunctions.InterfacesAbstractFactories;
     using Britt2022.A.A.ParameterElements.InterfacesAbstractFactories;
+    using Britt2022.A.A.ResultElements.InterfacesAbstractFactories;
     using Britt2022.A.A.Results.InterfacesAbstractFactories;
     using Britt2022.A.A.SA.InterfacesAbstractFactories;
     using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
