@@ -68,7 +68,7 @@
 
             for (int w = 1; w < iω.Length; w = w + 1)
             {
-                d1MinusResultSpan[iω[w].iωZI] = new d1MinusResultElement(
+                d1MinusResultSpan[iω[w].iωZI] = d1MinusResultElementFactory.Create(
                     surgeon: surgeons[iω[w].iIndexElement - 1],
                     scenario: scenarios[iω[w].ωIndexElement - 1],
                     value: d1MinusVariableSpan[iω[w].iωOI].Value);
