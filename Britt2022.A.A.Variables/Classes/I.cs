@@ -72,7 +72,7 @@
 
             for (int w = 1; w < kω.Length; w = w + 1)
             {
-                IResultSpan[kω[w].kωZI] = new IResultElement(
+                IResultSpan[kω[w].kωZI] = IResultElementFactory.Create(
                     day: planningHorizon[kω[w].kIndexElement - 1],
                     scenario: scenarios[kω[w].ωIndexElement - 1],
                     value: (decimal)IVariableSpan[kω[w].kωOI].Value);
