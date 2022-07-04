@@ -15,7 +15,7 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
 
-    public sealed class d1Minus : Id1Minus
+    internal sealed class d1Minus : Id1Minus
     {
         public d1Minus(
             ReadOnlySpan<iIndexElement> i,
