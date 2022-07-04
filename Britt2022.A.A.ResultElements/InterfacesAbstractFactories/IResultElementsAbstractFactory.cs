@@ -8,6 +8,8 @@
 
     public interface IResultElementsAbstractFactory
     {
+        IIResultElementFactory CreateIResultElementFactory();
+
         IxResultElementFactory CreatexResultElementFactory();
     }
 }

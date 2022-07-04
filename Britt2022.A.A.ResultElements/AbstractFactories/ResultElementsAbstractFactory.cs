@@ -18,6 +18,21 @@
         {
         }
 
+        public IIResultElementFactory CreateIResultElementFactory()
+        {
+            IIResultElementFactory factory = null;
+
+            try
+            {
+                factory = new IResultElementFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IxResultElementFactory CreatexResultElementFactory()
         {
             IxResultElementFactory factory = null;
