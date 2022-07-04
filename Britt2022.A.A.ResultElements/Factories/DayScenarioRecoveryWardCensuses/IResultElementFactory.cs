@@ -11,13 +11,19 @@
         {
         }
 
-        public IResultElement Create()
+        public IResultElement Create(
+            FhirDateTime day,
+            PositiveInt scenario,
+            decimal value)
         {
             IResultElement resultElement = default;
 
             try
             {
-                resultElement = new IResultElement();
+                resultElement = new IResultElement(
+                    day: day,
+                    scenario: scenario,
+                    value: value);
             }
             finally
             {

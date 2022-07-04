@@ -6,6 +6,9 @@
 
     public interface IIResultElementFactory
     {
-        IResultElement Create();
+        IResultElement Create(
+            FhirDateTime day,
+            PositiveInt scenario,
+            decimal value);
     }
 }
