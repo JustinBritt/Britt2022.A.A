@@ -11,13 +11,17 @@
         {
         }
 
-        public IMinResultElement Create()
+        public IMinResultElement Create(
+            PositiveInt scenario,
+            decimal value)
         {
             IMinResultElement resultElement = default;
 
             try
             {
-                resultElement = new IMinResultElement();
+                resultElement = new IMinResultElement(
+                    scenario: scenario,
+                    value: value);
             }
             finally
             {

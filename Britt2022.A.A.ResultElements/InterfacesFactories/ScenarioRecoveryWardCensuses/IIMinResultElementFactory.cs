@@ -6,6 +6,8 @@
 
     public interface IIMinResultElementFactory
     {
-        IMinResultElement Create();
+        IMinResultElement Create(
+            PositiveInt scenario,
+            decimal value);
     }
 }
