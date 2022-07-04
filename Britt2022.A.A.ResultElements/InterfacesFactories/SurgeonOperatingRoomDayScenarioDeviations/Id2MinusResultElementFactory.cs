@@ -6,6 +6,11 @@
 
     public interface Id2MinusResultElementFactory
     {
-        d2MinusResultElement Create();
+        d2MinusResultElement Create(
+            Organization surgeon,
+            Location operatingRoom,
+            FhirDateTime day,
+            PositiveInt scenario,
+            decimal value);
     }
 }

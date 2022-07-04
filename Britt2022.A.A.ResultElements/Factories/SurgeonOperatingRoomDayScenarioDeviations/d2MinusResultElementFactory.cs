@@ -11,13 +11,23 @@
         {
         }
 
-        public d2MinusResultElement Create()
+        public d2MinusResultElement Create(
+            Organization surgeon,
+            Location operatingRoom,
+            FhirDateTime day,
+            PositiveInt scenario,
+            decimal value)
         {
             d2MinusResultElement resultElement = default;
 
             try
             {
-                resultElement = new d2MinusResultElement();
+                resultElement = new d2MinusResultElement(
+                    surgeon: surgeon,
+                    operatingRoom: operatingRoom,
+                    day: day,
+                    scenario: scenario,
+                    value: value);
             }
             finally
             {
