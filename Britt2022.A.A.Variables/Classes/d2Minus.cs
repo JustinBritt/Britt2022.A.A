@@ -71,7 +71,7 @@
 
             for (int w = 1; w < ijkω.Length; w = w + 1)
             {
-                d2MinusResultSpan[ijkω[w].ijkωZI] = new d2MinusResultElement(
+                d2MinusResultSpan[ijkω[w].ijkωZI] = d2MinusResultElementFactory.Create(
                     surgeon: surgeons[ijkω[w].iIndexElement - 1],
                     operatingRoom: operatingRooms[ijkω[w].jIndexElement - 1],
                     day: planningHorizon[ijkω[w].kIndexElement - 1],
