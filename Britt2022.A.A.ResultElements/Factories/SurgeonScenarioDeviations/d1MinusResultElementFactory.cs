@@ -1,5 +1,7 @@
 ﻿namespace Britt2022.A.A.ResultElements.Factories.SurgeonScenarioDeviations
 {
+    using Hl7.Fhir.Model;
+
     using Britt2022.A.A.ResultElements.InterfacesFactories.SurgeonScenarioDeviations;
     using Britt2022.A.A.ResultElements.Structs.SurgeonScenarioDeviations;
 
