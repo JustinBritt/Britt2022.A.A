@@ -48,6 +48,21 @@
             return factory;
         }
 
+        public Id2MinusResultElementFactory Created2MinusResultElementFactory()
+        {
+            Id2MinusResultElementFactory factory = null;
+
+            try
+            {
+                factory = new d2MinusResultElementFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IIResultElementFactory CreateIResultElementFactory()
         {
             IIResultElementFactory factory = null;
