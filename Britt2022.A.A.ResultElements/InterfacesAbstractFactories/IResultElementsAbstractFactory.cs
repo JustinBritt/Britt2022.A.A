@@ -10,6 +10,8 @@
     {
         Id1MinusResultElementFactory Created1MinusResultElementFactory();
 
+        Id1PlusResultElementFactory Created1PlusResultElementFactory();
+
         IIResultElementFactory CreateIResultElementFactory();
 
         IIMaxResultElementFactory CreateIMaxResultElementFactory();

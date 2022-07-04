@@ -33,6 +33,21 @@
             return factory;
         }
 
+        public Id1PlusResultElementFactory Created1PlusResultElementFactory()
+        {
+            Id1PlusResultElementFactory factory = null;
+
+            try
+            {
+                factory = new d1PlusResultElementFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IIResultElementFactory CreateIResultElementFactory()
         {
             IIResultElementFactory factory = null;
