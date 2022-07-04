@@ -11,13 +11,17 @@
         {
         }
 
-        public IMaxResultElement Create()
+        public IMaxResultElement Create(
+            PositiveInt scenario,
+            decimal value)
         {
             IMaxResultElement resultElement = default;
 
             try
             {
-                resultElement = new IMaxResultElement();
+                resultElement = new IMaxResultElement(
+                    scenario: scenario,
+                    value: value);
             }
             finally
             {

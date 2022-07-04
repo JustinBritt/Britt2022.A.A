@@ -6,6 +6,8 @@
 
     public interface IIMaxResultElementFactory
     {
-        IMaxResultElement Create();
+        IMaxResultElement Create(
+            PositiveInt scenario,
+            decimal value);
     }
 }
