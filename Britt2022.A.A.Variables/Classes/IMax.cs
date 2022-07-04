@@ -60,7 +60,7 @@
 
             for (int w = 1; w < ω.Length; w = w + 1)
             {
-                IMaxResultSpan[ω[w].Value - 1] = new IMaxResultElement(
+                IMaxResultSpan[ω[w].Value - 1] = IMaxResultElementFactory.Create(
                     scenario: scenarios[ω[w].Value - 1],
                     value: (decimal)IMaxVariableSpan[ω[w].Value].Value);
             }
