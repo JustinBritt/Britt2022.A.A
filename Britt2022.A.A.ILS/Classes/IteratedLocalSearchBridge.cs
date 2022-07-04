@@ -14,6 +14,7 @@
     using Britt2022.A.A.SingleEmbeddedLocalSearches.InterfacesAbstractFactories;
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
+    using Britt2022.A.A.VariableElements.InterfacesAbstractFactories;
 
     internal sealed class IteratedLocalSearchBridge : IIteratedLocalSearchBridge
     {
@@ -26,6 +27,7 @@
             IConstructionHeuristicAbstractFactory constructionHeuristicAbstractFactory,
             IILSAbstractFactory ILSAbstractFactory,
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IWGPMModel WGPMModel,
             IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
             ISingleEmbeddedLocalSearchParameters singleEmbeddedLocalSearchParameters,
@@ -35,6 +37,7 @@
                 constructionHeuristicFactory: constructionHeuristicAbstractFactory.CreateConstructionHeuristicFactory(),
                 neighbourhoodStructureFactory: neighbourhoodStructuresAbstractFactory.CreateRandomPairwiseSwapFactory(),
                 improvementHeuristicFactory: ILSAbstractFactory.CreateImprovementHeuristicFactory(),
+                xVariableElementFactory: variableElementsAbstractFactory.CreatexVariableElementFactory(),
                 parameters: singleEmbeddedLocalSearchParameters,
                 standaloneLocalSearchImprovementHeuristic: standaloneLocalSearchImprovementHeuristic,
                 standaloneLocalSearchParameters: standaloneLocalSearchParameters,
@@ -88,6 +91,7 @@
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IWGPMModel WGPMModel,
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration) 
@@ -96,6 +100,7 @@
                 constructionHeuristicAbstractFactory,
                 (IILSAbstractFactory)singleEmbeddedLocalSearchAbstractFactory,
                 neighbourhoodStructuresAbstractFactory,
+                variableElementsAbstractFactory,
                 WGPMModel,
                 this.GetStandaloneLocalSearchImprovementHeuristic(
                     standaloneLocalSearchAbstractFactory,

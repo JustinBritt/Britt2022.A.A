@@ -18,6 +18,7 @@
     using Britt2022.A.A.ParameterElements.Structs.SurgicalSpecialties;
     using Britt2022.A.A.SingleEmbeddedLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
+    using Britt2022.A.A.VariableElements.InterfacesFactories;
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
     using Britt2022.A.A.VNS.Interfaces;
@@ -30,6 +31,7 @@
 
         public unsafe void Search(
             INeighbourhoodStructureFactory neighbourhoodStructureFactory,
+            IxVariableElementFactory xVariableElementFactory,
             ISingleEmbeddedLocalSearchParameters parameters,
             IStandaloneLocalSearchImprovementHeuristic standaloneLocalSearchImprovementHeuristic,
             IStandaloneLocalSearchParameters standaloneLocalSearchParameters,

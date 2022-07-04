@@ -7,6 +7,7 @@
     using Britt2022.A.A.SingleEmbeddedLocalSearches.InterfacesAbstractFactories;
     using Britt2022.A.A.StandaloneLocalSearches.Interfaces;
     using Britt2022.A.A.StandaloneLocalSearches.InterfacesAbstractFactories;
+    using Britt2022.A.A.VariableElements.InterfacesAbstractFactories;
 
     public interface ISingleEmbeddedLocalSearchBridge : ILocalSearchBridge
     {
@@ -15,6 +16,7 @@
             INeighbourhoodStructuresAbstractFactory neighbourhoodStructuresAbstractFactory,
             ISingleEmbeddedLocalSearchAbstractFactory singleEmbeddedLocalSearchesAbstractFactory,
             IStandaloneLocalSearchAbstractFactory standaloneLocalSearchAbstractFactory,
+            IVariableElementsAbstractFactory variableElementsAbstractFactory,
             IWGPMModel WGPMModel,
             ISingleEmbeddedLocalSearchSolverConfiguration singleEmbeddedLocalSearchSolverConfiguration,
             IStandaloneLocalSearchSolverConfiguration standaloneLocalSearchSolverConfiguration);

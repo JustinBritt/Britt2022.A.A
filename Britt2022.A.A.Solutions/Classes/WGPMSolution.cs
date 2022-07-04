@@ -100,6 +100,7 @@
                             neighbourhoodStructuresAbstractFactory,
                             singleEmbeddedLocalSearchAbstractFactory,
                             standaloneLocalSearchAbstractFactory,
+                            variableElementsAbstractFactory,
                             WGPMModel,
                             singleEmbeddedLocalSearchSolverConfiguration,
                             standaloneLocalSearchSolverConfiguration);
