@@ -234,7 +234,6 @@
                 if (candidateEnergy < f[vB] || candidateEnergy <= incumbentEnergy)
                 {
                     // Then accept the candidate s : = s*
-
                 }
                 // Else reject the candidate s := s
                 else
