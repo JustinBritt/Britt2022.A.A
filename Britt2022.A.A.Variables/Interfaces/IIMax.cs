@@ -20,7 +20,7 @@
             ReadOnlySpan<kIndexElement> k,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            ReadOnlySpan<IVariableElement> I);
+            Span<IVariableElement> I);
 
         Span<IMaxVariableElement> GetValue(
             ReadOnlySpan<iIndexElement> i,
@@ -28,6 +28,6 @@
             ReadOnlySpan<kIndexElement> k,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            ReadOnlySpan<IVariableElement> I);
+            Span<IVariableElement> I);
     }
 }

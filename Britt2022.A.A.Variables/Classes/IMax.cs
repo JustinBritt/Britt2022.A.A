@@ -42,9 +42,9 @@
             ReadOnlySpan<kIndexElement> k,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            ReadOnlySpan<IVariableElement> I)
+            Span<IVariableElement> I)
         {
-            ReadOnlySpan<IMaxVariableElement> IMaxVariableSpan = this.GetValue(
+            Span<IMaxVariableElement> IMaxVariableSpan = this.GetValue(
                 i,
                 j,
                 k,
@@ -74,7 +74,7 @@
             ReadOnlySpan<kIndexElement> k,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            ReadOnlySpan<IVariableElement> I)
+            Span<IVariableElement> I)
         {
             Span<double> maximumValuesSpan = new Span<double>(
                 (void*)this.MaximumValuesIntPtr,

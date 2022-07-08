@@ -25,9 +25,9 @@
             ReadOnlySpan<ilωCrossJoinElement> ilω,
             ReadOnlySpan<kωCrossJoinElement> kω,
             ReadOnlySpan<ΦParameterElement> Φ,
-            ReadOnlySpan<xVariableElement> x);
+            Span<xVariableElement> x);
 
-        ReadOnlySpan<IVariableElement> GetValue(
+        Span<IVariableElement> GetValue(
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,
@@ -35,6 +35,6 @@
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ilωCrossJoinElement> ilω,
             ReadOnlySpan<ΦParameterElement> Φ,
-            ReadOnlySpan<xVariableElement> x);
+            Span<xVariableElement> x);
     }
 }

@@ -24,15 +24,15 @@
             ReadOnlySpan<iωCrossJoinElement> iω,
             ReadOnlySpan<NParameterElement> N,
             ReadOnlySpan<niωParameterElement> niω,
-            ReadOnlySpan<xVariableElement> x);
+            Span<xVariableElement> x);
 
-        ReadOnlySpan<d1PlusVariableElement> GetValue(
+        Span<d1PlusVariableElement> GetValue(
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ijkCrossJoinElement> ijk,
             ReadOnlySpan<iωCrossJoinElement> iω,
             ReadOnlySpan<NParameterElement> N,
             ReadOnlySpan<niωParameterElement> niω,
-            ReadOnlySpan<xVariableElement> x);
+            Span<xVariableElement> x);
     }
 }

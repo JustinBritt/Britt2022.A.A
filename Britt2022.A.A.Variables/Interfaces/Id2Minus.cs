@@ -27,9 +27,9 @@
             ReadOnlySpan<AParameterElement> A,
             ReadOnlySpan<niωParameterElement> niω,
             double v,
-            ReadOnlySpan<xVariableElement> x);
+            Span<xVariableElement> x);
 
-        ReadOnlySpan<d2MinusVariableElement> GetValue(
+        Span<d2MinusVariableElement> GetValue(
             double v,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
@@ -38,6 +38,6 @@
             ReadOnlySpan<ijkωCrossJoinElement> ijkω,
             ReadOnlySpan<AParameterElement> A,
             ReadOnlySpan<niωParameterElement> niω,
-            ReadOnlySpan<xVariableElement> x);
+            Span<xVariableElement> x);
     }
 }

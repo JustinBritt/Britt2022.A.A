@@ -19,8 +19,8 @@
             ReadOnlySpan<iωCrossJoinElement> iω,
             double w1,
             ReadOnlySpan<ΡParameterElement> Ρ,
-            ReadOnlySpan<d1MinusVariableElement> d1Minus,
-            ReadOnlySpan<xVariableElement> x)
+            Span<d1MinusVariableElement> d1Minus,
+            Span<xVariableElement> x)
         {
             double sum = 0;
 

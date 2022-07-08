@@ -50,9 +50,9 @@
             ReadOnlySpan<iωCrossJoinElement> iω,
             ReadOnlySpan<NParameterElement> N,
             ReadOnlySpan<niωParameterElement> niω,
-            ReadOnlySpan<xVariableElement> x)
+            Span<xVariableElement> x)
         {
-            ReadOnlySpan<d1MinusVariableElement> d1MinusVariableSpan = this.GetValue(
+            Span<d1MinusVariableElement> d1MinusVariableSpan = this.GetValue(
                 i,
                 ω,
                 ijk,
@@ -78,14 +78,14 @@
             return d1MinusResultSpan;
         }
 
-        public unsafe ReadOnlySpan<d1MinusVariableElement> GetValue(
+        public unsafe Span<d1MinusVariableElement> GetValue(
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ijkCrossJoinElement> ijk,
             ReadOnlySpan<iωCrossJoinElement> iω,
             ReadOnlySpan<NParameterElement> N,
             ReadOnlySpan<niωParameterElement> niω,
-            ReadOnlySpan<xVariableElement> x)
+            Span<xVariableElement> x)
         {
             Span<int> sumsSpan = new Span<int>(
                 (void*)this.SumsIntPtr,

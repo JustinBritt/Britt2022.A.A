@@ -17,6 +17,6 @@
             Location[] operatingRooms,
             Organization[] surgeons,
             ReadOnlySpan<ijkCrossJoinElement> ijk,
-            ReadOnlySpan<xVariableElement> x);
+            Span<xVariableElement> x);
     }
 }

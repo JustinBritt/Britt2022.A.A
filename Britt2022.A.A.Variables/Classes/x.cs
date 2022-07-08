@@ -22,9 +22,9 @@
             Location[] operatingRooms,
             Organization[] surgeons,
             ReadOnlySpan<ijkCrossJoinElement> ijk,
-            ReadOnlySpan<xVariableElement> x)
+            Span<xVariableElement> x)
         {
-            ReadOnlySpan<xVariableElement> xVariableSpan = x;
+            Span<xVariableElement> xVariableSpan = x;
 
             Span<xResultElement> xResultSpan = (Span<xResultElement>)Array.CreateInstance(
                 typeof(xResultElement),

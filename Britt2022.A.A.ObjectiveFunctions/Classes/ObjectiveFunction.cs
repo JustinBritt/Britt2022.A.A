@@ -45,13 +45,13 @@
             II I,
             IIMax IMax,
             IIMin IMin,
-            ReadOnlySpan<xVariableElement> x,
+            Span<xVariableElement> x,
             IGoal1 goal1,
             IGoal2 goal2,
             IGoal3 goal3,
             IGoal4 goal4)
         {
-            ReadOnlySpan<IVariableElement> ISpan = I.GetValue(
+            Span<IVariableElement> ISpan = I.GetValue(
                 i,
                 j,
                 k,
@@ -61,7 +61,7 @@
                 Φ,
                 x);
 
-            ReadOnlySpan<IMaxVariableElement> IMaxSpan = IMax.GetValue(
+            Span<IMaxVariableElement> IMaxSpan = IMax.GetValue(
                 i,
                 j,
                 k,
@@ -69,7 +69,7 @@
                 kω,
                 ISpan);
 
-            ReadOnlySpan<IMinVariableElement> IMinSpan = IMin.GetValue(
+            Span<IMinVariableElement> IMinSpan = IMin.GetValue(
                 i,
                 j,
                 k,

@@ -40,7 +40,7 @@
             II I,
             IIMax IMax,
             IIMin IMin,
-            ReadOnlySpan<xVariableElement> x,
+            Span<xVariableElement> x,
             IGoal1 goal1,
             IGoal2 goal2,
             IGoal3 goal3,

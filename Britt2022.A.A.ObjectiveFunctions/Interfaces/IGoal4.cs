@@ -15,7 +15,7 @@
             ReadOnlySpan<iωCrossJoinElement> iω,
             double w4,
             ReadOnlySpan<ΡParameterElement> Ρ,
-            ReadOnlySpan<IMaxVariableElement> IMax,
-            ReadOnlySpan<IMinVariableElement> IMin);
+            Span<IMaxVariableElement> IMax,
+            Span<IMinVariableElement> IMin);
     }
 }

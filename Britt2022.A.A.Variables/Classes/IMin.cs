@@ -42,9 +42,9 @@
             ReadOnlySpan<kIndexElement> k,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            ReadOnlySpan<IVariableElement> I)
+            Span<IVariableElement> I)
         {
-            ReadOnlySpan<IMinVariableElement> IMinVariableSpan = this.GetValue(
+            Span<IMinVariableElement> IMinVariableSpan = this.GetValue(
                 i,
                 j,
                 k,
@@ -74,7 +74,7 @@
             ReadOnlySpan<kIndexElement> k,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            ReadOnlySpan<IVariableElement> I)
+            Span<IVariableElement> I)
         {
             Span<double> minimumValuesSpan = new Span<double>(
                 (void*)this.MinimumValuesIntPtr,
