@@ -2,7 +2,7 @@
 {
     public readonly struct HParameterElement
     {
-        public const int SizeInBytes = 8;
+        public const int SizeInBytes = 2 * sizeof(int);
 
         public HParameterElement(
             int iIndexElement,

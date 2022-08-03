@@ -2,7 +2,7 @@
 {
     public struct d1PlusVariableElement
     {
-        public const int SizeInBytes = 16;
+        public const int SizeInBytes = 3 * sizeof(int);
 
         public d1PlusVariableElement(
             int iIndexElement,

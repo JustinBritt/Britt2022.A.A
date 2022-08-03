@@ -2,7 +2,7 @@
 {
     public readonly struct LParameterElement
     {
-        public const int SizeInBytes = 8;
+        public const int SizeInBytes = 2 * sizeof(int);
 
         public LParameterElement(
             int iIndexElement,

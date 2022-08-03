@@ -2,7 +2,7 @@
 {
     public readonly struct lIndexElement
     {
-        public const int SizeInBytes = 4;
+        public const int SizeInBytes = 1 * sizeof(int);
 
         public lIndexElement(
             int value)

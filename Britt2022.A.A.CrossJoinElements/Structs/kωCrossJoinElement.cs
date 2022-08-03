@@ -2,7 +2,7 @@
 {
     public readonly struct kωCrossJoinElement
     {
-        public const int SizeInBytes = 16;
+        public const int SizeInBytes = 4 * sizeof(int);
 
         public kωCrossJoinElement(
             int kIndexElement,

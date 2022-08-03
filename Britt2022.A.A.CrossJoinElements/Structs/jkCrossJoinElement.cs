@@ -2,7 +2,7 @@
 {
     public readonly struct jkCrossJoinElement
     {
-        public const int SizeInBytes = 16;
+        public const int SizeInBytes = 4 * sizeof(int);
 
         public jkCrossJoinElement(
             int jIndexElement,

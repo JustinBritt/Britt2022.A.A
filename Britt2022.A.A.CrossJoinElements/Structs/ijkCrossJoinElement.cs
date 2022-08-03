@@ -2,7 +2,7 @@
 {
     public readonly struct ijkCrossJoinElement
     {
-        public const int SizeInBytes = 64;
+        public const int SizeInBytes = 8 * sizeof(int);
 
         public ijkCrossJoinElement(
             int iIndexElement,

@@ -2,7 +2,7 @@
 {
     public readonly struct B1ParameterElement
     {
-        public const int SizeInBytes = 4;
+        public const int SizeInBytes = 1 * sizeof(int);
 
         public B1ParameterElement(
             int value)

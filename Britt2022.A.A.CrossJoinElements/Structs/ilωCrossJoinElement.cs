@@ -2,7 +2,7 @@
 {
     public readonly struct ilωCrossJoinElement
     {
-        public const int SizeInBytes = 32;
+        public const int SizeInBytes = 5 * sizeof(int);
 
         public ilωCrossJoinElement(
             int iIndexElement,

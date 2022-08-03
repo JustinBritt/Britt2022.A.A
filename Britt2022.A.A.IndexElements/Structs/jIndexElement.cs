@@ -2,7 +2,7 @@
 {
     public readonly struct jIndexElement
     {
-        public const int SizeInBytes = 4;
+        public const int SizeInBytes = 1 * sizeof(int);
 
         public jIndexElement(
             int value)

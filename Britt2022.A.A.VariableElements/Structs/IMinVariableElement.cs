@@ -2,7 +2,7 @@
 {
     public struct IMinVariableElement
     {
-        public const int SizeInBytes = 32;
+        public const int SizeInBytes = 1 * sizeof(int) + 1 * sizeof(double);
 
         public IMinVariableElement(
             int ωIndexElement,

@@ -2,7 +2,7 @@
 {
     public struct xVariableElement
     {
-        public const int SizeInBytes = 16;
+        public const int SizeInBytes = 4 * sizeof(int);
 
         public xVariableElement(
             int iIndexElement,

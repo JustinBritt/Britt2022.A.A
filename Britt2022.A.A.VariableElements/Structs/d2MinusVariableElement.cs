@@ -2,7 +2,7 @@
 {
     public struct d2MinusVariableElement
     {
-        public const int SizeInBytes = 32;
+        public const int SizeInBytes = 4 * sizeof(int) + 1 * sizeof(double);
 
         public d2MinusVariableElement(
             int iIndexElement,

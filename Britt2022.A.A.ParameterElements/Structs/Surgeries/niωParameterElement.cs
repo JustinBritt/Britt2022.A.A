@@ -2,7 +2,7 @@
 {
     public readonly struct niωParameterElement
     {
-        public const int SizeInBytes = 24;
+        public const int SizeInBytes = 3 * sizeof(int);
 
         public niωParameterElement(
             int iIndexElement,

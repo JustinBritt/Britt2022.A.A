@@ -2,7 +2,7 @@
 {
     public readonly struct AParameterElement
     {
-        public const int SizeInBytes = 24;
+        public const int SizeInBytes = 2 * sizeof(int) + 1 * sizeof(double);
 
         public AParameterElement(
             int iIndexElement,

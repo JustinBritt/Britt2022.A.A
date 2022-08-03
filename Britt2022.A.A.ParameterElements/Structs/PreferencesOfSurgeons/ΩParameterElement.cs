@@ -2,7 +2,7 @@
 {
     public readonly struct ΩParameterElement
     {
-        public const int SizeInBytes = 12;
+        public const int SizeInBytes = 3 * sizeof(int);
 
         public ΩParameterElement(
             int iIndexElement,

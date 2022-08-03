@@ -2,7 +2,7 @@
 {
     public readonly struct ΦParameterElement
     {
-        public const int SizeInBytes = 32;
+        public const int SizeInBytes = 3 * sizeof(int) + 1 * sizeof(double);
 
         public ΦParameterElement(
             int iIndexElement,

@@ -2,7 +2,7 @@
 {
     public readonly struct ΡParameterElement
     {
-        public const int SizeInBytes = 20;
+        public const int SizeInBytes = 1 * sizeof(int) + 1 * sizeof(double);
 
         public ΡParameterElement(
             int ωIndexElement,
