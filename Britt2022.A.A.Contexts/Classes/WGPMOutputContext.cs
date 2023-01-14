@@ -1,9 +1,7 @@
 ﻿namespace Britt2022.A.A.Contexts.Classes
 {
     using System;
-    using System.Collections.Generic;
     using System.Collections.Immutable;
-    using System.Text;
 
     using Hl7.Fhir.Model;
 
