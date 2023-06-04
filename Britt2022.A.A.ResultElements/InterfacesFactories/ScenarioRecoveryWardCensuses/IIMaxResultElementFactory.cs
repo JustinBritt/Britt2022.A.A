@@ -7,7 +7,7 @@
     public interface IIMaxResultElementFactory
     {
         IMaxResultElement Create(
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value);
     }
 }

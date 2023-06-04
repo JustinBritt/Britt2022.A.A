@@ -12,7 +12,7 @@
         }
 
         public IMaxResultElement Create(
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value)
         {
             IMaxResultElement resultElement = default;

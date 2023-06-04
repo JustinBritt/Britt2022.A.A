@@ -25,7 +25,7 @@
             RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgicalSpecialtyStrategicTargetNumberTimeBlocks,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonMaximumNumberTimeBlocks,

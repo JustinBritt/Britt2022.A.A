@@ -7,7 +7,7 @@
     public interface IIMinResultElementFactory
     {
         IMinResultElement Create(
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value);
     }
 }

@@ -14,7 +14,7 @@
     {
         ReadOnlySpan<IMinResultElement> GetElementsAt(
             IIMinResultElementFactory IMinResultElementFactory,
-            PositiveInt[] scenarios,
+            INullableValue<int>[] scenarios,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,

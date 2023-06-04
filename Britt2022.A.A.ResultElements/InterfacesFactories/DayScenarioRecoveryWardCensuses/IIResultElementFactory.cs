@@ -8,7 +8,7 @@
     {
         IResultElement Create(
             FhirDateTime day,
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value);
     }
 }

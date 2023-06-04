@@ -8,7 +8,7 @@
             Organization surgeon,
             Location operatingRoom,
             FhirDateTime day,
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value)
         {
             this.Surgeon = surgeon;
@@ -28,7 +28,7 @@
 
         public FhirDateTime Day { get; }
 
-        public PositiveInt Scenario { get; }
+        public INullableValue<int> Scenario { get; }
 
         public decimal Value { get; }
     }

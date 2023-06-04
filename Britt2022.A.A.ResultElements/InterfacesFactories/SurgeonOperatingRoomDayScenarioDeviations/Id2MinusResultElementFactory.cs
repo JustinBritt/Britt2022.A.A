@@ -10,7 +10,7 @@
             Organization surgeon,
             Location operatingRoom,
             FhirDateTime day,
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value);
     }
 }

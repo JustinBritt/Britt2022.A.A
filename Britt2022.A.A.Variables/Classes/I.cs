@@ -43,7 +43,7 @@
         public unsafe ReadOnlySpan<IResultElement> GetElementsAt(
             IIResultElementFactory IResultElementFactory,
             FhirDateTime[] planningHorizon,
-            PositiveInt[] scenarios,
+            INullableValue<int>[] scenarios,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<jIndexElement> j,
             ReadOnlySpan<kIndexElement> k,

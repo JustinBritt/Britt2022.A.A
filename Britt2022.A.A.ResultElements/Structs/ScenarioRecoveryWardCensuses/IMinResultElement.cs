@@ -5,7 +5,7 @@
     public struct IMinResultElement
     {
         public IMinResultElement(
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value)
         {
             this.Scenario = scenario;
@@ -13,7 +13,7 @@
             this.Value = value;
         }
 
-        public PositiveInt Scenario { get; }
+        public INullableValue<int> Scenario { get; }
 
         public decimal Value { get; }
     }

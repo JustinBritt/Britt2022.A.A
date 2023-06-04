@@ -13,7 +13,7 @@
 
         public d1MinusResultElement Create(
             Organization surgeon,
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             int value)
         {
             d1MinusResultElement resultElement = default;

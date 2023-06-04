@@ -6,7 +6,7 @@
     {
         public d1MinusResultElement(
             Organization surgeon,
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             int value)
         {
             this.Surgeon = surgeon;
@@ -18,7 +18,7 @@
 
         public Organization Surgeon { get; }
 
-        public PositiveInt Scenario { get; }
+        public INullableValue<int> Scenario { get; }
 
         public int Value { get; }
     }

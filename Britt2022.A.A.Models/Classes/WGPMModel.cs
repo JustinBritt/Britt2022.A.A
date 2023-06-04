@@ -618,7 +618,7 @@
         public Organization[] SurgicalSpecialties { get; }
 
         // ω
-        public PositiveInt[] Scenarios { get; }
+        public INullableValue<int>[] Scenarios { get; }
 
         // A(i, ω)
         public Tuple<Organization, PositiveInt, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }

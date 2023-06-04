@@ -6,7 +6,7 @@
     {
         public IResultElement(
             FhirDateTime day,
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value)
         {
             this.Day = day;
@@ -18,7 +18,7 @@
 
         public FhirDateTime Day { get; }
 
-        public PositiveInt Scenario { get; }
+        public INullableValue<int> Scenario { get; }
 
         public decimal Value { get; }
     }

@@ -30,7 +30,7 @@
 
         Organization[] SurgicalSpecialties { get; }
 
-        PositiveInt[] Scenarios { get; }
+        INullableValue<int>[] Scenarios { get; }
 
         Tuple<Organization, PositiveInt, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 

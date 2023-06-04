@@ -12,7 +12,7 @@
         }
 
         public IMinResultElement Create(
-            PositiveInt scenario,
+            INullableValue<int> scenario,
             decimal value)
         {
             IMinResultElement resultElement = default;

@@ -18,7 +18,7 @@
         ReadOnlySpan<d1MinusResultElement> GetElementsAt(
             Id1MinusResultElementFactory d1MinusResultElementFactory,
             Organization[] surgeons,
-            PositiveInt[] scenarios,
+            INullableValue<int>[] scenarios,
             ReadOnlySpan<iIndexElement> i,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ijkCrossJoinElement> ijk,

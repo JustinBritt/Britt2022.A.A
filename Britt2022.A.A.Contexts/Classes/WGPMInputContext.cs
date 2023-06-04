@@ -19,7 +19,7 @@
             RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties,
-            ImmutableList<PositiveInt> scenarios,
+            ImmutableSortedSet<INullableValue<int>> scenarios,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgicalSpecialtyStrategicTargetNumberTimeBlocks,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonClusterDurationMeans,
@@ -181,7 +181,7 @@
         /// Gets the scenarios
         /// Parameter: ω
         /// </summary>
-        public ImmutableList<PositiveInt> Scenarios { get; }
+        public ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
         /// <summary>
         /// 
