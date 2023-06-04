@@ -19,7 +19,7 @@
 
         ImmutableSortedSet<INullableValue<int>> LengthOfStayDays { get; }
 
-        ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
+        RedBlackTree<Organization, ImmutableSortedSet<Organization>> SurgicalSpecialties { get; }
 
         ImmutableList<PositiveInt> Scenarios { get; }
 

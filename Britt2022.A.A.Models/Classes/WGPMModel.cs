@@ -115,7 +115,7 @@
 
             this.SurgicalSpecialties = WGPMInputContext
                 .SurgicalSpecialties
-                .Select(w => w.Item1)
+                .Select(w => w.Key)
                 .ToArray();
 
             this.SurgicalSpecialtiesIntPtr = Marshal.AllocHGlobal(
@@ -271,7 +271,7 @@
 
             F2ParameterElement[] F2ZI = new F2ParameterElement[this.SurgicalSpecialties.Count()];
 
-            int[] items = WGPMInputContext.SurgicalSpecialties.Select(w => w.Item2.Count()).ToArray();
+            int[] items = WGPMInputContext.SurgicalSpecialties.Select(w => w.Value.Count()).ToArray();
 
             for (int r = 1; r <= this.SurgicalSpecialties.Count(); r = r + 1)
             {
