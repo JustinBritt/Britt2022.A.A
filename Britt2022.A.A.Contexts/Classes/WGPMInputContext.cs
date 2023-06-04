@@ -6,6 +6,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.A.Contexts.Interfaces;
 
     public sealed class WGPMInputContext : IWGPMInputContext
@@ -14,7 +16,7 @@
             ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             Bundle operatingRooms,
-            ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
+            RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
             ImmutableList<PositiveInt> lengthOfStayDays,
             ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties,
             ImmutableList<PositiveInt> scenarios,
