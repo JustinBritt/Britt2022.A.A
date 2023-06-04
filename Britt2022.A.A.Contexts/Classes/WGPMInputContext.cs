@@ -159,6 +159,10 @@
         /// </summary>
         public Bundle OperatingRooms { get; }
 
+        /// <summary>
+        /// Gets the planning horizon.
+        /// Parameter: k
+        /// </summary>
         public RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
         /// <summary>
