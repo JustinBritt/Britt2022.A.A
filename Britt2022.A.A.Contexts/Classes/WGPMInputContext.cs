@@ -159,7 +159,7 @@
         /// </summary>
         public Bundle OperatingRooms { get; }
 
-        public ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> PlanningHorizon { get; }
+        public RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
         /// <summary>
         /// Gets the length of stay days.
