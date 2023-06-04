@@ -11,7 +11,7 @@
     public interface IWGPMInputContextFactory
     {
         IWGPMInputContext Create(
-               ImmutableList<PositiveInt> clusters,
+               ImmutableSortedSet<INullableValue<int>> clusters,
                Bundle surgeons,
                Bundle operatingRooms,
                ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,

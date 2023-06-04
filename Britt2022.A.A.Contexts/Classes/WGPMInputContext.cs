@@ -11,7 +11,7 @@
     public sealed class WGPMInputContext : IWGPMInputContext
     {
         public WGPMInputContext(
-            ImmutableList<PositiveInt> clusters,
+            ImmutableSortedSet<INullableValue<int>> clusters,
             Bundle surgeons,
             Bundle operatingRooms,
             ImmutableList<KeyValuePair<PositiveInt, FhirDateTime>> planningHorizon,
@@ -143,7 +143,7 @@
         /// Gets the clusters.
         /// Parameter: e
         /// </summary>
-        public ImmutableList<PositiveInt> Clusters { get; }
+        public ImmutableSortedSet<INullableValue<int>> Clusters { get; }
 
         /// <summary>
         /// Gets the surgeons.

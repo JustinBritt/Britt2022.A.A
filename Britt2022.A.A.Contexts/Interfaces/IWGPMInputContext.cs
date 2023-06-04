@@ -8,7 +8,7 @@
 
     public interface IWGPMInputContext
     {
-        ImmutableList<PositiveInt> Clusters { get; }
+        ImmutableSortedSet<INullableValue<int>> Clusters { get; }
 
         Bundle Surgeons { get; }
 
