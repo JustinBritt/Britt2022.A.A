@@ -31,10 +31,10 @@
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> surgeonClusterOverheadTimeFactors,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities,
             Duration timeBlockLength,
-            FhirDecimal goalWeight1,
-            FhirDecimal goalWeight2,
-            FhirDecimal goalWeight3,
-            FhirDecimal goalWeight4,
+            INullableValue<decimal> goalWeight1,
+            INullableValue<decimal> goalWeight2,
+            INullableValue<decimal> goalWeight3,
+            INullableValue<decimal> goalWeight4,
             ImmutableList<Tuple<Organization, Location, FhirBoolean>> surgeonOperatingRoomAvailabilities,
             ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> scenarioProbabilities,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioCumulativeNumberPatients,
@@ -259,25 +259,25 @@
         /// 
         /// Parameter: w1
         /// </summary>
-        public FhirDecimal GoalWeight1 { get; }
+        public INullableValue<decimal> GoalWeight1 { get; }
 
         /// <summary>
         /// 
         /// Parameter: w2
         /// </summary>
-        public FhirDecimal GoalWeight2 { get; }
+        public INullableValue<decimal> GoalWeight2 { get; }
 
         /// <summary>
         /// 
         /// Parameter: w3
         /// </summary>
-        public FhirDecimal GoalWeight3 { get; }
+        public INullableValue<decimal> GoalWeight3 { get; }
 
         /// <summary>
         /// 
         /// Parameter: w4
         /// </summary>
-        public FhirDecimal GoalWeight4 { get; }
+        public INullableValue<decimal> GoalWeight4 { get; }
 
         /// <summary>
         /// 

@@ -654,16 +654,16 @@
         public Duration TimeBlockLength { get; }
 
         // w1
-        public FhirDecimal GoalWeight1 { get; }
+        public INullableValue<decimal> GoalWeight1 { get; }
 
         // w2
-        public FhirDecimal GoalWeight2 { get; }
+        public INullableValue<decimal> GoalWeight2 { get; }
 
         // w3
-        public FhirDecimal GoalWeight3 { get; }
+        public INullableValue<decimal> GoalWeight3 { get; }
 
         // w4
-        public FhirDecimal GoalWeight4 { get; }
+        public INullableValue<decimal> GoalWeight4 { get; }
 
         public Tuple<Organization, Location, FhirBoolean>[] SurgeonOperatingRoomAvailabilities { get; }
 

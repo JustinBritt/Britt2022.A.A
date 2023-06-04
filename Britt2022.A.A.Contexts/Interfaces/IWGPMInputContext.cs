@@ -48,13 +48,13 @@
 
         Duration TimeBlockLength { get; }
 
-        FhirDecimal GoalWeight1 { get; }
+        INullableValue<decimal> GoalWeight1 { get; }
 
-        FhirDecimal GoalWeight2 { get; }
+        INullableValue<decimal> GoalWeight2 { get; }
 
-        FhirDecimal GoalWeight3 { get; }
+        INullableValue<decimal> GoalWeight3 { get; }
 
-        FhirDecimal GoalWeight4 { get; }
+        INullableValue<decimal> GoalWeight4 { get; }
 
         ImmutableList<Tuple<Organization, Location, FhirBoolean>> SurgeonOperatingRoomAvailabilities { get; }
 
