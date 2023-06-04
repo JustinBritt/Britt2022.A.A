@@ -612,7 +612,7 @@
         public FhirDateTime[] PlanningHorizon { get; }
 
         // l
-        public PositiveInt[] LengthOfStayDays { get; }
+        public INullableValue<int>[] LengthOfStayDays { get; }
 
         // r
         public Organization[] SurgicalSpecialties { get; }

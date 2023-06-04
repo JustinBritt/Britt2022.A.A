@@ -26,7 +26,7 @@
 
         FhirDateTime[] PlanningHorizon { get; }
 
-        PositiveInt[] LengthOfStayDays { get; }
+        INullableValue<int>[] LengthOfStayDays { get; }
 
         Organization[] SurgicalSpecialties { get; }
 

@@ -17,7 +17,7 @@
 
         RedBlackTree<INullableValue<int>, FhirDateTime> PlanningHorizon { get; }
 
-        ImmutableList<PositiveInt> LengthOfStayDays { get; }
+        ImmutableSortedSet<INullableValue<int>> LengthOfStayDays { get; }
 
         ImmutableList<Tuple<Organization, ImmutableList<Organization>>> SurgicalSpecialties { get; }
 

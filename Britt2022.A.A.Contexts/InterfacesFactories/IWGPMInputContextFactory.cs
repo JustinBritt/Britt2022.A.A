@@ -17,7 +17,7 @@
                Bundle surgeons,
                Bundle operatingRooms,
                RedBlackTree<INullableValue<int>, FhirDateTime> planningHorizon,
-               ImmutableList<PositiveInt> lengthOfStayDays,
+               ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
                ImmutableList<Tuple<Organization, ImmutableList<Organization>>> surgicalSpecialties,
                ImmutableList<PositiveInt> scenarios,
                ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
