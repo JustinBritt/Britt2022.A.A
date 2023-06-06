@@ -40,7 +40,7 @@
 
         F2ParameterElement[] SurgicalSpecialtyUpperBounds { get; }
 
-        KeyValuePair<Organization, PositiveInt>[] SurgeonMaximumNumberTimeBlocks { get; }
+        KeyValuePair<Organization, INullableValue<int>>[] SurgeonMaximumNumberTimeBlocks { get; }
 
         KeyValuePair<Organization, PositiveInt>[] SurgeonLengthOfStayMaximums { get; }
 

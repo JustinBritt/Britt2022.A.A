@@ -328,8 +328,17 @@
             // H(i)
             this.HParameterElementFactory = parameterElementsAbstractFactory.CreateHParameterElementFactory();
 
-            this.SurgeonMaximumNumberTimeBlocks = WGPMInputContext
-                .SurgeonMaximumNumberTimeBlocks
+            List<KeyValuePair<Organization, INullableValue<int>>> HList = new List<KeyValuePair<Organization, INullableValue<int>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonMaximumNumberTimeBlocks.Keys)
+            {
+                HList.Add(
+                    KeyValuePair.Create(
+                        surgeon,
+                        WGPMInputContext.SurgeonMaximumNumberTimeBlocks[surgeon]));
+            }
+
+            this.SurgeonMaximumNumberTimeBlocks = HList
                 .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
@@ -655,7 +664,7 @@
         public F2ParameterElement[] SurgicalSpecialtyUpperBounds { get; }
 
         // H(i)
-        public KeyValuePair<Organization, PositiveInt>[] SurgeonMaximumNumberTimeBlocks { get; }
+        public KeyValuePair<Organization, INullableValue<int>>[] SurgeonMaximumNumberTimeBlocks { get; }
 
         // h(i)
         public KeyValuePair<Organization, PositiveInt>[] SurgeonLengthOfStayMaximums { get; }
