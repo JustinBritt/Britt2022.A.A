@@ -425,8 +425,25 @@
             // p(i, l, ω)
             this.pParameterElementFactory = parameterElementsAbstractFactory.CreatepParameterElementFactory();
 
-            this.SurgeonDayScenarioLengthOfStayProbabilities = WGPMInputContext
-                .SurgeonDayScenarioLengthOfStayProbabilities
+            List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> pList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioLengthOfStayProbabilities.Keys)
+            {
+                foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
+                {
+                    foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
+                    {
+                        pList.Add(
+                            Tuple.Create(
+                                surgeon,
+                                day,
+                                scenario,
+                                WGPMInputContext.SurgeonDayScenarioLengthOfStayProbabilities[surgeon][day][scenario]));
+                    }
+                }
+            }
+
+            this.SurgeonDayScenarioLengthOfStayProbabilities = pList
                 .OrderBy(w => int.Parse(w.Item1.Id))
                 .ThenBy(w => w.Item2.Value.Value)
                 .ThenBy(w => w.Item3.Value.Value)
@@ -701,7 +718,7 @@
         public Tuple<Organization, INullableValue<int>, INullableValue<int>>[] SurgeonScenarioMaximumNumberPatients { get; }
 
         // p(i, l, ω)
-        public Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
+        public Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         // v
         public Duration TimeBlockLength { get; }

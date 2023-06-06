@@ -45,7 +45,7 @@
 
         ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgeonClusterOverheadTimeFactors { get; }
 
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         Duration TimeBlockLength { get; }
 

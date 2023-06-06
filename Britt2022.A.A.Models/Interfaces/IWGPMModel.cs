@@ -50,7 +50,7 @@
 
         Tuple<Organization, INullableValue<int>, INullableValue<int>>[] SurgeonScenarioMaximumNumberPatients { get; }
 
-        Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
+        Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
 
         Duration TimeBlockLength { get; }
 
