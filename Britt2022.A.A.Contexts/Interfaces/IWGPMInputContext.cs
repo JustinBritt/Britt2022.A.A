@@ -23,7 +23,7 @@
 
         ImmutableSortedSet<INullableValue<int>> Scenarios { get; }
 
-        ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonScenarioWeightedAverageSurgicalDurations { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 
         ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 

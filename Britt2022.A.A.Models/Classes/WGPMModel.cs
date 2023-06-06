@@ -232,10 +232,23 @@
             // A(i, ω)
             this.AParameterElementFactory = parameterElementsAbstractFactory.CreateAParameterElementFactory();
 
-            this.SurgeonScenarioWeightedAverageSurgicalDurations = WGPMInputContext
-                .SurgeonScenarioWeightedAverageSurgicalDurations
-                .OrderBy(w => int.Parse(w.Item1.Id))
-                .ThenBy(w => w.Item2.Value.Value)
+            List<Tuple<Organization, PositiveInt, Duration>> AList = new List<Tuple<Organization, PositiveInt, Duration>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations.Keys)
+            {
+                foreach (PositiveInt scenario in WGPMInputContext.Scenarios)
+                {
+                    AList.Add(
+                        Tuple.Create(
+                            surgeon,
+                            (PositiveInt)scenario,
+                            WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations[surgeon][scenario]));
+                }
+            }
+
+            this.SurgeonScenarioWeightedAverageSurgicalDurations = AList
+                .OrderBy(w => w.Item1)
+                .ThenBy(w => w.Item2)
                 .ToArray();
 
             this.SurgeonScenarioWeightedAverageSurgicalDurationsIntPtr = Marshal.AllocHGlobal(

@@ -57,7 +57,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.LocalSearches
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.VNS", "Britt2022.A.A.VNS\Britt2022.A.A.VNS.csproj", "{09D74FE4-9293-4DF7-98F0-F6A7F8A125EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Britt2022.A.A.DoubleEmbeddedLocalSearches", "Britt2022.A.A.DoubleEmbeddedLocalSearches\Britt2022.A.A.DoubleEmbeddedLocalSearches.csproj", "{2100AF50-9B6A-447E-9649-96CDECA4A8E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Britt2022.A.A.DoubleEmbeddedLocalSearches", "Britt2022.A.A.DoubleEmbeddedLocalSearches\Britt2022.A.A.DoubleEmbeddedLocalSearches.csproj", "{2100AF50-9B6A-447E-9649-96CDECA4A8E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Britt2022.A.A.Comparers", "Britt2022.A.A.Comparers\Britt2022.A.A.Comparers.csproj", "{16FC7735-303A-4296-B68A-451FA790DA9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,6 +179,10 @@ Global
 		{2100AF50-9B6A-447E-9649-96CDECA4A8E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2100AF50-9B6A-447E-9649-96CDECA4A8E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2100AF50-9B6A-447E-9649-96CDECA4A8E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16FC7735-303A-4296-B68A-451FA790DA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16FC7735-303A-4296-B68A-451FA790DA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16FC7735-303A-4296-B68A-451FA790DA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16FC7735-303A-4296-B68A-451FA790DA9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

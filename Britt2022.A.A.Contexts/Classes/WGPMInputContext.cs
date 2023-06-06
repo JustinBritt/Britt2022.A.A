@@ -20,7 +20,7 @@
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgicalSpecialtyStrategicTargetNumberTimeBlocks,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonClusterDurationMeans,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonClusterDurationStandardDeviations,
@@ -187,7 +187,7 @@
         /// 
         /// Parameter: A
         /// </summary>
-        public ImmutableList<Tuple<Organization, PositiveInt, Duration>> SurgeonScenarioWeightedAverageSurgicalDurations { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 
         /// <summary>
         /// 

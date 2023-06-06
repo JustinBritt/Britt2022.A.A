@@ -26,7 +26,7 @@
             ImmutableSortedSet<INullableValue<int>> lengthOfStayDays,
             RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties,
             ImmutableSortedSet<INullableValue<int>> scenarios,
-            ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgicalSpecialtyStrategicTargetNumberTimeBlocks,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonMaximumNumberTimeBlocks,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonMaximumLengthsOfStay,
