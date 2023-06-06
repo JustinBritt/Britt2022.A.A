@@ -679,7 +679,7 @@
         public KeyValuePair<Organization, INullableValue<int>>[] SurgeonLengthOfStayMaximums { get; }
 
         // L(i)
-        public KeyValuePair<Organization, PositiveInt>[] SurgeonMinimumNumberTimeBlocks { get; }
+        public KeyValuePair<Organization, INullableValue<int>>[] SurgeonMinimumNumberTimeBlocks { get; }
 
         // N(i)
         public KeyValuePair<Organization, PositiveInt>[] SurgeonStrategicTargets { get; }

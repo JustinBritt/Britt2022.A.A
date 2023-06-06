@@ -44,7 +44,7 @@
 
         KeyValuePair<Organization, INullableValue<int>>[] SurgeonLengthOfStayMaximums { get; }
 
-        KeyValuePair<Organization, PositiveInt>[] SurgeonMinimumNumberTimeBlocks { get; }
+        KeyValuePair<Organization, INullableValue<int>>[] SurgeonMinimumNumberTimeBlocks { get; }
 
         KeyValuePair<Organization, PositiveInt>[] SurgeonStrategicTargets { get; }
 

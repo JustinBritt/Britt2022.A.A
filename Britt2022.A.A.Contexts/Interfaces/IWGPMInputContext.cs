@@ -37,7 +37,7 @@
 
         RedBlackTree<Organization, INullableValue<int>> SurgeonMaximumLengthsOfStay { get; }
 
-        ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMinimumNumberTimeBlocks { get; }
+        RedBlackTree<Organization, INullableValue<int>> SurgeonMinimumNumberTimeBlocks { get; }
 
         ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonStrategicTargetNumberPatients { get; }
 
