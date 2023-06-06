@@ -261,17 +261,7 @@
             // B(r)
             this.BParameterElementFactory = parameterElementsAbstractFactory.CreateBParameterElementFactory();
 
-            List<KeyValuePair<Organization, INullableValue<int>>> BList = new List<KeyValuePair<Organization, INullableValue<int>>>();
-
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
-            {
-                BList.Add(
-                    KeyValuePair.Create(
-                        surgeon,
-                        WGPMInputContext.SurgicalSpecialtyStrategicTargetNumberTimeBlocks[surgeon]));
-            }
-
-            this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = BList
+            this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = WGPMInputContext.SurgicalSpecialtyStrategicTargetNumberTimeBlocks
                 .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
