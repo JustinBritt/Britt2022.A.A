@@ -56,7 +56,7 @@
 
         Tuple<Organization, Location, INullableValue<bool>>[] SurgeonOperatingRoomAvailabilities { get; }
 
-        KeyValuePair<PositiveInt, FhirDecimal>[] ScenarioProbabilities { get; }
+        KeyValuePair<INullableValue<int>, INullableValue<decimal>>[] ScenarioProbabilities { get; }
 
         Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
 

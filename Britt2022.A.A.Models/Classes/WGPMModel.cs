@@ -751,7 +751,7 @@
         public Tuple<Organization, Location, INullableValue<bool>>[] SurgeonOperatingRoomAvailabilities { get; }
 
         // Ρ(ω)
-        public KeyValuePair<PositiveInt, FhirDecimal>[] ScenarioProbabilities { get; }
+        public KeyValuePair<INullableValue<int>, INullableValue<decimal>>[] ScenarioProbabilities { get; }
 
         // Φ(i, l, ω)
         public Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
