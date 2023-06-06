@@ -350,8 +350,17 @@
             // h(i)
             this.hParameterElementFactory = parameterElementsAbstractFactory.CreatehiParameterElementFactory();
 
-            this.SurgeonLengthOfStayMaximums = WGPMInputContext
-                .SurgeonMaximumLengthsOfStay
+            List<KeyValuePair<Organization, INullableValue<int>>> hList = new List<KeyValuePair<Organization, INullableValue<int>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonMaximumLengthsOfStay.Keys)
+            {
+                hList.Add(
+                    KeyValuePair.Create(
+                        surgeon,
+                        WGPMInputContext.SurgeonMaximumLengthsOfStay[surgeon]));
+            }
+
+            this.SurgeonLengthOfStayMaximums = hList
                 .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
@@ -667,7 +676,7 @@
         public KeyValuePair<Organization, INullableValue<int>>[] SurgeonMaximumNumberTimeBlocks { get; }
 
         // h(i)
-        public KeyValuePair<Organization, PositiveInt>[] SurgeonLengthOfStayMaximums { get; }
+        public KeyValuePair<Organization, INullableValue<int>>[] SurgeonLengthOfStayMaximums { get; }
 
         // L(i)
         public KeyValuePair<Organization, PositiveInt>[] SurgeonMinimumNumberTimeBlocks { get; }

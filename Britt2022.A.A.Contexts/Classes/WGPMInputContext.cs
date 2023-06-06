@@ -26,7 +26,7 @@
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonClusterDurationStandardDeviations,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> surgeonClusterFrequencies,
             RedBlackTree<Organization, INullableValue<int>> surgeonMaximumNumberTimeBlocks,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonMaximumLengthsOfStay,
+            RedBlackTree<Organization, INullableValue<int>> surgeonMaximumLengthsOfStay,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonMinimumNumberTimeBlocks,
             ImmutableList<KeyValuePair<Organization, PositiveInt>> surgeonStrategicTargetNumberPatients,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> surgeonScenarioMaximumNumberPatients,
@@ -223,7 +223,7 @@
         /// 
         /// Parameter: h
         /// </summary>
-        public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgeonMaximumLengthsOfStay { get; }
+        public RedBlackTree<Organization, INullableValue<int>> SurgeonMaximumLengthsOfStay { get; }
 
         /// <summary>
         /// 
