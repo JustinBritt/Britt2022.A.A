@@ -21,7 +21,7 @@
             RedBlackTree<Organization, ImmutableSortedSet<Organization>> surgicalSpecialties,
             ImmutableSortedSet<INullableValue<int>> scenarios,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, Duration>> surgeonScenarioWeightedAverageSurgicalDurations,
-            ImmutableList<KeyValuePair<Organization, PositiveInt>> surgicalSpecialtyStrategicTargetNumberTimeBlocks,
+            RedBlackTree<Organization, INullableValue<int>> surgicalSpecialtyStrategicTargetNumberTimeBlocks,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonClusterDurationMeans,
             ImmutableList<Tuple<Organization, PositiveInt, Duration>> surgeonClusterDurationStandardDeviations,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> surgeonClusterFrequencies,
@@ -193,7 +193,7 @@
         /// 
         /// Parameter: B
         /// </summary>
-        public ImmutableList<KeyValuePair<Organization, PositiveInt>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
+        public RedBlackTree<Organization, INullableValue<int>> SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         /// <summary>
         /// 

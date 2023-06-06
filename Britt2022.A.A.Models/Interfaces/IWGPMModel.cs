@@ -34,7 +34,7 @@
 
         Tuple<Organization, INullableValue<int>, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 
-        KeyValuePair<Organization, PositiveInt>[] SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
+        KeyValuePair<Organization, INullableValue<int>>[] SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         B1ParameterElement[] SurgicalSpecialtyLowerBounds { get; }
 

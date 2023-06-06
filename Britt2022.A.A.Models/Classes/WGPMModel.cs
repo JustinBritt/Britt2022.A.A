@@ -261,9 +261,18 @@
             // B(r)
             this.BParameterElementFactory = parameterElementsAbstractFactory.CreateBParameterElementFactory();
 
-            this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = WGPMInputContext
-                .SurgicalSpecialtyStrategicTargetNumberTimeBlocks
-                .OrderBy(w => int.Parse(w.Key.Id))
+            List<KeyValuePair<Organization, INullableValue<int>>> BList = new List<KeyValuePair<Organization, INullableValue<int>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgicalSpecialtyStrategicTargetNumberTimeBlocks.Keys)
+            {
+                BList.Add(
+                    KeyValuePair.Create(
+                        surgeon,
+                        WGPMInputContext.SurgicalSpecialtyStrategicTargetNumberTimeBlocks[surgeon]));
+            }
+
+            this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = BList
+                .OrderBy(w => w.Key.Id)
                 .ToArray();
 
             this.SurgicalSpecialtyStrategicTargetNumberTimeBlocksIntPtr = Marshal.AllocHGlobal(
@@ -637,7 +646,7 @@
         public Tuple<Organization, INullableValue<int>, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 
         // B(r)
-        public KeyValuePair<Organization, PositiveInt>[] SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
+        public KeyValuePair<Organization, INullableValue<int>>[] SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 
         // B1(r)
         public B1ParameterElement[] SurgicalSpecialtyLowerBounds { get; }
