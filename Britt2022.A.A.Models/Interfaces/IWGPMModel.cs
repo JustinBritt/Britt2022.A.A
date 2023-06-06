@@ -46,7 +46,7 @@
 
         KeyValuePair<Organization, INullableValue<int>>[] SurgeonMinimumNumberTimeBlocks { get; }
 
-        KeyValuePair<Organization, PositiveInt>[] SurgeonStrategicTargets { get; }
+        KeyValuePair<Organization, INullableValue<int>>[] SurgeonStrategicTargets { get; }
 
         Tuple<Organization, PositiveInt, PositiveInt>[] SurgeonScenarioMaximumNumberPatients { get; }
 

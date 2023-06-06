@@ -682,7 +682,7 @@
         public KeyValuePair<Organization, INullableValue<int>>[] SurgeonMinimumNumberTimeBlocks { get; }
 
         // N(i)
-        public KeyValuePair<Organization, PositiveInt>[] SurgeonStrategicTargets { get; }
+        public KeyValuePair<Organization, INullableValue<int>>[] SurgeonStrategicTargets { get; }
 
         // n(i, ω)
         public Tuple<Organization, PositiveInt, PositiveInt>[] SurgeonScenarioMaximumNumberPatients { get; }
