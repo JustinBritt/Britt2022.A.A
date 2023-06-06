@@ -247,7 +247,7 @@
             }
 
             this.SurgeonScenarioWeightedAverageSurgicalDurations = AList
-                .OrderBy(w => w.Item1.Id)
+                .OrderBy(w => int.Parse(w.Item1.Id))
                 .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
@@ -272,7 +272,7 @@
             }
 
             this.SurgicalSpecialtyStrategicTargetNumberTimeBlocks = BList
-                .OrderBy(w => w.Key.Id)
+                .OrderBy(w => int.Parse(w.Key.Id))
                 .ToArray();
 
             this.SurgicalSpecialtyStrategicTargetNumberTimeBlocksIntPtr = Marshal.AllocHGlobal(
@@ -413,7 +413,7 @@
             }
 
             this.SurgeonScenarioMaximumNumberPatients = nList
-                .OrderBy(w => w.Item1.Id)
+                .OrderBy(w => int.Parse(w.Item1.Id))
                 .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
