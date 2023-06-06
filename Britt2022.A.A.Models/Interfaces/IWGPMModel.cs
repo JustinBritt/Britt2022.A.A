@@ -32,7 +32,7 @@
 
         INullableValue<int>[] Scenarios { get; }
 
-        Tuple<Organization, PositiveInt, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }
+        Tuple<Organization, INullableValue<int>, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 
         KeyValuePair<Organization, PositiveInt>[] SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
 

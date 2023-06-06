@@ -232,23 +232,23 @@
             // A(i, ω)
             this.AParameterElementFactory = parameterElementsAbstractFactory.CreateAParameterElementFactory();
 
-            List<Tuple<Organization, PositiveInt, Duration>> AList = new List<Tuple<Organization, PositiveInt, Duration>>();
+            List<Tuple<Organization, INullableValue<int>, Duration>> AList = new List<Tuple<Organization, INullableValue<int>, Duration>>();
 
             foreach (Organization surgeon in WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations.Keys)
             {
-                foreach (PositiveInt scenario in WGPMInputContext.Scenarios)
+                foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
                 {
                     AList.Add(
                         Tuple.Create(
                             surgeon,
-                            (PositiveInt)scenario,
+                            scenario,
                             WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations[surgeon][scenario]));
                 }
             }
 
             this.SurgeonScenarioWeightedAverageSurgicalDurations = AList
                 .OrderBy(w => w.Item1)
-                .ThenBy(w => w.Item2)
+                .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
             this.SurgeonScenarioWeightedAverageSurgicalDurationsIntPtr = Marshal.AllocHGlobal(
@@ -634,7 +634,7 @@
         public INullableValue<int>[] Scenarios { get; }
 
         // A(i, ω)
-        public Tuple<Organization, PositiveInt, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }
+        public Tuple<Organization, INullableValue<int>, Duration>[] SurgeonScenarioWeightedAverageSurgicalDurations { get; }
 
         // B(r)
         public KeyValuePair<Organization, PositiveInt>[] SurgicalSpecialtyStrategicTargetNumberTimeBlocks { get; }
