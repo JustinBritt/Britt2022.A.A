@@ -4,7 +4,7 @@
     using Britt2022.A.A.Comparers.InterfacesAbstractFactories;
     using Britt2022.A.A.Comparers.InterfacesFactories;
 
-    internal sealed class ComparersAbstractFactory : IComparersAbstractFactory
+    public sealed class ComparersAbstractFactory : IComparersAbstractFactory
     {
         public ComparersAbstractFactory()
         {
