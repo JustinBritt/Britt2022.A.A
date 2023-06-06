@@ -247,7 +247,7 @@
             }
 
             this.SurgeonScenarioWeightedAverageSurgicalDurations = AList
-                .OrderBy(w => w.Item1)
+                .OrderBy(w => w.Item1.Id)
                 .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
