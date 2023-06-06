@@ -41,7 +41,7 @@
 
         RedBlackTree<Organization, INullableValue<int>> SurgeonStrategicTargetNumberPatients { get; }
 
-        ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
+        RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioMaximumNumberPatients { get; }
 
         ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> SurgeonClusterOverheadTimeFactors { get; }
 

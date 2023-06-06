@@ -48,7 +48,7 @@
 
         KeyValuePair<Organization, INullableValue<int>>[] SurgeonStrategicTargets { get; }
 
-        Tuple<Organization, PositiveInt, PositiveInt>[] SurgeonScenarioMaximumNumberPatients { get; }
+        Tuple<Organization, INullableValue<int>, INullableValue<int>>[] SurgeonScenarioMaximumNumberPatients { get; }
 
         Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
 

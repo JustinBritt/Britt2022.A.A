@@ -29,7 +29,7 @@
             RedBlackTree<Organization, INullableValue<int>> surgeonMaximumLengthsOfStay,
             RedBlackTree<Organization, INullableValue<int>> surgeonMinimumNumberTimeBlocks,
             RedBlackTree<Organization, INullableValue<int>> surgeonStrategicTargetNumberPatients,
-            ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> surgeonScenarioMaximumNumberPatients,
+            RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> surgeonScenarioMaximumNumberPatients,
             ImmutableList<Tuple<Organization, PositiveInt, FhirDecimal>> surgeonClusterOverheadTimeFactors,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioLengthOfStayProbabilities,
             Duration timeBlockLength,
@@ -241,7 +241,7 @@
         /// 
         /// Parameter: n
         /// </summary>
-        public ImmutableList<Tuple<Organization, PositiveInt, PositiveInt>> SurgeonScenarioMaximumNumberPatients { get; }
+        public RedBlackTree<Organization, RedBlackTree<INullableValue<int>, INullableValue<int>>> SurgeonScenarioMaximumNumberPatients { get; }
 
         /// <summary>
         /// 

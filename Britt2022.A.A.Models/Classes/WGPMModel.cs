@@ -398,9 +398,22 @@
             // n(i, ω)
             this.nParameterElementFactory = parameterElementsAbstractFactory.CreateniωParameterElementFactory();
 
-            this.SurgeonScenarioMaximumNumberPatients = WGPMInputContext
-                .SurgeonScenarioMaximumNumberPatients
-                .OrderBy(w => int.Parse(w.Item1.Id))
+            List<Tuple<Organization, INullableValue<int>, INullableValue<int>>> nList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonScenarioMaximumNumberPatients.Keys)
+            {
+                foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
+                {
+                    nList.Add(
+                        Tuple.Create(
+                            surgeon,
+                            scenario,
+                            WGPMInputContext.SurgeonScenarioMaximumNumberPatients[surgeon][scenario]));
+                }
+            }
+
+            this.SurgeonScenarioMaximumNumberPatients = nList
+                .OrderBy(w => w.Item1.Id)
                 .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
@@ -685,7 +698,7 @@
         public KeyValuePair<Organization, INullableValue<int>>[] SurgeonStrategicTargets { get; }
 
         // n(i, ω)
-        public Tuple<Organization, PositiveInt, PositiveInt>[] SurgeonScenarioMaximumNumberPatients { get; }
+        public Tuple<Organization, INullableValue<int>, INullableValue<int>>[] SurgeonScenarioMaximumNumberPatients { get; }
 
         // p(i, l, ω)
         public Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
