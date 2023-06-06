@@ -521,8 +521,25 @@
             // Φ(i, l, ω)
             this.ΦParameterElementFactory = parameterElementsAbstractFactory.CreateΦParameterElementFactory();
 
-            this.SurgeonDayScenarioCumulativeNumberPatients = WGPMInputContext
-                .SurgeonDayScenarioCumulativeNumberPatients
+            List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> ΦList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys)
+            {
+                foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
+                {
+                    foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
+                    {
+                        ΦList.Add(
+                            Tuple.Create(
+                                surgeon,
+                                day,
+                                scenario,
+                                WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario]));
+                    }
+                }
+            }
+
+            this.SurgeonDayScenarioCumulativeNumberPatients = ΦList
                 .OrderBy(w => int.Parse(w.Item1.Id))
                 .ThenBy(w => w.Item2.Value.Value)
                 .ThenBy(w => w.Item3.Value.Value)
@@ -754,7 +771,7 @@
         public KeyValuePair<INullableValue<int>, INullableValue<decimal>>[] ScenarioProbabilities { get; }
 
         // Φ(i, l, ω)
-        public Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
+        public Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         public Tuple<Organization, FhirDateTime, FhirBoolean>[] SurgeonDayAvailabilities { get; }
 
