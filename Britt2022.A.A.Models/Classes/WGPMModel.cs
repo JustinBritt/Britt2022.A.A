@@ -234,7 +234,7 @@
 
             List<Tuple<Organization, INullableValue<int>, Duration>> AList = new List<Tuple<Organization, INullableValue<int>, Duration>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
                 {
@@ -263,7 +263,7 @@
 
             List<KeyValuePair<Organization, INullableValue<int>>> BList = new List<KeyValuePair<Organization, INullableValue<int>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgicalSpecialtyStrategicTargetNumberTimeBlocks.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 BList.Add(
                     KeyValuePair.Create(
@@ -330,7 +330,7 @@
 
             List<KeyValuePair<Organization, INullableValue<int>>> HList = new List<KeyValuePair<Organization, INullableValue<int>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonMaximumNumberTimeBlocks.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 HList.Add(
                     KeyValuePair.Create(
@@ -352,7 +352,7 @@
 
             List<KeyValuePair<Organization, INullableValue<int>>> hList = new List<KeyValuePair<Organization, INullableValue<int>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonMaximumLengthsOfStay.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 hList.Add(
                     KeyValuePair.Create(
@@ -400,7 +400,7 @@
 
             List<Tuple<Organization, INullableValue<int>, INullableValue<int>>> nList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonScenarioMaximumNumberPatients.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
                 {
@@ -427,7 +427,7 @@
 
             List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> pList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioLengthOfStayProbabilities.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
                 {
@@ -483,7 +483,7 @@
 
             List<Tuple<Organization, Location, INullableValue<bool>>> ΠList = new List<Tuple<Organization, Location, INullableValue<bool>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonOperatingRoomAvailabilities.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 foreach (Location operatingRoom in WGPMInputContext.OperatingRooms.Entry.Where(i => i.Resource is Location).Select(i => (Location)i.Resource))
                 {
@@ -523,7 +523,7 @@
 
             List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> ΦList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
                 {
@@ -559,7 +559,7 @@
 
             List<Tuple<Organization, FhirDateTime, INullableValue<bool>>> ΩList = new List<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonDayAvailabilities.Keys)
+            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
             {
                 foreach (FhirDateTime day in WGPMInputContext.PlanningHorizon.Values)
                 {
