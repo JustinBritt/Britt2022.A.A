@@ -60,7 +60,7 @@
 
         Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
 
-        Tuple<Organization, FhirDateTime, FhirBoolean>[] SurgeonDayAvailabilities { get; }
+        Tuple<Organization, FhirDateTime, INullableValue<bool>>[] SurgeonDayAvailabilities { get; }
 
         Id1Minus d1Minus { get; }
 

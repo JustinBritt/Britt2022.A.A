@@ -557,8 +557,21 @@
             // Ω(i, k)
             this.ΩParameterElementFactory = parameterElementsAbstractFactory.CreateΩParameterElementFactory();
 
-            this.SurgeonDayAvailabilities = WGPMInputContext
-                .SurgeonDayAvailabilities
+            List<Tuple<Organization, FhirDateTime, INullableValue<bool>>> ΩList = new List<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonDayAvailabilities.Keys)
+            {
+                foreach (FhirDateTime day in WGPMInputContext.PlanningHorizon.Values)
+                {
+                    ΩList.Add(
+                        Tuple.Create(
+                            surgeon,
+                            day,
+                            WGPMInputContext.SurgeonDayAvailabilities[surgeon][day]));
+                }
+            }
+
+            this.SurgeonDayAvailabilities = ΩList
                 .OrderBy(w => int.Parse(w.Item1.Id))
                 .ThenBy(w => w.Item2.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime)
                 .ToArray();
@@ -773,7 +786,7 @@
         // Φ(i, l, ω)
         public Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
 
-        public Tuple<Organization, FhirDateTime, FhirBoolean>[] SurgeonDayAvailabilities { get; }
+        public Tuple<Organization, FhirDateTime, INullableValue<bool>>[] SurgeonDayAvailabilities { get; }
 
         // i
         private IntPtr SurgeonsIntPtr { get; }
