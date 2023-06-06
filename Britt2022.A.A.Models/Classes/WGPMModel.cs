@@ -481,8 +481,21 @@
             // Π(i, j)
             this.ΠParameterElementFactory = parameterElementsAbstractFactory.CreateΠParameterElementFactory();
 
-            this.SurgeonOperatingRoomAvailabilities = WGPMInputContext
-                .SurgeonOperatingRoomAvailabilities
+            List<Tuple<Organization, Location, INullableValue<bool>>> ΠList = new List<Tuple<Organization, Location, INullableValue<bool>>>();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonOperatingRoomAvailabilities.Keys)
+            {
+                foreach (Location operatingRoom in WGPMInputContext.OperatingRooms.Entry.Where(i => i.Resource is Location).Select(i => (Location)i.Resource))
+                {
+                    ΠList.Add(
+                        Tuple.Create(
+                            surgeon,
+                            operatingRoom,
+                            WGPMInputContext.SurgeonOperatingRoomAvailabilities[surgeon][operatingRoom]));
+                }
+            }
+
+            this.SurgeonOperatingRoomAvailabilities = ΠList
                 .OrderBy(w => int.Parse(w.Item1.Id))
                 .ThenBy(w => int.Parse(w.Item2.Id))
                 .ToArray();
@@ -735,7 +748,7 @@
         // w4
         public INullableValue<decimal> GoalWeight4 { get; }
 
-        public Tuple<Organization, Location, FhirBoolean>[] SurgeonOperatingRoomAvailabilities { get; }
+        public Tuple<Organization, Location, INullableValue<bool>>[] SurgeonOperatingRoomAvailabilities { get; }
 
         // Ρ(ω)
         public KeyValuePair<PositiveInt, FhirDecimal>[] ScenarioProbabilities { get; }

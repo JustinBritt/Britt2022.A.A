@@ -39,7 +39,7 @@
             INullableValue<decimal> goalWeight2,
             INullableValue<decimal> goalWeight3,
             INullableValue<decimal> goalWeight4,
-            ImmutableList<Tuple<Organization, Location, FhirBoolean>> surgeonOperatingRoomAvailabilities,
+            RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> surgeonOperatingRoomAvailabilities,
             ImmutableList<KeyValuePair<PositiveInt, FhirDecimal>> scenarioProbabilities,
             ImmutableList<Tuple<Organization, PositiveInt, PositiveInt, FhirDecimal>> surgeonDayScenarioCumulativeNumberPatients,
             ImmutableList<Tuple<Organization, FhirDateTime, FhirBoolean>> surgeonDayAvailabilities)

@@ -54,7 +54,7 @@
 
         Duration TimeBlockLength { get; }
 
-        Tuple<Organization, Location, FhirBoolean>[] SurgeonOperatingRoomAvailabilities { get; }
+        Tuple<Organization, Location, INullableValue<bool>>[] SurgeonOperatingRoomAvailabilities { get; }
 
         KeyValuePair<PositiveInt, FhirDecimal>[] ScenarioProbabilities { get; }
 
