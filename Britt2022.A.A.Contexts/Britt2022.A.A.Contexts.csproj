@@ -41,4 +41,9 @@
     <ProjectReference Include="..\Britt2022.A.A.ResultElements\Britt2022.A.A.ResultElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Results\Britt2022.A.A.Results.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="InterfacesVisitors\" />
+    <Folder Include="Visitors\" />
+  </ItemGroup>
 </Project>
