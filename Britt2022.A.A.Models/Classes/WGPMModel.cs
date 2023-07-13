@@ -558,6 +558,9 @@
 
             List<Tuple<Organization, FhirDateTime, INullableValue<bool>>> ΩList = new List<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
 
+            var ΩArraySize = 1 + this.Surgeons.Count() + this.Surgeons.Count() * this.PlanningHorizon.Count();
+            var ΩArray = new Tuple<Organization, FhirDateTime, INullableValue<bool>>[ΠArraySize];
+
             ReadOnlySpan<ikCrossJoinElement> ik = this.Getik();
 
             for (int i = 1; i < ik.Length; i = i + 1)
@@ -566,15 +569,14 @@
 
                 FhirDateTime day = this.PlanningHorizon[ik[i].kIndexElement - 1];
 
-                ΩList.Add(
+                ΩArray[ik[i].ikZI] =
                     Tuple.Create(
                         surgeon,
                         day,
-                        WGPMInputContext.SurgeonDayAvailabilities[surgeon][day]));
+                        WGPMInputContext.SurgeonDayAvailabilities[surgeon][day]);
             }
 
-            this.SurgeonDayAvailabilities = ΩList
-                .ToArray();
+            this.SurgeonDayAvailabilities = ΩArray;
 
             this.SurgeonDayAvailabilitiesIntPtr = Marshal.AllocHGlobal(
                (this.Surgeons.Count() + 1)
