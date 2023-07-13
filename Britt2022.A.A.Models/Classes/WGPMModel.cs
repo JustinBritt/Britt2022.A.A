@@ -236,21 +236,22 @@
 
             List<Tuple<Organization, INullableValue<int>, Duration>> AList = new List<Tuple<Organization, INullableValue<int>, Duration>>();
 
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
+
+            for (int i = 1; i < iω.Length; i = i + 1)
             {
-                foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
-                {
-                    AList.Add(
-                        Tuple.Create(
-                            surgeon,
-                            scenario,
-                            WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations[surgeon][scenario]));
-                }
+                Organization surgeon = this.Surgeons[iω[i].iIndexElement - 1];
+
+                INullableValue<int> scenario = this.Scenarios[iω[i].ωIndexElement - 1];
+
+                AList.Add(
+                    Tuple.Create(
+                        surgeon,
+                        scenario,
+                        WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations[surgeon][scenario]));
             }
 
             this.SurgeonScenarioWeightedAverageSurgicalDurations = AList
-                .OrderBy(w => int.Parse(w.Item1.Id))
-                .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
             this.SurgeonScenarioWeightedAverageSurgicalDurationsIntPtr = Marshal.AllocHGlobal(
