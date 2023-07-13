@@ -488,8 +488,6 @@
             }
 
             this.SurgeonOperatingRoomAvailabilities = ΠList
-                .OrderBy(w => int.Parse(w.Item1.Id))
-                .ThenBy(w => int.Parse(w.Item2.Id))
                 .ToArray();
 
             this.SurgeonOperatingRoomAvailabilitiesIntPtr = Marshal.AllocHGlobal(
