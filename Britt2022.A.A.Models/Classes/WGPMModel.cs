@@ -551,21 +551,22 @@
 
             List<Tuple<Organization, FhirDateTime, INullableValue<bool>>> ΩList = new List<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            ReadOnlySpan<ikCrossJoinElement> ik = this.Getik();
+
+            for (int i = 1; i < ik.Length; i = i + 1)
             {
-                foreach (FhirDateTime day in WGPMInputContext.PlanningHorizon.Values)
-                {
-                    ΩList.Add(
-                        Tuple.Create(
-                            surgeon,
-                            day,
-                            WGPMInputContext.SurgeonDayAvailabilities[surgeon][day]));
-                }
+                Organization surgeon = this.Surgeons[ik[i].iIndexElement - 1];
+
+                FhirDateTime day = this.PlanningHorizon[ik[i].kIndexElement - 1];
+
+                ΩList.Add(
+                    Tuple.Create(
+                        surgeon,
+                        day,
+                        WGPMInputContext.SurgeonDayAvailabilities[surgeon][day]));
             }
 
             this.SurgeonDayAvailabilities = ΩList
-                .OrderBy(w => int.Parse(w.Item1.Id))
-                .ThenBy(w => w.Item2.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime)
                 .ToArray();
 
             this.SurgeonDayAvailabilitiesIntPtr = Marshal.AllocHGlobal(
