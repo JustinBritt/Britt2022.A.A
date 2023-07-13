@@ -559,7 +559,7 @@
             List<Tuple<Organization, FhirDateTime, INullableValue<bool>>> ΩList = new List<Tuple<Organization, FhirDateTime, INullableValue<bool>>>();
 
             var ΩArraySize = 1 + this.Surgeons.Count() + this.Surgeons.Count() * this.PlanningHorizon.Count();
-            var ΩArray = new Tuple<Organization, FhirDateTime, INullableValue<bool>>[ΠArraySize];
+            var ΩArray = new Tuple<Organization, FhirDateTime, INullableValue<bool>>[ΩArraySize];
 
             ReadOnlySpan<ikCrossJoinElement> ik = this.Getik();
 
