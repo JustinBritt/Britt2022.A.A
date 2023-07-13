@@ -57,6 +57,8 @@
 
         INullableValue<decimal> GoalWeight4 { get; }
 
+        RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> SurgeonOperatingRoomDayAssignments { get; }
+
         RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> SurgeonOperatingRoomAvailabilities { get; }
 
         RedBlackTree<INullableValue<int>, INullableValue<decimal>> ScenarioProbabilities { get; }

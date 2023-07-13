@@ -40,7 +40,8 @@
             RedBlackTree<Organization, RedBlackTree<Location, INullableValue<bool>>> surgeonOperatingRoomAvailabilities,
             RedBlackTree<INullableValue<int>, INullableValue<decimal>> scenarioProbabilities,
             RedBlackTree<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioCumulativeNumberPatients,
-            RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> surgeonDayAvailabilities)
+            RedBlackTree<Organization, RedBlackTree<FhirDateTime, INullableValue<bool>>> surgeonDayAvailabilities,
+            RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> surgeonOperatingRoomDayAssignments = null)
         {
             // e
             this.Clusters = clusters;
@@ -131,6 +132,11 @@
 
             // w4
             this.GoalWeight4 = goalWeight4;
+
+            if (surgeonOperatingRoomDayAssignments != null)
+            {
+                this.SurgeonOperatingRoomDayAssignments = surgeonOperatingRoomDayAssignments;
+            }
 
             this.SurgeonOperatingRoomAvailabilities = surgeonOperatingRoomAvailabilities;
 
@@ -284,6 +290,12 @@
         /// Parameter: w4
         /// </summary>
         public INullableValue<decimal> GoalWeight4 { get; }
+
+        /// <summary>
+        /// 
+        /// Variable: x
+        /// </summary>
+        public RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> SurgeonOperatingRoomDayAssignments { get; }
 
         /// <summary>
         /// 
