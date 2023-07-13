@@ -479,7 +479,8 @@
             // Π(i, j)
             this.ΠParameterElementFactory = parameterElementsAbstractFactory.CreateΠParameterElementFactory();
 
-            List<Tuple<Organization, Location, INullableValue<bool>>> ΠList = new List<Tuple<Organization, Location, INullableValue<bool>>>();
+            var ΠArraySize = 1 + this.Surgeons.Count() + this.Surgeons.Count() * this.OperatingRooms.Count();
+            var ΠArray = new Tuple<Organization, Location, INullableValue<bool>>[ΠArraySize];
 
             ReadOnlySpan<ijCrossJoinElement> ij = this.Getij();
 
@@ -489,15 +490,14 @@
 
                 Location operatingRoom = this.OperatingRooms[ij[i].jIndexElement - 1];
 
-                ΠList.Add(
+                ΠArray[ij[i].ijZI] =
                     Tuple.Create(
                         surgeon,
                         operatingRoom,
-                        WGPMInputContext.SurgeonOperatingRoomAvailabilities[surgeon][operatingRoom]));
+                        WGPMInputContext.SurgeonOperatingRoomAvailabilities[surgeon][operatingRoom]);
             }
 
-            this.SurgeonOperatingRoomAvailabilities = ΠList
-                .ToArray();
+            this.SurgeonOperatingRoomAvailabilities = ΠArray;
 
             this.SurgeonOperatingRoomAvailabilitiesIntPtr = Marshal.AllocHGlobal(
                (1 + this.Surgeons.Count() + this.Surgeons.Count() * this.OperatingRooms.Count())
