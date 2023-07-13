@@ -40,6 +40,7 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
+    using System.Collections;
 
     public unsafe sealed class WGPMModel : IWGPMModel
     {
@@ -480,16 +481,19 @@
 
             List<Tuple<Organization, Location, INullableValue<bool>>> ΠList = new List<Tuple<Organization, Location, INullableValue<bool>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            ReadOnlySpan<ijCrossJoinElement> ij = this.Getij();
+
+            for (int i = 1; i < ij.Length; i = i + 1)
             {
-                foreach (Location operatingRoom in WGPMInputContext.OperatingRooms.Entry.Where(i => i.Resource is Location).Select(i => (Location)i.Resource))
-                {
-                    ΠList.Add(
-                        Tuple.Create(
-                            surgeon,
-                            operatingRoom,
-                            WGPMInputContext.SurgeonOperatingRoomAvailabilities[surgeon][operatingRoom]));
-                }
+                Organization surgeon = this.Surgeons[ij[i].iIndexElement - 1];
+
+                Location operatingRoom = this.OperatingRooms[ij[i].jIndexElement - 1];
+
+                ΠList.Add(
+                    Tuple.Create(
+                        surgeon,
+                        operatingRoom,
+                        WGPMInputContext.SurgeonOperatingRoomAvailabilities[surgeon][operatingRoom]));
             }
 
             this.SurgeonOperatingRoomAvailabilities = ΠList
