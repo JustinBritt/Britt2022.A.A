@@ -91,6 +91,7 @@
             this.PlanningHorizon = WGPMInputContext
                 .PlanningHorizon
                 .Select(w => w.Value)
+                .OrderBy(w => w.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime.Date)
                 .ToArray();
 
             this.PlanningHorizonIntPtr = Marshal.AllocHGlobal(
@@ -116,6 +117,7 @@
             this.SurgicalSpecialties = WGPMInputContext
                 .SurgicalSpecialties
                 .Select(w => w.Key)
+                .OrderBy(w => int.Parse(w.Id))
                 .ToArray();
 
             this.SurgicalSpecialtiesIntPtr = Marshal.AllocHGlobal(
