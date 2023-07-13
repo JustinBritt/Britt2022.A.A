@@ -393,21 +393,20 @@
 
             List<Tuple<Organization, INullableValue<int>, INullableValue<int>>> nList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            for (int i = 1; i < iω.Length; i = i + 1)
             {
-                foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
-                {
-                    nList.Add(
-                        Tuple.Create(
-                            surgeon,
-                            scenario,
-                            WGPMInputContext.SurgeonScenarioMaximumNumberPatients[surgeon][scenario]));
-                }
+                Organization surgeon = this.Surgeons[iω[i].iIndexElement - 1];
+
+                INullableValue<int> scenario = this.Scenarios[iω[i].ωIndexElement - 1];
+
+                nList.Add(
+                    Tuple.Create(
+                        surgeon,
+                        scenario,
+                        WGPMInputContext.SurgeonScenarioMaximumNumberPatients[surgeon][scenario]));
             }
 
             this.SurgeonScenarioMaximumNumberPatients = nList
-                .OrderBy(w => int.Parse(w.Item1.Id))
-                .ThenBy(w => w.Item2.Value.Value)
                 .ToArray();
 
             this.SurgeonScenarioMaximumNumberPatientsIntPtr = Marshal.AllocHGlobal(
