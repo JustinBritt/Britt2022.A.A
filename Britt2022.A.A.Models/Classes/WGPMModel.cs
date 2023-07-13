@@ -286,7 +286,12 @@
 
             F2ParameterElement[] F2ZI = new F2ParameterElement[this.SurgicalSpecialties.Count()];
 
-            int[] items = WGPMInputContext.SurgicalSpecialties.Select(w => w.Value.Count()).ToArray();
+            int[] items = WGPMInputContext
+                .SurgicalSpecialties
+                .Select(w => KeyValuePair.Create(w.Key, w.Value))
+                .OrderBy(w => int.Parse(w.Key.Id))
+                .Select(w => w.Value.Count())
+                .ToArray();
 
             for (int r = 1; r <= this.SurgicalSpecialties.Count(); r = r + 1)
             {
