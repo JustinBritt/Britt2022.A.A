@@ -347,28 +347,6 @@
                *
                HParameterElement.SizeInBytes);
 
-            // h(i)
-            //this.hParameterElementFactory = parameterElementsAbstractFactory.CreatehiParameterElementFactory();
-
-            //List<KeyValuePair<Organization, INullableValue<int>>> hList = new List<KeyValuePair<Organization, INullableValue<int>>>();
-
-            //foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
-            //{
-            //    hList.Add(
-            //        KeyValuePair.Create(
-            //            surgeon,
-            //            WGPMInputContext.SurgeonMaximumLengthsOfStay[surgeon]));
-            //}
-
-            //this.SurgeonLengthOfStayMaximums = hList
-            //    .OrderBy(w => int.Parse(w.Key.Id))
-            //    .ToArray();
-
-            //this.SurgeonLengthOfStayMaximumsIntPtr = Marshal.AllocHGlobal(
-            //   (this.Surgeons.Count() + 1)
-            //   *
-            //   hiParameterElement.SizeInBytes);
-
             // L(i)
             this.LParameterElementFactory = parameterElementsAbstractFactory.CreateLParameterElementFactory();
 
