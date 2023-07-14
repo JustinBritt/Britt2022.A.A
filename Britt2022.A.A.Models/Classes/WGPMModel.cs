@@ -347,26 +347,26 @@
                HParameterElement.SizeInBytes);
 
             // h(i)
-            this.hParameterElementFactory = parameterElementsAbstractFactory.CreatehiParameterElementFactory();
+            //this.hParameterElementFactory = parameterElementsAbstractFactory.CreatehiParameterElementFactory();
 
-            List<KeyValuePair<Organization, INullableValue<int>>> hList = new List<KeyValuePair<Organization, INullableValue<int>>>();
+            //List<KeyValuePair<Organization, INullableValue<int>>> hList = new List<KeyValuePair<Organization, INullableValue<int>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
-            {
-                hList.Add(
-                    KeyValuePair.Create(
-                        surgeon,
-                        WGPMInputContext.SurgeonMaximumLengthsOfStay[surgeon]));
-            }
+            //foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            //{
+            //    hList.Add(
+            //        KeyValuePair.Create(
+            //            surgeon,
+            //            WGPMInputContext.SurgeonMaximumLengthsOfStay[surgeon]));
+            //}
 
-            this.SurgeonLengthOfStayMaximums = hList
-                .OrderBy(w => int.Parse(w.Key.Id))
-                .ToArray();
+            //this.SurgeonLengthOfStayMaximums = hList
+            //    .OrderBy(w => int.Parse(w.Key.Id))
+            //    .ToArray();
 
-            this.SurgeonLengthOfStayMaximumsIntPtr = Marshal.AllocHGlobal(
-               (this.Surgeons.Count() + 1)
-               *
-               hiParameterElement.SizeInBytes);
+            //this.SurgeonLengthOfStayMaximumsIntPtr = Marshal.AllocHGlobal(
+            //   (this.Surgeons.Count() + 1)
+            //   *
+            //   hiParameterElement.SizeInBytes);
 
             // L(i)
             this.LParameterElementFactory = parameterElementsAbstractFactory.CreateLParameterElementFactory();
@@ -421,40 +421,40 @@
                niωParameterElement.SizeInBytes);
 
             // p(i, l, ω)
-            this.pParameterElementFactory = parameterElementsAbstractFactory.CreatepParameterElementFactory();
+            //this.pParameterElementFactory = parameterElementsAbstractFactory.CreatepParameterElementFactory();
 
-            List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> pList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
+            //List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> pList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
 
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
-            {
-                foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
-                {
-                    foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
-                    {
-                        pList.Add(
-                            Tuple.Create(
-                                surgeon,
-                                day,
-                                scenario,
-                                WGPMInputContext.SurgeonDayScenarioLengthOfStayProbabilities[surgeon][day][scenario]));
-                    }
-                }
-            }
+            //foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            //{
+            //    foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
+            //    {
+            //        foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
+            //        {
+            //            pList.Add(
+            //                Tuple.Create(
+            //                    surgeon,
+            //                    day,
+            //                    scenario,
+            //                    WGPMInputContext.SurgeonDayScenarioLengthOfStayProbabilities[surgeon][day][scenario]));
+            //        }
+            //    }
+            //}
 
-            this.SurgeonDayScenarioLengthOfStayProbabilities = pList
-                .OrderBy(w => int.Parse(w.Item1.Id))
-                .ThenBy(w => w.Item2.Value.Value)
-                .ThenBy(w => w.Item3.Value.Value)
-                .ToArray();
+            //this.SurgeonDayScenarioLengthOfStayProbabilities = pList
+            //    .OrderBy(w => int.Parse(w.Item1.Id))
+            //    .ThenBy(w => w.Item2.Value.Value)
+            //    .ThenBy(w => w.Item3.Value.Value)
+            //    .ToArray();
 
-            this.SurgeonDayScenarioLengthOfStayProbabilitiesIntPtr = Marshal.AllocHGlobal(
-                (this.Surgeons.Count() + 1)
-                *
-                (this.LengthOfStayDays.Count() + 1)
-                *
-                (this.Scenarios.Count() + 1)
-                *
-                pParameterElement.SizeInBytes);
+            //this.SurgeonDayScenarioLengthOfStayProbabilitiesIntPtr = Marshal.AllocHGlobal(
+            //    (this.Surgeons.Count() + 1)
+            //    *
+            //    (this.LengthOfStayDays.Count() + 1)
+            //    *
+            //    (this.Scenarios.Count() + 1)
+            //    *
+            //    pParameterElement.SizeInBytes);
 
             // v
             this.TimeBlockLength = WGPMInputContext
@@ -651,6 +651,43 @@
             this.Goal4 = objectiveFunctionsAbstractFactory.CreateGoal4Factory().Create();
 
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
+
+            // TODO: Remove
+            var aaa = this.ObjectiveFunction.GetValue(
+                this.Geti(),
+                this.Getj(),
+                this.Getk(),
+                this.Getl(),
+                this.Getω(),
+                this.Getijk(),
+                this.Getijkω(),
+                this.Getilω(),
+                this.Getiω(),
+                this.Getkω(),
+                this.GetA(),
+                this.GetN(),
+                this.Getn(),
+                this.Getv(),
+                this.Getw1(),
+                this.Getw2(),
+                this.Getw3(),
+                this.Getw4(),
+                this.GetΡ(),
+                this.GetΦ(),
+                this.d1Minus,
+                this.d2Minus,
+                this.I,
+                this.IMax,
+                this.IMin,
+                this.GetxWithoutClearing(),
+                this.Goal1,
+                this.Goal2,
+                this.Goal3,
+                this.Goal4);
+
+            Console.WriteLine(aaa.ToString());
+
+            var bbb = 2;
         }
 
         private IiIndexElementFactory iIndexElementFactory { get; }
@@ -1646,25 +1683,25 @@
             return HSpan;
         }
 
-        public unsafe ReadOnlySpan<hiParameterElement> Geth()
-        {
-            ReadOnlySpan<iIndexElement> i = this.Geti();
+        //public unsafe ReadOnlySpan<hiParameterElement> Geth()
+        //{
+        //    ReadOnlySpan<iIndexElement> i = this.Geti();
 
-            Span<hiParameterElement> hSpan = new Span<hiParameterElement>(
-                (void*)this.SurgeonLengthOfStayMaximumsIntPtr,
-                1 + this.Surgeons.Count());
+        //    Span<hiParameterElement> hSpan = new Span<hiParameterElement>(
+        //        (void*)this.SurgeonLengthOfStayMaximumsIntPtr,
+        //        1 + this.Surgeons.Count());
 
-            hSpan.Clear();
+        //    hSpan.Clear();
 
-            for (int w = 1; w < i.Length; w = w + 1)
-            {
-                hSpan[i[w].Value] = this.hParameterElementFactory.Create(
-                    iIndexElement: i[w].Value,
-                    value: this.SurgeonLengthOfStayMaximums[i[w].Value - 1].Value.Value.Value);
-            }
+        //    for (int w = 1; w < i.Length; w = w + 1)
+        //    {
+        //        hSpan[i[w].Value] = this.hParameterElementFactory.Create(
+        //            iIndexElement: i[w].Value,
+        //            value: this.SurgeonLengthOfStayMaximums[i[w].Value - 1].Value.Value.Value);
+        //    }
 
-            return hSpan;
-        }
+        //    return hSpan;
+        //}
 
         public unsafe ReadOnlySpan<LParameterElement> GetL()
         {
@@ -1727,29 +1764,29 @@
             return nSpan;
         }
 
-        public unsafe ReadOnlySpan<pParameterElement> Getp()
-        {
-            ReadOnlySpan<ilωCrossJoinElement> ilω = this.Getilω();
+        //public unsafe ReadOnlySpan<pParameterElement> Getp()
+        //{
+        //    ReadOnlySpan<ilωCrossJoinElement> ilω = this.Getilω();
 
-            Span<pParameterElement> pSpan = new Span<pParameterElement>(
-                (void*)this.SurgeonDayScenarioLengthOfStayProbabilitiesIntPtr,
-                1
-                +
-                ilω.ToArray().Select(w => w.ilωOI).Max());
+        //    Span<pParameterElement> pSpan = new Span<pParameterElement>(
+        //        (void*)this.SurgeonDayScenarioLengthOfStayProbabilitiesIntPtr,
+        //        1
+        //        +
+        //        ilω.ToArray().Select(w => w.ilωOI).Max());
 
-            pSpan.Clear();
+        //    pSpan.Clear();
 
-            for (int w = 1; w < ilω.Length; w = w + 1)
-            {
-                pSpan[ilω[w].ilωOI] = this.pParameterElementFactory.Create(
-                    iIndexElement: ilω[w].iIndexElement,
-                    lIndexElement: ilω[w].lIndexElement,
-                    ωIndexElement: ilω[w].ωIndexElement,
-                    (double)this.SurgeonDayScenarioLengthOfStayProbabilities[ilω[w].ilωZI].Item4.Value.Value);
-            }
+        //    for (int w = 1; w < ilω.Length; w = w + 1)
+        //    {
+        //        pSpan[ilω[w].ilωOI] = this.pParameterElementFactory.Create(
+        //            iIndexElement: ilω[w].iIndexElement,
+        //            lIndexElement: ilω[w].lIndexElement,
+        //            ωIndexElement: ilω[w].ωIndexElement,
+        //            (double)this.SurgeonDayScenarioLengthOfStayProbabilities[ilω[w].ilωZI].Item4.Value.Value);
+        //    }
 
-            return pSpan;
-        }
+        //    return pSpan;
+        //}
 
         public double Getv()
         {
@@ -1827,7 +1864,7 @@
                 +
                 ilω.ToArray().Select(w => w.ilωOI).Max());
 
-            ΦSpan.Clear();
+            //ΦSpan.Clear();
 
             for (int w = 1; w < ilω.Length; w = w + 1)
             {
