@@ -623,10 +623,6 @@
                 this.Goal2,
                 this.Goal3,
                 this.Goal4);
-
-            Console.WriteLine(aaa.ToString());
-
-            var bbb = 2;
         }
 
         private IiIndexElementFactory iIndexElementFactory { get; }
