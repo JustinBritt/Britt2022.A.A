@@ -1897,7 +1897,6 @@
                 }
             }
             
-
             return xSpan;
         }
 
