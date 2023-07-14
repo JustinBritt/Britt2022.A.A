@@ -421,42 +421,6 @@
                *
                niωParameterElement.SizeInBytes);
 
-            // p(i, l, ω)
-            //this.pParameterElementFactory = parameterElementsAbstractFactory.CreatepParameterElementFactory();
-
-            //List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> pList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
-
-            //foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
-            //{
-            //    foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
-            //    {
-            //        foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
-            //        {
-            //            pList.Add(
-            //                Tuple.Create(
-            //                    surgeon,
-            //                    day,
-            //                    scenario,
-            //                    WGPMInputContext.SurgeonDayScenarioLengthOfStayProbabilities[surgeon][day][scenario]));
-            //        }
-            //    }
-            //}
-
-            //this.SurgeonDayScenarioLengthOfStayProbabilities = pList
-            //    .OrderBy(w => int.Parse(w.Item1.Id))
-            //    .ThenBy(w => w.Item2.Value.Value)
-            //    .ThenBy(w => w.Item3.Value.Value)
-            //    .ToArray();
-
-            //this.SurgeonDayScenarioLengthOfStayProbabilitiesIntPtr = Marshal.AllocHGlobal(
-            //    (this.Surgeons.Count() + 1)
-            //    *
-            //    (this.LengthOfStayDays.Count() + 1)
-            //    *
-            //    (this.Scenarios.Count() + 1)
-            //    *
-            //    pParameterElement.SizeInBytes);
-
             // v
             this.TimeBlockLength = WGPMInputContext
                 .TimeBlockLength;
