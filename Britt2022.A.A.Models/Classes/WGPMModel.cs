@@ -240,21 +240,23 @@
 
             ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
 
+            var AArraySize = 1 + iω.ToArray().Select(w => w.iωOI).Max();
+            var AArray = new Tuple<Organization, INullableValue<int>, Duration>[AArraySize];
+
             for (int i = 1; i < iω.Length; i = i + 1)
             {
                 Organization surgeon = this.Surgeons[iω[i].iIndexElement - 1];
 
                 INullableValue<int> scenario = this.Scenarios[iω[i].ωIndexElement - 1];
 
-                AList.Add(
+                AArray[iω[i].iωZI] =
                     Tuple.Create(
                         surgeon,
                         scenario,
-                        WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations[surgeon][scenario]));
+                        WGPMInputContext.SurgeonScenarioWeightedAverageSurgicalDurations[surgeon][scenario]);
             }
 
-            this.SurgeonScenarioWeightedAverageSurgicalDurations = AList
-                .ToArray();
+            this.SurgeonScenarioWeightedAverageSurgicalDurations = AArray;
 
             this.SurgeonScenarioWeightedAverageSurgicalDurationsIntPtr = Marshal.AllocHGlobal(
                (this.Surgeons.Count() + 1)
