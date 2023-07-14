@@ -41,6 +41,7 @@
     using Britt2022.A.A.Variables.Interfaces;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
     using System.Collections;
+    using NGenerics.DataStructures.Trees;
 
     public unsafe sealed class WGPMModel : IWGPMModel
     {
@@ -655,6 +656,12 @@
                xVariableElement.SizeInBytes);
 
             this.x = variablesAbstractFactory.CreatexFactory().Create();
+
+            if (WGPMInputContext.SurgeonOperatingRoomDayAssignments != null)
+            {
+                this.Setx(
+                    WGPMInputContext.SurgeonOperatingRoomDayAssignments);
+            }
 
             this.Constraints = constraintsAbstractFactory.CreateConstraintsFactory().Create(
                 constraints1Factory: constraintsAbstractFactory.CreateConstraints1Factory(),
@@ -1953,6 +1960,40 @@
             Span<xVariableElement> xSpan = new Span<xVariableElement>(
                 (void*)this.SurgeonOperatingRoomDayAssignmentsIntPtr,
                 1 + ijk.ToArray().Select(w => w.ijkOI).Max());
+
+            return xSpan;
+        }
+
+        private unsafe Span<xVariableElement> Setx(
+            RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> surgeonOperatingRoomDayAssignments)
+        {
+            ReadOnlySpan<ijkCrossJoinElement> ijk = this.Getijk();
+
+            Span<xVariableElement> xSpan = new Span<xVariableElement>(
+                (void*)this.SurgeonOperatingRoomDayAssignmentsIntPtr,
+                1 + ijk.ToArray().Select(w => w.ijkOI).Max());
+
+            fixed (ijkCrossJoinElement * ijkPtr = ijk)
+            {
+                fixed (xVariableElement * xPtr = xSpan)
+                {
+                    for (int w = 1; w < ijk.Length; w = w + 1)
+                    {
+                        Organization surgeon = this.Surgeons[ijk[w].iIndexElement - 1];
+
+                        Location operatingRoom = this.OperatingRooms[ijk[w].jIndexElement - 1];
+
+                        FhirDateTime day = this.PlanningHorizon[ijk[w].kIndexElement - 1];
+
+                        (*(xPtr + (*(ijkPtr + w)).ijkOI)) = this.xVariableElementFactory.Create(
+                            ijk[w].iIndexElement,
+                            ijk[w].jIndexElement,
+                            ijk[w].kIndexElement,
+                            surgeonOperatingRoomDayAssignments[surgeon][operatingRoom][day].Value.Value ? 1 : 0);
+                    }
+                }
+            }
+            
 
             return xSpan;
         }
