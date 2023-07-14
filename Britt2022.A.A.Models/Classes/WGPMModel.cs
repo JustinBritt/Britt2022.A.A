@@ -520,38 +520,65 @@
             // Φ(i, l, ω)
             this.ΦParameterElementFactory = parameterElementsAbstractFactory.CreateΦParameterElementFactory();
 
-            List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> ΦList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
+            var ilω = this.Getilω();
 
-            foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            var ΦArraySize = 1 + ilω.ToArray().Select(w => w.ilωOI).Max();
+            var ΦArray = new Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[ΦArraySize];
+
+            for (int i = 1; i < ilω.Length; i = i + 1)
             {
-                foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
-                {
-                    foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
-                    {
-                        ΦList.Add(
-                            Tuple.Create(
-                                surgeon,
-                                day,
-                                scenario,
-                                WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario]));
-                    }
-                }
+                Organization surgeon = this.Surgeons[ilω[i].iIndexElement - 1];
+
+                INullableValue<int> day = this.LengthOfStayDays[ilω[i].lIndexElement];
+
+                INullableValue<int> scenario = this.Scenarios[ilω[i].ωIndexElement - 1];
+
+                ΦArray[ilω[i].ilωZI] =
+                    Tuple.Create(
+                        surgeon,
+                        day,
+                        scenario,
+                        WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario]);
             }
 
-            this.SurgeonDayScenarioCumulativeNumberPatients = ΦList
-                .OrderBy(w => int.Parse(w.Item1.Id))
-                .ThenBy(w => w.Item2.Value.Value)
-                .ThenBy(w => w.Item3.Value.Value)
-                .ToArray();
+            this.SurgeonDayScenarioCumulativeNumberPatients = ΦArray;
 
-            this.SurgeonDayScenarioCumulativeNumberPatientsIntPtr = Marshal.AllocHGlobal(
-               (this.Surgeons.Count() + 1)
-               *
-               (this.LengthOfStayDays.Count() + 1)
-               *
-               (this.Scenarios.Count() + 1)
-               *
-               ΦParameterElement.SizeInBytes);
+            var aaa = this.GetΦ();
+
+            var bb = 2;
+
+            //List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>> ΦList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>>();
+
+            //foreach (Organization surgeon in WGPMInputContext.Surgeons.Entry.Where(i => i.Resource is Organization).Select(i => (Organization)i.Resource))
+            //{
+            //    foreach (INullableValue<int> day in WGPMInputContext.LengthOfStayDays)
+            //    {
+            //        foreach (INullableValue<int> scenario in WGPMInputContext.Scenarios)
+            //        {
+            //            ΦList.Add(
+            //                Tuple.Create(
+            //                    surgeon,
+            //                    day,
+            //                    scenario,
+            //                    WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario]));
+            //        }
+            //    }
+            //}
+
+            //this.SurgeonDayScenarioCumulativeNumberPatients = ΦList
+            //    //.OrderBy(w => int.Parse(w.Item1.Id))
+            //    .OrderBy(w => w.Item2.Value.Value)
+            //    //.OrderBy(w => w.Item3.Value.Value)
+            //    .ToArray();
+
+            //this.SurgeonDayScenarioCumulativeNumberPatientsIntPtr = Marshal.AllocHGlobal(
+            //   (this.Surgeons.Count() + 1)
+            //   *
+            //   (this.LengthOfStayDays.Count() + 1)
+            //   *
+            //   (this.Scenarios.Count() + 1)
+            //   *
+            //   ΦParameterElement.SizeInBytes);
 
             // Ω(i, k)
             this.ΩParameterElementFactory = parameterElementsAbstractFactory.CreateΩParameterElementFactory();
@@ -653,7 +680,7 @@
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
 
             // TODO: Remove
-            var aaa = this.ObjectiveFunction.GetValue(
+            var aaa2 = this.ObjectiveFunction.GetValue(
                 this.Geti(),
                 this.Getj(),
                 this.Getk(),
@@ -1858,11 +1885,9 @@
         {
             ReadOnlySpan<ilωCrossJoinElement> ilω = this.Getilω();
 
-            Span<ΦParameterElement> ΦSpan = new Span<ΦParameterElement>(
-                (void*)this.SurgeonDayScenarioCumulativeNumberPatientsIntPtr,
-                1
-                +
-                ilω.ToArray().Select(w => w.ilωOI).Max());
+            Span<ΦParameterElement> ΦSpan = (Span<ΦParameterElement>)Array.CreateInstance(
+                typeof(ΦParameterElement),
+                1 + ilω.ToArray().Select(w => w.ilωOI).Max());
 
             //ΦSpan.Clear();
 
