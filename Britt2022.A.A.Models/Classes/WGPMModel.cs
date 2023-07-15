@@ -591,6 +591,54 @@
 
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
 
+            var d1MinusValue = this.d1Minus.GetElementsAt(
+                new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().Created1MinusResultElementFactory(),
+                this.Surgeons,
+                this.Scenarios,
+                this.Geti(),
+                this.Getω(),
+                this.Getijk(),
+                this.Getiω(),
+                this.GetN(),
+                this.Getn(),
+                this.GetxWithoutClearing()).ToArray().Select(w => w.Value).Sum();
+
+            var d2MinusValue = this.d2Minus.GetElementsAt(
+                new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().Created2MinusResultElementFactory(),
+                this.Surgeons,
+                this.OperatingRooms,
+                this.PlanningHorizon,
+                this.Scenarios,
+                this.Geti(),
+                this.Getj(),
+                this.Getk(),
+                this.Getω(),
+                this.Getijkω(),
+                this.GetA(),
+                this.Getn(),
+                this.Getv(),
+                this.GetxWithoutClearing()).ToArray().Select(w => w.Value).Sum();
+
+            var IMaxValue = this.IMax.GetElementsAt(
+                new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().CreateIMaxResultElementFactory(),
+                this.Scenarios,
+                this.Geti(),
+                this.Getj(),
+                this.Getk(),
+                this.Getω(),
+                this.Getkω(),
+                this.I.GetValue(
+                    this.Geti(),
+                    this.Getj(),
+                    this.Getk(),
+                    this.Getl(),
+                    this.Getω(),
+                    this.Getilω(),
+                    this.GetΦ(),
+                    this.GetxWithoutClearing())).ToArray().Select(w => w.Value).Sum();
+
+            var bbb = 2;
+
             // TODO: Remove
             var aaa2 = this.ObjectiveFunction.GetValue(
                 this.Geti(),
@@ -1797,7 +1845,7 @@
                 typeof(ΦParameterElement),
                 1 + ilω.ToArray().Select(w => w.ilωOI).Max());
 
-            //ΦSpan.Clear();
+            ΦSpan.Clear();
 
             for (int w = 1; w < ilω.Length; w = w + 1)
             {
