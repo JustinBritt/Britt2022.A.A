@@ -470,23 +470,61 @@
             var ΦArraySize = 1 + ilω.ToArray().Select(w => w.ilωOI).Max();
             var ΦArray = new Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[ΦArraySize];
 
-            for (int i = 1; i < ilω.Length; i = i + 1)
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> outerRedBlackTree = new();
+
+            foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys)
             {
-                Organization surgeon = this.Surgeons[ilω[i].iIndexElement - 1];
+                int iIndexElement = int.Parse(surgeon.Id);
 
-                INullableValue<int> day = this.LengthOfStayDays[ilω[i].lIndexElement];
+                RedBlackTree<int, RedBlackTree<int, decimal>> firstInnerRedBlackTree = new();
 
-                INullableValue<int> scenario = this.Scenarios[ilω[i].ωIndexElement - 1];
+                foreach (INullableValue<int> day in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon].Keys)
+                {
+                    int lIndexElement = day.Value.Value;
 
-                ΦArray[ilω[i].ilωZI] =
-                    Tuple.Create(
-                        surgeon,
-                        day,
-                        scenario,
-                        WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario]);
+                    RedBlackTree<int, decimal> secondInnerRedBlackTree = new RedBlackTree<int, decimal>();
+
+                    foreach (INullableValue<int> scenario in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day].Keys)
+                    {
+                        int ωIndexElement = scenario.Value.Value;
+
+                        var value0 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys
+                            .Where(w => int.Parse(w.Id) == iIndexElement)
+                            .FirstOrDefault();
+
+                        var value2 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[value0].Keys
+                            .Where(w => w.Value.Value == lIndexElement)
+                            .FirstOrDefault();
+
+                        var value4 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[value0][value2].Keys
+                            .Where(w => w.Value.Value == ωIndexElement)
+                            .FirstOrDefault();
+
+                        var value6 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[value0][value2][value4];
+
+                        secondInnerRedBlackTree.Add(
+                            ωIndexElement,
+                            value6.Value.Value);
+                    }
+
+                    firstInnerRedBlackTree.Add(
+                        lIndexElement,
+                        secondInnerRedBlackTree);
+                }
+
+                outerRedBlackTree.Add(
+                    iIndexElement,
+                    firstInnerRedBlackTree);
             }
 
-            this.SurgeonDayScenarioCumulativeNumberPatients = ΦArray;
+            this.SurgeonDayScenarioCumulativeNumberPatients = outerRedBlackTree;
+
+            var sum1 = SurgeonDayScenarioCumulativeNumberPatients.SelectMany(w => w.Value.Values).SelectMany(w => w.Values).Sum();
+            var sum2 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.SelectMany(w => w.Value.Values).SelectMany(w => w.Values).Select(w => w.Value.Value).Sum();
+
+            var diff = sum1 - sum2;
+
+            var diff2 = 2;
 
             // Ω(i, k)
             this.ΩParameterElementFactory = parameterElementsAbstractFactory.CreateΩParameterElementFactory();
@@ -806,7 +844,7 @@
         public KeyValuePair<INullableValue<int>, INullableValue<decimal>>[] ScenarioProbabilities { get; }
 
         // Φ(i, l, ω)
-        public Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
+        public RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         public Tuple<Organization, FhirDateTime, INullableValue<bool>>[] SurgeonDayAvailabilities { get; }
 
@@ -1841,22 +1879,23 @@
         {
             ReadOnlySpan<ilωCrossJoinElement> ilω = this.Getilω();
 
-            Span<ΦParameterElement> ΦSpan = (Span<ΦParameterElement>)Array.CreateInstance(
+            var ΦSpan = Array.CreateInstance(
                 typeof(ΦParameterElement),
                 1 + ilω.ToArray().Select(w => w.ilωOI).Max());
 
-            ΦSpan.Clear();
+            //ΦSpan.Clear();
 
             for (int w = 1; w < ilω.Length; w = w + 1)
             {
-                ΦSpan[ilω[w].ilωOI] = this.ΦParameterElementFactory.Create(
+                ΦSpan.SetValue(this.ΦParameterElementFactory.Create(
                     iIndexElement: ilω[w].iIndexElement,
                     lIndexElement: ilω[w].lIndexElement,
                     ωIndexElement: ilω[w].ωIndexElement,
-                    (double)this.SurgeonDayScenarioCumulativeNumberPatients[ilω[w].ilωZI].Item4.Value.Value);
+                    (double)this.SurgeonDayScenarioCumulativeNumberPatients[ilω[w].iIndexElement][ilω[w].lIndexElement][ilω[w].ωIndexElement]),
+                    ilω[w].ilωOI);
             }
 
-            return ΦSpan;
+            return (Span<ΦParameterElement>)ΦSpan;
         }
 
         public unsafe ReadOnlySpan<ΩParameterElement> GetΩ()
