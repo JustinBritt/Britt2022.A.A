@@ -524,6 +524,8 @@
 
             var diff = sum1 - sum2;
 
+            var ΦAverage = SurgeonDayScenarioCumulativeNumberPatients.SelectMany(w => w.Value.Values).SelectMany(w => w.Values).Average();
+
             var diff2 = 2;
 
             // Ω(i, k)
@@ -674,6 +676,18 @@
                     this.Getilω(),
                     this.GetΦ(),
                     this.GetxWithoutClearing())).ToArray().Select(w => w.Value).Sum();
+
+            var IValue = this.I.GetValue(
+                    this.Geti(),
+                    this.Getj(),
+                    this.Getk(),
+                    this.Getl(),
+                    this.Getω(),
+                    this.Getilω(),
+                    this.GetΦ(),
+                    this.GetxWithoutClearing());
+
+            var IAverage = IValue.ToArray().Select(w => w.Value).Average();
 
             var bbb = 2;
 
