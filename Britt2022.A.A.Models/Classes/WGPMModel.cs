@@ -1779,15 +1779,13 @@
         {
             ReadOnlySpan<ilωCrossJoinElement> ilω = this.Getilω();
 
-            var ΦSpan = Array.CreateInstance(
+            Array ΦArray = Array.CreateInstance(
                 typeof(ΦParameterElement),
                 1 + ilω.ToArray().Select(w => w.ilωOI).Max());
 
-            //ΦSpan.Clear();
-
             for (int w = 1; w < ilω.Length; w = w + 1)
             {
-                ΦSpan.SetValue(this.ΦParameterElementFactory.Create(
+                ΦArray.SetValue(this.ΦParameterElementFactory.Create(
                     iIndexElement: ilω[w].iIndexElement,
                     lIndexElement: ilω[w].lIndexElement,
                     ωIndexElement: ilω[w].ωIndexElement,
@@ -1795,7 +1793,7 @@
                     ilω[w].ilωOI);
             }
 
-            return (Span<ΦParameterElement>)ΦSpan;
+            return (Span<ΦParameterElement>)ΦArray;
         }
 
         public unsafe ReadOnlySpan<ΩParameterElement> GetΩ()
