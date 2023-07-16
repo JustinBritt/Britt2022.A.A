@@ -7,6 +7,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.Constraints.InterfacesAbstractFactories;
     using Britt2022.A.A.Contexts.Interfaces;
@@ -40,8 +42,6 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
-    using System.Collections;
-    using NGenerics.DataStructures.Trees;
 
     public unsafe sealed class WGPMModel : IWGPMModel
     {
