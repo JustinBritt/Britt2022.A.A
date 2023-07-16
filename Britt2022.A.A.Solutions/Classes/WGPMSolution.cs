@@ -161,7 +161,7 @@
                             WGPMModel.Getω(),
                             WGPMModel.Getilω(),
                             WGPMModel.Getkω(),
-                            WGPMModel.GetΦ(),
+                            null,//WGPMModel.GetΦ(),
                             WGPMModel.GetxWithoutClearing()),
                         WGPMModel.IMax.GetElementsAt(
                             resultElementsAbstractFactory.CreateIMaxResultElementFactory(),
@@ -178,7 +178,7 @@
                                 WGPMModel.Getl(),
                                 WGPMModel.Getω(),
                                 WGPMModel.Getilω(),
-                                WGPMModel.GetΦ(),
+                                null,//WGPMModel.GetΦ(),
                                 WGPMModel.GetxWithoutClearing())),
                         WGPMModel.IMin.GetElementsAt(
                             resultElementsAbstractFactory.CreateIMinResultElementFactory(),
@@ -195,7 +195,7 @@
                                 WGPMModel.Getl(),
                                 WGPMModel.Getω(),
                                 WGPMModel.Getilω(),
-                                WGPMModel.GetΦ(),
+                                null,//WGPMModel.GetΦ(),
                                 WGPMModel.GetxWithoutClearing())),
                         (decimal)WGPMModel.ObjectiveFunction.GetValue(
                             WGPMModel.Geti(),
@@ -217,7 +217,7 @@
                             WGPMModel.Getw3(),
                             WGPMModel.Getw4(),
                             WGPMModel.GetΡ(),
-                            WGPMModel.GetΦ(),
+                            null,//WGPMModel.GetΦ(),
                             WGPMModel.d1Minus,
                             WGPMModel.d2Minus,
                             WGPMModel.I,

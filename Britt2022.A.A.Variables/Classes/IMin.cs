@@ -76,8 +76,12 @@
             ReadOnlySpan<kωCrossJoinElement> kω,
             Span<IVariableElement> I)
         {
-            Span<double> minimumValuesSpan = new Span<double>(
-                (void*)this.MinimumValuesIntPtr,
+            //Span<double> minimumValuesSpan = new Span<double>(
+            //    (void*)this.MinimumValuesIntPtr,
+            //    ω.Length);
+
+            Span<double> minimumValuesSpan = (Span<double>)Array.CreateInstance(
+                typeof(double),
                 ω.Length);
 
             minimumValuesSpan.Clear();
@@ -85,8 +89,12 @@
             minimumValuesSpan.Fill(
                 double.MaxValue);
 
-            Span<IMinVariableElement> IMinSpan = new Span<IMinVariableElement>(
-                (void*)this.IMinIntPtr,
+            //Span<IMinVariableElement> IMinSpan = new Span<IMinVariableElement>(
+            //    (void*)this.IMinIntPtr,
+            //    ω.Length);
+
+            Span<IMinVariableElement> IMinSpan = (Span<IMinVariableElement>)Array.CreateInstance(
+                typeof(IMinVariableElement),
                 ω.Length);
 
             IMinSpan.Clear();

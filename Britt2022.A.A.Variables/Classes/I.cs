@@ -5,6 +5,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
     using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
@@ -51,7 +53,7 @@
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ilωCrossJoinElement> ilω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            ReadOnlySpan<ΦParameterElement> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
             Span<xVariableElement> x)
         {
             Span<IVariableElement> IVariableSpan = this.GetValue(
@@ -88,19 +90,31 @@
             ReadOnlySpan<lIndexElement> l,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ilωCrossJoinElement> ilω,
-            ReadOnlySpan<ΦParameterElement> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
             Span<xVariableElement> x)
         {
-            Span<double> sumsSpan = new Span<double>(
-                (void*)this.SumsIntPtr,
+            //Span<double> sumsSpan = new Span<double>(
+            //    (void*)this.SumsIntPtr,
+            //    k.Length
+            //    *
+            //    ω.Length);
+
+            Span<double> sumsSpan = (Span<double>)Array.CreateInstance(
+                typeof(double),
                 k.Length
                 *
                 ω.Length);
 
             sumsSpan.Clear();
 
-            Span<IVariableElement> ISpan = new Span<IVariableElement>(
-                (void*)this.IIntPtr,
+            //Span<IVariableElement> ISpan = new Span<IVariableElement>(
+            //    (void*)this.IIntPtr,
+            //    k.Length
+            //    *
+            //    ω.Length);
+
+            Span<IVariableElement> ISpan = (Span<IVariableElement>)Array.CreateInstance(
+                typeof(IVariableElement),
                 k.Length
                 *
                 ω.Length);
@@ -109,22 +123,21 @@
 
             fixed (double * sumsSpanPtr = sumsSpan)
             {
-                fixed (ΦParameterElement * ΦPtr = Φ)
                 fixed (xVariableElement * xPtr = x)
                 {
-                    for (int iIndexElement = 1; iIndexElement <= i.Length - 1; iIndexElement = iIndexElement + 1)
+                    for (int iIndexElement = 1; iIndexElement < i.Length; iIndexElement = iIndexElement + 1)
                     {
-                        for (int jIndexElement = 1; jIndexElement <= j.Length - 1; jIndexElement = jIndexElement + 1)
+                        for (int jIndexElement = 1; jIndexElement < j.Length; jIndexElement = jIndexElement + 1)
                         {
-                            for (int kIndexElement = 1; kIndexElement <= k.Length - 1; kIndexElement = kIndexElement + 1)
+                            for (int kIndexElement = 1; kIndexElement < k.Length; kIndexElement = kIndexElement + 1)
                             {
                                 for (int lIndexElement = 1; lIndexElement <= kIndexElement; lIndexElement = lIndexElement + 1)
                                 {
                                     if ((*(xPtr + iIndexElement + (jIndexElement * (i.Length - 1)) + (lIndexElement * (i.Length - 1) * (j.Length - 1)))).Value == 1)
                                     {
-                                        for (int ωIndexElement = 1; ωIndexElement <= ω.Length - 1; ωIndexElement = ωIndexElement + 1)
+                                        for (int ωIndexElement = 1; ωIndexElement < ω.Length; ωIndexElement = ωIndexElement + 1)
                                         {
-                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (*(ΦPtr + iIndexElement + (kIndexElement - lIndexElement) * (i.Length - 1) + (ωIndexElement * (i.Length - 1) * (l.Length - 1)))).Value;
+                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (double)Φ[iIndexElement][kIndexElement - lIndexElement][ωIndexElement];
                                         }
                                     }
                                 }
@@ -132,19 +145,19 @@
                         }
                     }
 
-                    for (int iIndexElement = 1; iIndexElement <= i.Length - 1; iIndexElement = iIndexElement + 1)
+                    for (int iIndexElement = 1; iIndexElement < i.Length; iIndexElement = iIndexElement + 1)
                     {
-                        for (int jIndexElement = 1; jIndexElement <= j.Length - 1; jIndexElement = jIndexElement + 1)
+                        for (int jIndexElement = 1; jIndexElement < j.Length; jIndexElement = jIndexElement + 1)
                         {
-                            for (int kIndexElement = 1; kIndexElement <= k.Length - 1; kIndexElement = kIndexElement + 1)
+                            for (int kIndexElement = 1; kIndexElement < k.Length; kIndexElement = kIndexElement + 1)
                             {
-                                for (int lIndexElement = kIndexElement + 1; lIndexElement <= (k.Length - 1); lIndexElement = lIndexElement + 1)
+                                for (int lIndexElement = kIndexElement + 1; lIndexElement < k.Length; lIndexElement = lIndexElement + 1)
                                 {
                                     if ((*(xPtr + iIndexElement + (jIndexElement * (i.Length - 1)) + (lIndexElement * (i.Length - 1) * (j.Length - 1)))).Value == 1)
                                     {
-                                        for (int ωIndexElement = 1; ωIndexElement <= (ω.Length - 1); ωIndexElement = ωIndexElement + 1)
+                                        for (int ωIndexElement = 1; ωIndexElement < ω.Length; ωIndexElement = ωIndexElement + 1)
                                         {
-                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (*(ΦPtr + iIndexElement + (kIndexElement - lIndexElement + (k.Length - 1)) * (i.Length - 1) + (ωIndexElement * (i.Length - 1) * (l.Length - 1)))).Value;
+                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (double)Φ[iIndexElement][kIndexElement - lIndexElement + (k.Length - 1)][ωIndexElement];
                                         }
                                     }
                                 }
@@ -154,9 +167,9 @@
 
                     fixed (IVariableElement * IPtr = ISpan)
                     {
-                        for (int kIndexElement = 1; kIndexElement <= k.Length - 1; kIndexElement = kIndexElement + 1)
+                        for (int kIndexElement = 1; kIndexElement < k.Length; kIndexElement = kIndexElement + 1)
                         {
-                            for (int ωIndexElement = 1; ωIndexElement <= (ω.Length - 1); ωIndexElement = ωIndexElement + 1)
+                            for (int ωIndexElement = 1; ωIndexElement < ω.Length; ωIndexElement = ωIndexElement + 1)
                             {
                                 *(IPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) = new IVariableElement(
                                     kIndexElement,

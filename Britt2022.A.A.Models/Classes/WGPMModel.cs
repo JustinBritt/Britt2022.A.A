@@ -631,67 +631,183 @@
 
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
 
-            var d1MinusValue = this.d1Minus.GetElementsAt(
-                new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().Created1MinusResultElementFactory(),
-                this.Surgeons,
-                this.Scenarios,
-                this.Geti(),
-                this.Getω(),
-                this.Getijk(),
-                this.Getiω(),
-                this.GetN(),
-                this.Getn(),
-                this.GetxWithoutClearing()).ToArray().Select(w => w.Value).Sum();
+            //var d1MinusValue = this.d1Minus.GetElementsAt(
+            //    new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().Created1MinusResultElementFactory(),
+            //    this.Surgeons,
+            //    this.Scenarios,
+            //    this.Geti(),
+            //    this.Getω(),
+            //    this.Getijk(),
+            //    this.Getiω(),
+            //    this.GetN(),
+            //    this.Getn(),
+            //    this.GetxWithoutClearing()).ToArray().Select(w => w.Value).Sum();
 
-            var d2MinusValue = this.d2Minus.GetElementsAt(
-                new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().Created2MinusResultElementFactory(),
-                this.Surgeons,
-                this.OperatingRooms,
-                this.PlanningHorizon,
-                this.Scenarios,
+            //var d2MinusValue = this.d2Minus.GetElementsAt(
+            //    new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().Created2MinusResultElementFactory(),
+            //    this.Surgeons,
+            //    this.OperatingRooms,
+            //    this.PlanningHorizon,
+            //    this.Scenarios,
+            //    this.Geti(),
+            //    this.Getj(),
+            //    this.Getk(),
+            //    this.Getω(),
+            //    this.Getijkω(),
+            //    this.GetA(),
+            //    this.Getn(),
+            //    this.Getv(),
+            //    this.GetxWithoutClearing()).ToArray().Select(w => w.Value).Sum();
+
+            //var IMaxValue = this.IMax.GetElementsAt(
+            //    new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().CreateIMaxResultElementFactory(),
+            //    this.Scenarios,
+            //    this.Geti(),
+            //    this.Getj(),
+            //    this.Getk(),
+            //    this.Getω(),
+            //    this.Getkω(),
+            //    this.I.GetValue(
+            //        this.Geti(),
+            //        this.Getj(),
+            //        this.Getk(),
+            //        this.Getl(),
+            //        this.Getω(),
+            //        this.Getilω(),
+            //        this.SurgeonDayScenarioCumulativeNumberPatients,
+            //        this.GetxWithoutClearing())).ToArray().Select(w => w.Value).Sum();
+
+            //var IMinValue = this.IMin.GetElementsAt(
+            //    new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().CreateIMinResultElementFactory(),
+            //    this.Scenarios,
+            //    this.Geti(),
+            //    this.Getj(),
+            //    this.Getk(),
+            //    this.Getω(),
+            //    this.Getkω(),
+            //    this.I.GetValue(
+            //        this.Geti(),
+            //        this.Getj(),
+            //        this.Getk(),
+            //        this.Getl(),
+            //        this.Getω(),
+            //        this.Getilω(),
+            //        this.SurgeonDayScenarioCumulativeNumberPatients,
+            //        this.GetxWithoutClearing())).ToArray().Select(w => w.Value).Sum();
+
+            //var IValue = this.I.GetValue(
+            //        this.Geti(),
+            //        this.Getj(),
+            //        this.Getk(),
+            //        this.Getl(),
+            //        this.Getω(),
+            //        this.Getilω(),
+            //        this.SurgeonDayScenarioCumulativeNumberPatients,
+            //        this.GetxWithoutClearing());
+
+            //var IAverage = IValue.ToArray().Select(w => w.Value).Average();
+
+            //var bbb = 2;
+
+            // TODO: Remove
+            var goal1 = this.Goal1.GetValue(
+                this.Getω(),
+                this.Getiω(),
+                this.Getw1(),
+                this.GetΡ(),
+                this.d1Minus.GetValue(
+                    this.Geti(),
+                    this.Getω(),
+                    this.Getijk(),
+                    this.Getiω(),
+                    this.GetN(),
+                    this.Getn(),
+                    this.GetxWithoutClearing()),
+                this.GetxWithoutClearing());
+
+            var goal2 = this.Goal2.GetValue(
+                this.Getv(),
                 this.Geti(),
                 this.Getj(),
                 this.Getk(),
                 this.Getω(),
                 this.Getijkω(),
-                this.GetA(),
-                this.Getn(),
-                this.Getv(),
-                this.GetxWithoutClearing()).ToArray().Select(w => w.Value).Sum();
+                this.Getw2(),
+                this.GetΡ(),
+                this.d2Minus.GetValue(
+                    this.Getv(),
+                    this.Geti(),
+                    this.Getj(),
+                    this.Getk(),
+                    this.Getω(),
+                    this.Getijkω(),
+                    this.GetA(),
+                    this.Getn(),
+                    this.GetxWithoutClearing()),
+                this.GetxWithoutClearing());
 
-            var IMaxValue = this.IMax.GetElementsAt(
-                new Britt2022.A.A.ResultElements.AbstractFactories.ResultElementsAbstractFactory().CreateIMaxResultElementFactory(),
-                this.Scenarios,
-                this.Geti(),
-                this.Getj(),
+            var goal3 = this.Goal3.GetValue(
                 this.Getk(),
                 this.Getω(),
-                this.Getkω(),
-                this.I.GetValue(
+                this.Getiω(),
+                this.Getw3(),
+                this.GetΡ(),
+                this.IMax.GetValue(
                     this.Geti(),
                     this.Getj(),
                     this.Getk(),
-                    this.Getl(),
                     this.Getω(),
-                    this.Getilω(),
-                    this.GetΦ(),
-                    this.GetxWithoutClearing())).ToArray().Select(w => w.Value).Sum();
+                    this.Getkω(),
+                    this.I.GetValue(
+                        this.Geti(),
+                        this.Getj(),
+                        this.Getk(),
+                        this.Getl(),
+                        this.Getω(),
+                        this.Getilω(),
+                        this.SurgeonDayScenarioCumulativeNumberPatients,
+                        this.GetxWithoutClearing())));
 
-            var IValue = this.I.GetValue(
+            var goal4 = this.Goal4.GetValue(
+                this.Getk(),
+                this.Getω(),
+                this.Getiω(),
+                this.Getw4(),
+                this.GetΡ(),
+                this.IMax.GetValue(
                     this.Geti(),
                     this.Getj(),
                     this.Getk(),
-                    this.Getl(),
                     this.Getω(),
-                    this.Getilω(),
-                    this.GetΦ(),
-                    this.GetxWithoutClearing());
+                    this.Getkω(),
+                    this.I.GetValue(
+                        this.Geti(),
+                        this.Getj(),
+                        this.Getk(),
+                        this.Getl(),
+                        this.Getω(),
+                        this.Getilω(),
+                        this.SurgeonDayScenarioCumulativeNumberPatients,
+                        this.GetxWithoutClearing())),
+                this.IMin.GetValue(
+                    this.Geti(),
+                    this.Getj(),
+                    this.Getk(),
+                    this.Getω(),
+                    this.Getkω(),
+                    this.I.GetValue(
+                        this.Geti(),
+                        this.Getj(),
+                        this.Getk(),
+                        this.Getl(),
+                        this.Getω(),
+                        this.Getilω(),
+                        this.SurgeonDayScenarioCumulativeNumberPatients,
+                        this.GetxWithoutClearing())));
 
-            var IAverage = IValue.ToArray().Select(w => w.Value).Average();
+            var sum = goal1 + goal2 + goal3 + goal4;
 
             var bbb = 2;
-
-            // TODO: Remove
             var aaa2 = this.ObjectiveFunction.GetValue(
                 this.Geti(),
                 this.Getj(),
@@ -712,7 +828,7 @@
                 this.Getw3(),
                 this.Getw4(),
                 this.GetΡ(),
-                this.GetΦ(),
+                this.SurgeonDayScenarioCumulativeNumberPatients,
                 this.d1Minus,
                 this.d2Minus,
                 this.I,
