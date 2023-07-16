@@ -1648,26 +1648,6 @@
             return HSpan;
         }
 
-        //public unsafe ReadOnlySpan<hiParameterElement> Geth()
-        //{
-        //    ReadOnlySpan<iIndexElement> i = this.Geti();
-
-        //    Span<hiParameterElement> hSpan = new Span<hiParameterElement>(
-        //        (void*)this.SurgeonLengthOfStayMaximumsIntPtr,
-        //        1 + this.Surgeons.Count());
-
-        //    hSpan.Clear();
-
-        //    for (int w = 1; w < i.Length; w = w + 1)
-        //    {
-        //        hSpan[i[w].Value] = this.hParameterElementFactory.Create(
-        //            iIndexElement: i[w].Value,
-        //            value: this.SurgeonLengthOfStayMaximums[i[w].Value - 1].Value.Value.Value);
-        //    }
-
-        //    return hSpan;
-        //}
-
         public unsafe ReadOnlySpan<LParameterElement> GetL()
         {
             ReadOnlySpan<iIndexElement> i = this.Geti();
@@ -1728,30 +1708,6 @@
 
             return nSpan;
         }
-
-        //public unsafe ReadOnlySpan<pParameterElement> Getp()
-        //{
-        //    ReadOnlySpan<ilωCrossJoinElement> ilω = this.Getilω();
-
-        //    Span<pParameterElement> pSpan = new Span<pParameterElement>(
-        //        (void*)this.SurgeonDayScenarioLengthOfStayProbabilitiesIntPtr,
-        //        1
-        //        +
-        //        ilω.ToArray().Select(w => w.ilωOI).Max());
-
-        //    pSpan.Clear();
-
-        //    for (int w = 1; w < ilω.Length; w = w + 1)
-        //    {
-        //        pSpan[ilω[w].ilωOI] = this.pParameterElementFactory.Create(
-        //            iIndexElement: ilω[w].iIndexElement,
-        //            lIndexElement: ilω[w].lIndexElement,
-        //            ωIndexElement: ilω[w].ωIndexElement,
-        //            (double)this.SurgeonDayScenarioLengthOfStayProbabilities[ilω[w].ilωZI].Item4.Value.Value);
-        //    }
-
-        //    return pSpan;
-        //}
 
         public double Getv()
         {
