@@ -236,8 +236,6 @@
             // A(i, ω)
             this.AParameterElementFactory = parameterElementsAbstractFactory.CreateAParameterElementFactory();
 
-            List<Tuple<Organization, INullableValue<int>, Duration>> AList = new List<Tuple<Organization, INullableValue<int>, Duration>>();
-
             ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
 
             var AArraySize = 1 + iω.ToArray().Select(w => w.iωOI).Max();
