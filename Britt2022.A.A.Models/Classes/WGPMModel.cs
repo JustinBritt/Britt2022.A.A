@@ -519,15 +519,6 @@
 
             this.SurgeonDayScenarioCumulativeNumberPatients = outerRedBlackTree;
 
-            var sum1 = SurgeonDayScenarioCumulativeNumberPatients.SelectMany(w => w.Value.Values).SelectMany(w => w.Values).Sum();
-            var sum2 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.SelectMany(w => w.Value.Values).SelectMany(w => w.Values).Select(w => w.Value.Value).Sum();
-
-            var diff = sum1 - sum2;
-
-            var ΦAverage = SurgeonDayScenarioCumulativeNumberPatients.SelectMany(w => w.Value.Values).SelectMany(w => w.Values).Average();
-
-            var diff2 = 2;
-
             // Ω(i, k)
             this.ΩParameterElementFactory = parameterElementsAbstractFactory.CreateΩParameterElementFactory();
 
