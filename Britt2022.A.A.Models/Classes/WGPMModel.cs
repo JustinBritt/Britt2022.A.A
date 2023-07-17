@@ -651,6 +651,25 @@
                 this.Goal2,
                 this.Goal3,
                 this.Goal4);
+
+            var feasible = this.Constraints.IsFeasible(
+                this.Geti(),
+                this.Getj(),
+                this.Getk(),
+                this.Getr(),
+                this.Getijk(),
+                this.Getik(),
+                this.Getjk(),
+                this.GetB(),
+                this.GetB1(),
+                this.GetF2(),
+                this.GetH(),
+                this.GetL(),
+                this.GetΠ(),
+                this.GetΩ(),
+                this.GetxWithoutClearing());
+
+            var bbb = 2;
         }
 
         private IiIndexElementFactory iIndexElementFactory { get; }
