@@ -486,23 +486,9 @@
                     {
                         int ωIndexElement = scenario.Value.Value;
 
-                        var value0 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys
-                            .Where(w => int.Parse(w.Id) == iIndexElement)
-                            .FirstOrDefault();
-
-                        var value2 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[value0].Keys
-                            .Where(w => w.Value.Value == lIndexElement)
-                            .FirstOrDefault();
-
-                        var value4 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[value0][value2].Keys
-                            .Where(w => w.Value.Value == ωIndexElement)
-                            .FirstOrDefault();
-
-                        var value6 = WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[value0][value2][value4];
-
                         secondInnerRedBlackTree.Add(
                             ωIndexElement,
-                            value6.Value.Value);
+                            WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario].Value.Value);
                     }
 
                     firstInnerRedBlackTree.Add(
