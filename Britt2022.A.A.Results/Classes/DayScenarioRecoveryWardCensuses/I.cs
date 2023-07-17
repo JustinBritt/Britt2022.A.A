@@ -24,7 +24,7 @@
                 .Select(
                 w => Tuple.Create(
                     w.Day,
-                    (INullableValue<int>)w.Scenario,
+                    w.Scenario,
                     nullableValueFactory.Create<decimal>(
                         w.Value)))
                 .ToImmutableList();
