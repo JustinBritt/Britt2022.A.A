@@ -781,9 +781,6 @@
         // n(i, ω)
         public Tuple<Organization, INullableValue<int>, INullableValue<int>>[] SurgeonScenarioMaximumNumberPatients { get; }
 
-        // p(i, l, ω)
-        public Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
-
         // v
         public Duration TimeBlockLength { get; }
 

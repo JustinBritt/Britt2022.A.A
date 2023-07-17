@@ -50,15 +50,11 @@
 
         Tuple<Organization, INullableValue<int>, INullableValue<int>>[] SurgeonScenarioMaximumNumberPatients { get; }
 
-        Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioLengthOfStayProbabilities { get; }
-
         Duration TimeBlockLength { get; }
 
         Tuple<Organization, Location, INullableValue<bool>>[] SurgeonOperatingRoomAvailabilities { get; }
 
         KeyValuePair<INullableValue<int>, INullableValue<decimal>>[] ScenarioProbabilities { get; }
-
-        //Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[] SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         Tuple<Organization, FhirDateTime, INullableValue<bool>>[] SurgeonDayAvailabilities { get; }
 
