@@ -161,7 +161,7 @@
                             WGPMModel.Getω(),
                             WGPMModel.Getilω(),
                             WGPMModel.Getkω(),
-                            null,//WGPMModel.GetΦ(),
+                            WGPMModel.SurgeonDayScenarioCumulativeNumberPatients,
                             WGPMModel.GetxWithoutClearing()),
                         WGPMModel.IMax.GetElementsAt(
                             resultElementsAbstractFactory.CreateIMaxResultElementFactory(),
@@ -195,7 +195,7 @@
                                 WGPMModel.Getl(),
                                 WGPMModel.Getω(),
                                 WGPMModel.Getilω(),
-                                null,//WGPMModel.GetΦ(),
+                                WGPMModel.SurgeonDayScenarioCumulativeNumberPatients,
                                 WGPMModel.GetxWithoutClearing())),
                         (decimal)WGPMModel.ObjectiveFunction.GetValue(
                             WGPMModel.Geti(),
@@ -217,7 +217,7 @@
                             WGPMModel.Getw3(),
                             WGPMModel.Getw4(),
                             WGPMModel.GetΡ(),
-                            null,//WGPMModel.GetΦ(),
+                            WGPMModel.SurgeonDayScenarioCumulativeNumberPatients,
                             WGPMModel.d1Minus,
                             WGPMModel.d2Minus,
                             WGPMModel.I,
