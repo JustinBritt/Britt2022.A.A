@@ -55,7 +55,7 @@
                 w4: WGPMModel.Getw4(),
                 Π: WGPMModel.GetΠ(),
                 Ρ: WGPMModel.GetΡ(),
-                Φ: WGPMModel.GetΦ(),
+                Φ: WGPMModel.SurgeonDayScenarioCumulativeNumberPatients,
                 Ω: WGPMModel.GetΩ(),
                 d1Minus: WGPMModel.d1Minus,
                 d2Minus: WGPMModel.d2Minus,

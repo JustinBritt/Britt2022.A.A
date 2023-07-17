@@ -5,6 +5,8 @@
 
     using Hl7.Fhir.Model;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
@@ -55,6 +57,9 @@
         Tuple<Organization, Location, INullableValue<bool>>[] SurgeonOperatingRoomAvailabilities { get; }
 
         KeyValuePair<INullableValue<int>, INullableValue<decimal>>[] ScenarioProbabilities { get; }
+
+        // Φ(i, l, ω)
+        RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         Tuple<Organization, FhirDateTime, INullableValue<bool>>[] SurgeonDayAvailabilities { get; }
 

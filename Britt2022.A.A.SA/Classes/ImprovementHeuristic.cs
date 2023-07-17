@@ -2,6 +2,8 @@
 {
     using System;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
@@ -52,7 +54,7 @@
             double v,
             ReadOnlySpan<ΠParameterElement> Π,
             ReadOnlySpan<ΡParameterElement> Ρ,
-            ReadOnlySpan<ΦParameterElement> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
             ReadOnlySpan<ΩParameterElement> Ω,
             double w1,
             double w2,
@@ -93,7 +95,7 @@
                 w3,
                 w4,
                 Ρ,
-                null,//Φ,
+                Φ,
                 d1Minus,
                 d2Minus,
                 I,
@@ -139,7 +141,7 @@
                     w3,
                     w4,
                     Ρ,
-                    null,//Φ,
+                    Φ,
                     d1Minus,
                     d2Minus,
                     I,
@@ -192,7 +194,7 @@
                                     w3,
                                     w4,
                                     Ρ,
-                                    null,//Φ,
+                                    Φ,
                                     d1Minus,
                                     d2Minus,
                                     I,

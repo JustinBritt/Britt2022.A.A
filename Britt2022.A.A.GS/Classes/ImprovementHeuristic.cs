@@ -3,6 +3,8 @@
     using System;
     using System.Diagnostics;
 
+    using NGenerics.DataStructures.Trees;
+
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.GS.Interfaces;
@@ -10,7 +12,6 @@
     using Britt2022.A.A.NeighbourhoodStructures.Interfaces;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesFactories;
     using Britt2022.A.A.ObjectiveFunctions.Interfaces;
-    using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
     using Britt2022.A.A.ParameterElements.Structs.PreferencesOfSurgeons;
     using Britt2022.A.A.ParameterElements.Structs.ScenarioProbabilities;
     using Britt2022.A.A.ParameterElements.Structs.StrategicTargets;
@@ -53,7 +54,7 @@
             double v,
             ReadOnlySpan<ΠParameterElement> Π,
             ReadOnlySpan<ΡParameterElement> Ρ,
-            ReadOnlySpan<ΦParameterElement> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
             ReadOnlySpan<ΩParameterElement> Ω,
             double w1,
             double w2,
@@ -92,7 +93,7 @@
                 w3,
                 w4,
                 Ρ,
-                null,//Φ,
+                Φ,
                 d1Minus,
                 d2Minus,
                 I,
@@ -140,7 +141,7 @@
                     w3,
                     w4,
                     Ρ,
-                    null,//Φ,
+                    Φ,
                     d1Minus,
                     d2Minus,
                     I,
@@ -187,7 +188,7 @@
                                 w3,
                                 w4,
                                 Ρ,
-                                null,//Φ,
+                                Φ,
                                 d1Minus,
                                 d2Minus,
                                 I,
