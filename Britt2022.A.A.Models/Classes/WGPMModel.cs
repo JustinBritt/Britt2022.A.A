@@ -1850,37 +1850,30 @@
             return xSpan;
         }
 
-        private unsafe Span<xVariableElement> Setx(
+        private void Setx(
             RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> surgeonOperatingRoomDayAssignments)
         {
             ReadOnlySpan<ijkCrossJoinElement> ijk = this.Getijk();
-
-            Span<xVariableElement> xSpan = new Span<xVariableElement>(
-                (void*)this.SurgeonOperatingRoomDayAssignmentsIntPtr,
-                1 + ijk.ToArray().Select(w => w.ijkOI).Max());
-
-            fixed (ijkCrossJoinElement * ijkPtr = ijk)
-            {
-                fixed (xVariableElement * xPtr = xSpan)
-                {
-                    for (int w = 1; w < ijk.Length; w = w + 1)
-                    {
-                        Organization surgeon = this.Surgeons[ijk[w].iIndexElement - 1];
-
-                        Location operatingRoom = this.OperatingRooms[ijk[w].jIndexElement - 1];
-
-                        FhirDateTime day = this.PlanningHorizon[ijk[w].kIndexElement - 1];
-
-                        (*(xPtr + (*(ijkPtr + w)).ijkOI)) = this.xVariableElementFactory.Create(
-                            ijk[w].iIndexElement,
-                            ijk[w].jIndexElement,
-                            ijk[w].kIndexElement,
-                            surgeonOperatingRoomDayAssignments[surgeon][operatingRoom][day].Value.Value ? 1 : 0);
-                    }
-                }
-            }
             
-            return xSpan;
+            for (int w = 1; w < ijk.Length; w = w + 1)
+            {
+                Organization surgeon = this.Surgeons[ijk[w].iIndexElement - 1];
+                
+                Location operatingRoom = this.OperatingRooms[ijk[w].jIndexElement - 1];
+                
+                FhirDateTime day = this.PlanningHorizon[ijk[w].kIndexElement - 1];
+                
+                Marshal.StructureToPtr(
+                    this.xVariableElementFactory.Create(
+                        ijk[w].iIndexElement,
+                        ijk[w].jIndexElement,
+                        ijk[w].kIndexElement,
+                        surgeonOperatingRoomDayAssignments[surgeon][operatingRoom][day].Value.Value ? 1 : 0),
+                    IntPtr.Add(
+                        this.SurgeonOperatingRoomDayAssignmentsIntPtr, 
+                        ijk[w].ijkOI * xVariableElement.SizeInBytes),
+                    false);
+            }
         }
 
         bool disposed;
