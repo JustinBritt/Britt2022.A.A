@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Britt2022.A.A.Comparers\Britt2022.A.A.Comparers.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Constraints\Britt2022.A.A.Constraints.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.ConstructionHeuristic\Britt2022.A.A.ConstructionHeuristic.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Contexts\Britt2022.A.A.Contexts.csproj" />
