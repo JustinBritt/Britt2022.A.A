@@ -596,23 +596,6 @@
             this.Goal4 = objectiveFunctionsAbstractFactory.CreateGoal4Factory().Create();
 
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
-
-            var feasible = this.Constraints.IsFeasible(
-                this.Geti(),
-                this.Getj(),
-                this.Getk(),
-                this.Getr(),
-                this.Getijk(),
-                this.Getik(),
-                this.Getjk(),
-                this.GetB(),
-                this.GetB1(),
-                this.GetF2(),
-                this.GetH(),
-                this.GetL(),
-                this.GetΠ(),
-                this.GetΩ(),
-                this.GetxWithoutClearing());
         }
 
         private IiIndexElementFactory iIndexElementFactory { get; }
