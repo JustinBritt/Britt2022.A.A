@@ -464,11 +464,6 @@
             // Φ(i, l, ω)
             this.ΦParameterElementFactory = parameterElementsAbstractFactory.CreateΦParameterElementFactory();
 
-            var ilω = this.Getilω();
-
-            var ΦArraySize = 1 + ilω.ToArray().Select(w => w.ilωOI).Max();
-            var ΦArray = new Tuple<Organization, INullableValue<int>, INullableValue<int>, INullableValue<decimal>>[ΦArraySize];
-
             RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> outerRedBlackTree = new();
 
             foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys)
