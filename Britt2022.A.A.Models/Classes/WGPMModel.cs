@@ -93,7 +93,7 @@
             // k
             this.kIndexElementFactory = indexElementsAbstractFactory.CreatekIndexElementFactory();
 
-            IPlanningHorizonVisitor<INullableValue<int>, FhirDateTime> planningHorizonVisitor = new Britt2022.A.A.Contexts.Visitors.PlanningHorizonVisitor<INullableValue<int>, FhirDateTime>();
+            IPlanningHorizonVisitor<INullableValue<int>, FhirDateTime> planningHorizonVisitor = contextsAbstractFactory.CreatePlanningHorizonVisitorFactory().Create<INullableValue<int>, FhirDateTime>();
 
             WGPMInputContext.PlanningHorizon.AcceptVisitor(
                 planningHorizonVisitor);
