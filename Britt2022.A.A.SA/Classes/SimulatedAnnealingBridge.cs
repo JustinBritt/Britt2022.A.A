@@ -62,7 +62,7 @@
                 I: WGPMModel.I,
                 IMax: WGPMModel.IMax,
                 IMin: WGPMModel.IMin,
-                x: WGPMModel.Getx(),
+                x: WGPMModel.GetxWithoutClearing(),
                 constraints: WGPMModel.Constraints,
                 energyFunction: WGPMModel.ObjectiveFunction,
                 goal1: WGPMModel.Goal1,
