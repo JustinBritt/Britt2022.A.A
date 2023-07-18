@@ -4,6 +4,8 @@
 
     public interface IContextsAbstractFactory
     {
+        IPlanningHorizonVisitorFactory CreatePlanningHorizonVisitorFactory();
+
         IWGPMInputContextFactory CreateWGPMInputContextFactory();
 
         IWGPMOutputContextFactory CreateWGPMOutputContextFactory();

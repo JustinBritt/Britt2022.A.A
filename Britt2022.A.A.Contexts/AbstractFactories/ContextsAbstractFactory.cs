@@ -10,6 +10,21 @@
         {
         }
 
+        public IPlanningHorizonVisitorFactory CreatePlanningHorizonVisitorFactory()
+        {
+            IPlanningHorizonVisitorFactory factory = null;
+
+            try
+            {
+                factory = new PlanningHorizonVisitorFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IWGPMInputContextFactory CreateWGPMInputContextFactory()
         {
             IWGPMInputContextFactory factory = null;
