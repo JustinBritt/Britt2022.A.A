@@ -7,9 +7,8 @@
     using Hl7.Fhir.Model;
 
     using Britt2022.A.A.Contexts.InterfacesVisitors;
-    using Britt2022.A.A.IndexElements.InterfacesFactories;
 
-    public sealed class PlanningHorizonVisitor<TKey, TValue> : IPlanningHorizonVisitor<TKey, TValue>
+    internal sealed class PlanningHorizonVisitor<TKey, TValue> : IPlanningHorizonVisitor<TKey, TValue>
         where TKey : INullableValue<int>
         where TValue : FhirDateTime
     {
