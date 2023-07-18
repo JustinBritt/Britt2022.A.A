@@ -11,7 +11,6 @@
     using Britt2022.A.A.CrossJoinElements.Structs;
     using Britt2022.A.A.IndexElements.Structs;
     using Britt2022.A.A.ObjectiveFunctions.Interfaces;
-    using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
     using Britt2022.A.A.ParameterElements.Structs.PreferencesOfSurgeons;
     using Britt2022.A.A.ParameterElements.Structs.ScenarioProbabilities;
     using Britt2022.A.A.ParameterElements.Structs.StrategicTargets;
