@@ -468,32 +468,27 @@
 
             foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys)
             {
-                int iIndexElement = int.Parse(surgeon.Id);
-
                 RedBlackTree<int, RedBlackTree<int, decimal>> firstInnerRedBlackTree = new();
 
                 foreach (INullableValue<int> day in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon].Keys)
                 {
-                    int lIndexElement = day.Value.Value;
-
                     RedBlackTree<int, decimal> secondInnerRedBlackTree = new RedBlackTree<int, decimal>();
 
                     foreach (INullableValue<int> scenario in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day].Keys)
                     {
-                        int ωIndexElement = scenario.Value.Value;
-
                         secondInnerRedBlackTree.Add(
-                            ωIndexElement,
+                            scenario.Value.Value,
                             WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario].Value.Value);
                     }
 
                     firstInnerRedBlackTree.Add(
-                        lIndexElement,
+                        day.Value.Value,
                         secondInnerRedBlackTree);
                 }
 
                 outerRedBlackTree.Add(
-                    iIndexElement,
+                    int.Parse(
+                        surgeon.Id),
                     firstInnerRedBlackTree);
             }
 
