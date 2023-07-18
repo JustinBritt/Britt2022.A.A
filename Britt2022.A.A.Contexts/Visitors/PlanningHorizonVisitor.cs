@@ -1,6 +1,8 @@
 ﻿namespace Britt2022.A.A.Contexts.Visitors
 {
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using Hl7.Fhir.Model;
 
@@ -27,7 +29,9 @@
 
         public FhirDateTime[] GetValue()
         {
-            return this.Value.ToArray();
+            return this.Value
+                .OrderBy(w => w.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime.Date)
+                .ToArray();
         }
 
         public void Visit(
