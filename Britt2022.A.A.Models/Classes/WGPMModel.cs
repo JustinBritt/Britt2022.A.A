@@ -607,8 +607,6 @@
 
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
 
-            var aaa2 = this.GetObjectiveFunctionValue();
-
             var feasible = this.Constraints.IsFeasible(
                 this.Geti(),
                 this.Getj(),
@@ -625,8 +623,6 @@
                 this.GetΠ(),
                 this.GetΩ(),
                 this.GetxWithoutClearing());
-
-            var bbb = 2;
         }
 
         private IiIndexElementFactory iIndexElementFactory { get; }
