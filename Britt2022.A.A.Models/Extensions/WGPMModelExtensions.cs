@@ -4,6 +4,27 @@
 
     public static class WGPMModelExtensions
     {
+        public static bool ConstraintsIsFeasible(
+            this IWGPMModel WGPMModel)
+        {
+            return WGPMModel.Constraints.IsFeasible(
+                WGPMModel.Geti(),
+                WGPMModel.Getj(),
+                WGPMModel.Getk(),
+                WGPMModel.Getr(),
+                WGPMModel.Getijk(),
+                WGPMModel.Getik(),
+                WGPMModel.Getjk(),
+                WGPMModel.GetB(),
+                WGPMModel.GetB1(),
+                WGPMModel.GetF2(),
+                WGPMModel.GetH(),
+                WGPMModel.GetL(),
+                WGPMModel.GetΠ(),
+                WGPMModel.GetΩ(),
+                WGPMModel.GetxWithoutClearing());
+        }
+
         public static double GetObjectiveFunctionValue(
             this IWGPMModel WGPMModel)
         {
