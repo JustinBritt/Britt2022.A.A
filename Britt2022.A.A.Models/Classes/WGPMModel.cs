@@ -21,6 +21,7 @@
     using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
     using Britt2022.A.A.IndexElements.InterfacesFactories;
     using Britt2022.A.A.IndexElements.Structs;
+    using Britt2022.A.A.Models.Extensions;
     using Britt2022.A.A.Models.Interfaces;
     using Britt2022.A.A.ObjectiveFunctions.Interfaces;
     using Britt2022.A.A.ObjectiveFunctions.InterfacesAbstractFactories;
@@ -606,37 +607,7 @@
 
             this.ObjectiveFunction = objectiveFunctionsAbstractFactory.CreateObjectiveFunctionFactory().Create();
 
-            var aaa2 = this.ObjectiveFunction.GetValue(
-                this.Geti(),
-                this.Getj(),
-                this.Getk(),
-                this.Getl(),
-                this.Getω(),
-                this.Getijk(),
-                this.Getijkω(),
-                this.Getilω(),
-                this.Getiω(),
-                this.Getkω(),
-                this.GetA(),
-                this.GetN(),
-                this.Getn(),
-                this.Getv(),
-                this.Getw1(),
-                this.Getw2(),
-                this.Getw3(),
-                this.Getw4(),
-                this.GetΡ(),
-                this.SurgeonDayScenarioCumulativeNumberPatients,
-                this.d1Minus,
-                this.d2Minus,
-                this.I,
-                this.IMax,
-                this.IMin,
-                this.GetxWithoutClearing(),
-                this.Goal1,
-                this.Goal2,
-                this.Goal3,
-                this.Goal4);
+            var aaa2 = this.GetObjectiveFunctionValue();
 
             var feasible = this.Constraints.IsFeasible(
                 this.Geti(),
