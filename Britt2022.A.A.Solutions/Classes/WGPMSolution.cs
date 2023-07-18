@@ -178,7 +178,7 @@
                                 WGPMModel.Getl(),
                                 WGPMModel.Getω(),
                                 WGPMModel.Getilω(),
-                                null,//WGPMModel.GetΦ(),
+                                WGPMModel.SurgeonDayScenarioCumulativeNumberPatients,
                                 WGPMModel.GetxWithoutClearing())),
                         WGPMModel.IMin.GetElementsAt(
                             resultElementsAbstractFactory.CreateIMinResultElementFactory(),
