@@ -13,15 +13,10 @@
         where TKey : INullableValue<int>
         where TValue : FhirDateTime
     {
-        public PlanningHorizonVisitor(
-            IkIndexElementFactory kIndexElementFactory)
+        public PlanningHorizonVisitor()
         {
-            this.kIndexElementFactory = kIndexElementFactory;
-
             this.Value = new List<FhirDateTime>();
         }
-
-        private IkIndexElementFactory kIndexElementFactory { get; }
 
         public bool HasCompleted => false;
 

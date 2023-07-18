@@ -8,10 +8,12 @@
     using Hl7.Fhir.Model;
 
     using NGenerics.DataStructures.Trees;
+    using NGenerics.Patterns.Visitor;
 
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.Constraints.InterfacesAbstractFactories;
     using Britt2022.A.A.Contexts.Interfaces;
+    using Britt2022.A.A.Contexts.InterfacesVisitors;
     using Britt2022.A.A.CrossJoinElements.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoinElements.InterfacesFactories;
     using Britt2022.A.A.CrossJoinElements.Structs;
@@ -89,11 +91,12 @@
             // k
             this.kIndexElementFactory = indexElementsAbstractFactory.CreatekIndexElementFactory();
 
-            this.PlanningHorizon = WGPMInputContext
-                .PlanningHorizon
-                .Select(w => w.Value)
-                .OrderBy(w => w.ToDateTimeOffset(TimeSpan.Zero).UtcDateTime.Date)
-                .ToArray();
+            IPlanningHorizonVisitor<INullableValue<int>, FhirDateTime> planningHorizonVisitor = new Britt2022.A.A.Contexts.Visitors.PlanningHorizonVisitor<INullableValue<int>, FhirDateTime>();
+
+            WGPMInputContext.PlanningHorizon.AcceptVisitor(
+                planningHorizonVisitor);
+
+            this.PlanningHorizon = planningHorizonVisitor.GetValue();
 
             this.PlanningHorizonIntPtr = Marshal.AllocHGlobal(
                (this.PlanningHorizon.Count() + 1)
