@@ -127,15 +127,11 @@
 
         ReadOnlySpan<HParameterElement> GetH();
 
-        //ReadOnlySpan<hiParameterElement> Geth();
-
         ReadOnlySpan<LParameterElement> GetL();
 
         ReadOnlySpan<NParameterElement> GetN();
 
         ReadOnlySpan<niωParameterElement> Getn();
-
-        // ReadOnlySpan<pParameterElement> Getp();
 
         double Getv();
 
@@ -150,8 +146,6 @@
         ReadOnlySpan<ΠParameterElement> GetΠ();
 
         ReadOnlySpan<ΡParameterElement> GetΡ();
-
-        ReadOnlySpan<ΦParameterElement> GetΦ();
 
         ReadOnlySpan<ΩParameterElement> GetΩ();
 

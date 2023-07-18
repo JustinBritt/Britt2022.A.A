@@ -1711,27 +1711,6 @@
             return ΡSpan;
         }
 
-        public unsafe ReadOnlySpan<ΦParameterElement> GetΦ()
-        {
-            ReadOnlySpan<ilωCrossJoinElement> ilω = this.Getilω();
-
-            Array ΦArray = Array.CreateInstance(
-                typeof(ΦParameterElement),
-                1 + ilω.ToArray().Select(w => w.ilωOI).Max());
-
-            for (int w = 1; w < ilω.Length; w = w + 1)
-            {
-                ΦArray.SetValue(this.ΦParameterElementFactory.Create(
-                    iIndexElement: ilω[w].iIndexElement,
-                    lIndexElement: ilω[w].lIndexElement,
-                    ωIndexElement: ilω[w].ωIndexElement,
-                    (double)this.SurgeonDayScenarioCumulativeNumberPatients[ilω[w].iIndexElement][ilω[w].lIndexElement][ilω[w].ωIndexElement]),
-                    ilω[w].ilωOI);
-            }
-
-            return (Span<ΦParameterElement>)ΦArray;
-        }
-
         public unsafe ReadOnlySpan<ΩParameterElement> GetΩ()
         {
             ReadOnlySpan<ikCrossJoinElement> ik = this.Getik();
