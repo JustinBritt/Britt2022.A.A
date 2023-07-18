@@ -92,7 +92,7 @@
                 Ω,
                 x);
 
-            if (isFeasible)
+            if (!isFeasible)
             {
                 constructionHeuristicFactory.Create().GenerateInitialFeasibleSchedule(
                     i: i,
