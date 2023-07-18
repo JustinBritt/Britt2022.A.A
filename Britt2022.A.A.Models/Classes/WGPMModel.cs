@@ -642,15 +642,11 @@
 
         private IHParameterElementFactory HParameterElementFactory { get; }
 
-        private IhiParameterElementFactory hParameterElementFactory { get; }
-
         private ILParameterElementFactory LParameterElementFactory { get; }
 
         private INParameterElementFactory NParameterElementFactory { get; }
 
         private IniωParameterElementFactory nParameterElementFactory { get; }
-
-        private IpParameterElementFactory pParameterElementFactory { get; }
 
         private IΠParameterElementFactory ΠParameterElementFactory { get; }
 
