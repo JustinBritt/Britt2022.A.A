@@ -13,6 +13,7 @@
     using Britt2022.A.A.Constraints.Interfaces;
     using Britt2022.A.A.Constraints.InterfacesAbstractFactories;
     using Britt2022.A.A.Contexts.Interfaces;
+    using Britt2022.A.A.Contexts.InterfacesAbstractFactories;
     using Britt2022.A.A.Contexts.InterfacesVisitors;
     using Britt2022.A.A.CrossJoinElements.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoinElements.InterfacesFactories;
@@ -43,12 +44,13 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
-
+    
     public unsafe sealed class WGPMModel : IWGPMModel
     {
         // Note: This assumes that indices have numbered Ids.
         public unsafe WGPMModel(
             IConstraintsAbstractFactory constraintsAbstractFactory,
+            IContextsAbstractFactory contextsAbstractFactory,
             ICrossJoinElementsAbstractFactory crossJoinElementsAbstractFactory,
             ICrossJoinsAbstractFactory crossJoinsAbstractFactory,
             IIndexElementsAbstractFactory indexElementsAbstractFactory,

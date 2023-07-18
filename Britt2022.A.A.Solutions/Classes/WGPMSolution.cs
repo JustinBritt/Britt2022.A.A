@@ -69,6 +69,7 @@
 
                 using (IWGPMModel WGPMModel = modelsAbstractFactory.CreateWGPMModelFactory().Create(
                     constraintsAbstractFactory,
+                    contextsAbstractFactory,
                     crossJoinElementsAbstractFactory,
                     crossJoinsAbstractFactory,
                     indexElementsAbstractFactory,

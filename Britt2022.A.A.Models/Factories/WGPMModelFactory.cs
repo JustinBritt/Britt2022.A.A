@@ -2,6 +2,7 @@
 {
     using Britt2022.A.A.Constraints.InterfacesAbstractFactories;
     using Britt2022.A.A.Contexts.Interfaces;
+    using Britt2022.A.A.Contexts.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoinElements.InterfacesAbstractFactories;
     using Britt2022.A.A.CrossJoins.InterfacesAbstractFactories;
     using Britt2022.A.A.IndexElements.InterfacesAbstractFactories;
@@ -21,6 +22,7 @@
 
         public IWGPMModel Create(
             IConstraintsAbstractFactory constraintsAbstractFactory,
+            IContextsAbstractFactory contextsAbstractFactory,
             ICrossJoinElementsAbstractFactory crossJoinElementsAbstractFactory,
             ICrossJoinsAbstractFactory crossJoinsAbstractFactory,
             IIndexElementsAbstractFactory indexElementsAbstractFactory,
@@ -36,6 +38,7 @@
             {
                 model = new WGPMModel(
                     constraintsAbstractFactory,
+                    contextsAbstractFactory,
                     crossJoinElementsAbstractFactory,
                     crossJoinsAbstractFactory,
                     indexElementsAbstractFactory,
