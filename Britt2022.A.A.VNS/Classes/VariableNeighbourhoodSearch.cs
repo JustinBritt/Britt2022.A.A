@@ -80,20 +80,40 @@
             IGoal3 goal3,
             IGoal4 goal4)
         {
-            constructionHeuristicFactory.Create().GenerateInitialFeasibleSchedule(
-                i: i,
-                j: j,
-                k: k,
-                r: r,
-                ijk: ijk,
-                B: B,
-                B1: B1,
-                F2: F2,
-                H: H,
-                L: Li,
-                Π: Π,
-                Ω: Ω,
-                x: x);
+            bool isFeasible = constraints.IsFeasible(
+                i,
+                j,
+                k,
+                r,
+                ijk,
+                ik,
+                jk,
+                B,
+                B1,
+                F2,
+                H,
+                Li,
+                Π,
+                Ω,
+                x);
+
+            if (!isFeasible)
+            {
+                constructionHeuristicFactory.Create().GenerateInitialFeasibleSchedule(
+                    i: i,
+                    j: j,
+                    k: k,
+                    r: r,
+                    ijk: ijk,
+                    B: B,
+                    B1: B1,
+                    F2: F2,
+                    H: H,
+                    L: Li,
+                    Π: Π,
+                    Ω: Ω,
+                    x: x);
+            }
 
             improvementHeuristicFactory.Create().Search(
                 neighbourhoodStructureFactory: neighbourhoodStructureFactory,
