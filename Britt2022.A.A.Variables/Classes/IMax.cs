@@ -76,19 +76,11 @@
             ReadOnlySpan<kωCrossJoinElement> kω,
             Span<IVariableElement> I)
         {
-            //Span<double> maximumValuesSpan = new Span<double>(
-            //    (void*)this.MaximumValuesIntPtr,
-            //    ω.Length);
-
             Span<double> maximumValuesSpan = (Span<double>)Array.CreateInstance(
                 typeof(double),
                 ω.Length);
 
             maximumValuesSpan.Clear();
-
-            //Span<IMaxVariableElement> IMaxSpan = new Span<IMaxVariableElement>(
-            //    (void*)this.IMaxIntPtr,
-            //    ω.Length);
 
             Span<IMaxVariableElement> IMaxSpan = (Span<IMaxVariableElement>)Array.CreateInstance(
                 typeof(IMaxVariableElement),
