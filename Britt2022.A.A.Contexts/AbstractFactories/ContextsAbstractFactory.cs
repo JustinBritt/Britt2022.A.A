@@ -25,6 +25,21 @@
             return factory;
         }
 
+        public ISurgeonDayScenarioCumulativeNumberPatientsOuterVisitorFactory CreateSurgeonDayScenarioCumulativeNumberPatientsOuterVisitorFactory()
+        {
+            ISurgeonDayScenarioCumulativeNumberPatientsOuterVisitorFactory factory = null;
+
+            try
+            {
+                factory = new SurgeonDayScenarioCumulativeNumberPatientsOuterVisitorFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IWGPMInputContextFactory CreateWGPMInputContextFactory()
         {
             IWGPMInputContextFactory factory = null;

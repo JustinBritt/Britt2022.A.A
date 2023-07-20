@@ -6,6 +6,8 @@
     {
         IPlanningHorizonVisitorFactory CreatePlanningHorizonVisitorFactory();
 
+        ISurgeonDayScenarioCumulativeNumberPatientsOuterVisitorFactory CreateSurgeonDayScenarioCumulativeNumberPatientsOuterVisitorFactory();
+
         IWGPMInputContextFactory CreateWGPMInputContextFactory();
 
         IWGPMOutputContextFactory CreateWGPMOutputContextFactory();
