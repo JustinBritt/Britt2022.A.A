@@ -93,12 +93,6 @@
             RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             Span<xVariableElement> x)
         {
-            //Span<double> sumsSpan = new Span<double>(
-            //    (void*)this.SumsIntPtr,
-            //    k.Length
-            //    *
-            //    ω.Length);
-
             Span<double> sumsSpan = (Span<double>)Array.CreateInstance(
                 typeof(double),
                 k.Length
@@ -106,12 +100,6 @@
                 ω.Length);
 
             sumsSpan.Clear();
-
-            //Span<IVariableElement> ISpan = new Span<IVariableElement>(
-            //    (void*)this.IIntPtr,
-            //    k.Length
-            //    *
-            //    ω.Length);
 
             Span<IVariableElement> ISpan = (Span<IVariableElement>)Array.CreateInstance(
                 typeof(IVariableElement),
