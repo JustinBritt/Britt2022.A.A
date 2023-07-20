@@ -212,8 +212,6 @@
                *
                iωCrossJoinElement.SizeInBytes);
 
-            ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
-
             // jk
             this.jkCrossJoinElementFactory = crossJoinElementsAbstractFactory.CreatejkCrossJoinElementFactory();
 
@@ -239,6 +237,8 @@
             this.abcMappingFactory = crossJoinsAbstractFactory.CreateabcMappingFactory();
 
             this.abcdMappingFactory = crossJoinsAbstractFactory.CreateabcdMappingFactory();
+
+            ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
 
             // A(i, ω)
             this.AParameterElementFactory = parameterElementsAbstractFactory.CreateAParameterElementFactory();
@@ -381,7 +381,8 @@
             // n(i, ω)
             this.nParameterElementFactory = parameterElementsAbstractFactory.CreateniωParameterElementFactory();
 
-            List<Tuple<Organization, INullableValue<int>, INullableValue<int>>> nList = new List<Tuple<Organization, INullableValue<int>, INullableValue<int>>>();
+            var nArraySize = 1 + iω.ToArray().Select(w => w.iωOI).Max();
+            var nArray = new Tuple<Organization, INullableValue<int>, INullableValue<int>>[nArraySize];
 
             for (int i = 1; i < iω.Length; i = i + 1)
             {
@@ -389,15 +390,14 @@
 
                 INullableValue<int> scenario = this.Scenarios[iω[i].ωIndexElement - 1];
 
-                nList.Add(
+                nArray[iω[i].iωZI] =
                     Tuple.Create(
                         surgeon,
                         scenario,
-                        WGPMInputContext.SurgeonScenarioMaximumNumberPatients[surgeon][scenario]));
+                        WGPMInputContext.SurgeonScenarioMaximumNumberPatients[surgeon][scenario]);
             }
 
-            this.SurgeonScenarioMaximumNumberPatients = nList
-                .ToArray();
+            this.SurgeonScenarioMaximumNumberPatients = nArray;
 
             this.SurgeonScenarioMaximumNumberPatientsIntPtr = Marshal.AllocHGlobal(
                (1 + this.Surgeons.Count() + this.Surgeons.Count() * this.Scenarios.Count())
