@@ -36,7 +36,7 @@
             double w3,
             double w4,
             ReadOnlySpan<ΡParameterElement> Ρ,
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             Id1Minus d1Minus,
             Id2Minus d2Minus,
             II I,

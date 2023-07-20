@@ -53,7 +53,7 @@
             double v,
             ReadOnlySpan<ΠParameterElement> Π,
             ReadOnlySpan<ΡParameterElement> Ρ,
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             ReadOnlySpan<ΩParameterElement> Ω,
             double w1,
             double w2,

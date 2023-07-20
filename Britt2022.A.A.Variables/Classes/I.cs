@@ -53,7 +53,7 @@
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ilωCrossJoinElement> ilω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             Span<xVariableElement> x)
         {
             Span<IVariableElement> IVariableSpan = this.GetValue(
@@ -90,7 +90,7 @@
             ReadOnlySpan<lIndexElement> l,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ilωCrossJoinElement> ilω,
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             Span<xVariableElement> x)
         {
             //Span<double> sumsSpan = new Span<double>(
@@ -137,7 +137,7 @@
                                     {
                                         for (int ωIndexElement = 1; ωIndexElement < ω.Length; ωIndexElement = ωIndexElement + 1)
                                         {
-                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (double)Φ[iIndexElement][kIndexElement - lIndexElement][ωIndexElement];
+                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (double)Φ[iIndexElement][kIndexElement - lIndexElement][ωIndexElement].Value;
                                         }
                                     }
                                 }
@@ -157,7 +157,7 @@
                                     {
                                         for (int ωIndexElement = 1; ωIndexElement < ω.Length; ωIndexElement = ωIndexElement + 1)
                                         {
-                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (double)Φ[iIndexElement][kIndexElement - lIndexElement + (k.Length - 1)][ωIndexElement];
+                                            *(sumsSpanPtr + kIndexElement + (ωIndexElement * (k.Length - 1))) += (double)Φ[iIndexElement][kIndexElement - lIndexElement + (k.Length - 1)][ωIndexElement].Value;
                                         }
                                     }
                                 }

@@ -34,6 +34,7 @@
     using Britt2022.A.A.ParameterElements.InterfacesFactories.StrategicTargets;
     using Britt2022.A.A.ParameterElements.InterfacesFactories.Surgeries;
     using Britt2022.A.A.ParameterElements.InterfacesFactories.SurgicalSpecialties;
+    using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
     using Britt2022.A.A.ParameterElements.Structs.PreferencesOfSurgeons;
     using Britt2022.A.A.ParameterElements.Structs.ScenarioProbabilities;
     using Britt2022.A.A.ParameterElements.Structs.StrategicTargets;
@@ -44,7 +45,7 @@
     using Britt2022.A.A.VariableElements.Structs;
     using Britt2022.A.A.Variables.Interfaces;
     using Britt2022.A.A.Variables.InterfacesAbstractFactories;
-    
+
     public unsafe sealed class WGPMModel : IWGPMModel
     {
         // Note: This assumes that indices have numbered Ids.
@@ -467,35 +468,13 @@
             // Φ(i, l, ω)
             this.ΦParameterElementFactory = parameterElementsAbstractFactory.CreateΦParameterElementFactory();
 
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> outerRedBlackTree = new();
+            ISurgeonDayScenarioCumulativeNumberPatientsOuterVisitor<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>> surgeonDayScenarioCumulativeNumberPatientsOuterVisitor = contextsAbstractFactory.CreateSurgeonDayScenarioCumulativeNumberPatientsOuterVisitorFactory().Create<Organization, RedBlackTree<INullableValue<int>, RedBlackTree<INullableValue<int>, INullableValue<decimal>>>>(
+                parameterElementsAbstractFactory.CreateΦParameterElementFactory());
 
-            foreach (Organization surgeon in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.Keys)
-            {
-                RedBlackTree<int, RedBlackTree<int, decimal>> firstInnerRedBlackTree = new();
+            WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients.AcceptVisitor(
+                surgeonDayScenarioCumulativeNumberPatientsOuterVisitor);
 
-                foreach (INullableValue<int> day in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon].Keys)
-                {
-                    RedBlackTree<int, decimal> secondInnerRedBlackTree = new RedBlackTree<int, decimal>();
-
-                    foreach (INullableValue<int> scenario in WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day].Keys)
-                    {
-                        secondInnerRedBlackTree.Add(
-                            scenario.Value.Value,
-                            WGPMInputContext.SurgeonDayScenarioCumulativeNumberPatients[surgeon][day][scenario].Value.Value);
-                    }
-
-                    firstInnerRedBlackTree.Add(
-                        day.Value.Value,
-                        secondInnerRedBlackTree);
-                }
-
-                outerRedBlackTree.Add(
-                    int.Parse(
-                        surgeon.Id),
-                    firstInnerRedBlackTree);
-            }
-
-            this.SurgeonDayScenarioCumulativeNumberPatients = outerRedBlackTree;
+            this.SurgeonDayScenarioCumulativeNumberPatients = surgeonDayScenarioCumulativeNumberPatientsOuterVisitor.RedBlackTree;
 
             // Ω(i, k)
             this.ΩParameterElementFactory = parameterElementsAbstractFactory.CreateΩParameterElementFactory();
@@ -727,7 +706,7 @@
         public KeyValuePair<INullableValue<int>, INullableValue<decimal>>[] ScenarioProbabilities { get; }
 
         // Φ(i, l, ω)
-        public RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
+        public RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> SurgeonDayScenarioCumulativeNumberPatients { get; }
 
         public Tuple<Organization, FhirDateTime, INullableValue<bool>>[] SurgeonDayAvailabilities { get; }
 

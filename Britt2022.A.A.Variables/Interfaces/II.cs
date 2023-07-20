@@ -26,7 +26,7 @@
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ilωCrossJoinElement> ilω,
             ReadOnlySpan<kωCrossJoinElement> kω,
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             Span<xVariableElement> x);
 
         Span<IVariableElement> GetValue(
@@ -36,7 +36,7 @@
             ReadOnlySpan<lIndexElement> l,
             ReadOnlySpan<ωIndexElement> ω,
             ReadOnlySpan<ilωCrossJoinElement> ilω,
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             Span<xVariableElement> x);
     }
 }

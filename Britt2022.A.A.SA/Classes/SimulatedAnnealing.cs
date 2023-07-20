@@ -10,6 +10,7 @@
     using Britt2022.A.A.IndexElements.Structs;
     using Britt2022.A.A.NeighbourhoodStructures.InterfacesFactories;
     using Britt2022.A.A.ObjectiveFunctions.Interfaces;
+    using Britt2022.A.A.ParameterElements.Structs.LengthsOfStay;
     using Britt2022.A.A.ParameterElements.Structs.PreferencesOfSurgeons;
     using Britt2022.A.A.ParameterElements.Structs.ScenarioProbabilities;
     using Britt2022.A.A.ParameterElements.Structs.StrategicTargets;
@@ -56,7 +57,7 @@
             double v,
             ReadOnlySpan<ΠParameterElement> Π,
             ReadOnlySpan<ΡParameterElement> Ρ,
-            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, decimal>>> Φ,
+            RedBlackTree<int, RedBlackTree<int, RedBlackTree<int, ΦParameterElement>>> Φ,
             ReadOnlySpan<ΩParameterElement> Ω,
             double w1,
             double w2,
