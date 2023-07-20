@@ -212,6 +212,8 @@
                *
                iωCrossJoinElement.SizeInBytes);
 
+            ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
+
             // jk
             this.jkCrossJoinElementFactory = crossJoinElementsAbstractFactory.CreatejkCrossJoinElementFactory();
 
@@ -240,8 +242,6 @@
 
             // A(i, ω)
             this.AParameterElementFactory = parameterElementsAbstractFactory.CreateAParameterElementFactory();
-
-            ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
 
             var AArraySize = 1 + iω.ToArray().Select(w => w.iωOI).Max();
             var AArray = new Tuple<Organization, INullableValue<int>, Duration>[AArraySize];
