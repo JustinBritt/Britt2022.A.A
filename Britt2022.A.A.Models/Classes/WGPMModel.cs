@@ -238,6 +238,10 @@
 
             this.abcdMappingFactory = crossJoinsAbstractFactory.CreateabcdMappingFactory();
 
+            ReadOnlySpan<ijCrossJoinElement> ij = this.Getij();
+
+            ReadOnlySpan<ikCrossJoinElement> ik = this.Getik();
+
             ReadOnlySpan<iωCrossJoinElement> iω = this.Getiω();
 
             // A(i, ω)
@@ -430,8 +434,6 @@
             var ΠArraySize = 1 + this.Surgeons.Count() + this.Surgeons.Count() * this.OperatingRooms.Count();
             var ΠArray = new Tuple<Organization, Location, INullableValue<bool>>[ΠArraySize];
 
-            ReadOnlySpan<ijCrossJoinElement> ij = this.Getij();
-
             for (int i = 1; i < ij.Length; i = i + 1)
             {
                 Organization surgeon = this.Surgeons[ij[i].iIndexElement - 1];
@@ -481,8 +483,6 @@
 
             var ΩArraySize = 1 + this.Surgeons.Count() + this.Surgeons.Count() * this.PlanningHorizon.Count();
             var ΩArray = new Tuple<Organization, FhirDateTime, INullableValue<bool>>[ΩArraySize];
-
-            ReadOnlySpan<ikCrossJoinElement> ik = this.Getik();
 
             for (int i = 1; i < ik.Length; i = i + 1)
             {
