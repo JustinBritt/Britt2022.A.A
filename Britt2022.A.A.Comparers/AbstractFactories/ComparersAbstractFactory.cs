@@ -10,6 +10,21 @@
         {
         }
 
+        public IFhirDateTimeComparerFactory CreateFhirDateTimeComparerFactory()
+        {
+            IFhirDateTimeComparerFactory factory = null;
+
+            try
+            {
+                factory = new FhirDateTimeComparerFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IOrganizationComparerFactory CreateOrganizationComparerFactory()
         {
             IOrganizationComparerFactory factory = null;
