@@ -46,7 +46,7 @@
                             thirdInnerRedBlackTree.Add(
                                 scenario,
                                 nullableValueFactory.Create<decimal>(
-                                d2MinusArray.Where(w => w.Surgeon == surgeon && w.OperatingRoom == operatingRoom && w.Day == day && w.Scenario == scenario).Select(w => w.Value).SingleOrDefault()));
+                                    d2MinusArray.Where(w => w.Surgeon == surgeon && w.OperatingRoom == operatingRoom && w.Day == day && w.Scenario == scenario).Select(w => w.Value).SingleOrDefault()));
                         }
 
                         secondInnerRedBlackTree.Add(
