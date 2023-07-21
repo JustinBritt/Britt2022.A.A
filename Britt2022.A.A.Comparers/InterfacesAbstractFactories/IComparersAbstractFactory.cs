@@ -6,6 +6,8 @@
     {
         IFhirDateTimeComparerFactory CreateFhirDateTimeComparerFactory();
 
+        INullableValueintComparerFactory CreateNullableValueintComparerFactory();
+
         IOrganizationComparerFactory CreateOrganizationComparerFactory();
     }
 }

@@ -25,6 +25,21 @@
             return factory;
         }
 
+        public INullableValueintComparerFactory CreateNullableValueintComparerFactory()
+        {
+            INullableValueintComparerFactory factory = null;
+
+            try
+            {
+                factory = new NullableValueintComparerFactory();
+            }
+            finally
+            {
+            }
+
+            return factory;
+        }
+
         public IOrganizationComparerFactory CreateOrganizationComparerFactory()
         {
             IOrganizationComparerFactory factory = null;
