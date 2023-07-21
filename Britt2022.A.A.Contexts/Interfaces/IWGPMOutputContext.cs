@@ -1,7 +1,6 @@
 ﻿namespace Britt2022.A.A.Contexts.Interfaces
 {
     using System;
-    using System.Collections.Immutable;
 
     using Hl7.Fhir.Model;
 
@@ -25,6 +24,6 @@
 
         TimeSpan OverallWallTime { get; }
 
-        ImmutableList<Tuple<Organization, Location, FhirDateTime, INullableValue<bool>>> SurgeonOperatingRoomDayAssignments { get; }
+        RedBlackTree<Organization, RedBlackTree<Location, RedBlackTree<FhirDateTime, INullableValue<bool>>>> SurgeonOperatingRoomDayAssignments { get; }
     }
 }
