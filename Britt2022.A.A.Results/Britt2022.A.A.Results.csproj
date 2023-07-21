@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Britt2022.A.A.Comparers\Britt2022.A.A.Comparers.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.CrossJoinElements\Britt2022.A.A.CrossJoinElements.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model\Britt2022.A.A.Dependencies.Hl7.Fhir.R4.Model.csproj" />
     <ProjectReference Include="..\Britt2022.A.A.ResultElements\Britt2022.A.A.ResultElements.csproj" />
