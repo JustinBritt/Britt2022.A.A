@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NUGET_AUTH_TOKEN: ${{ github.token }}
+      NUGET_AUTH_TOKEN: ${{ secrets.PersonalAccessToken }}
     steps:
     - uses: actions/checkout@v1
     - name: Setup .NET
